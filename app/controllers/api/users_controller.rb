@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
     def create
-        @user = User.new(new_user_params)
+        @user = User.new(user_params)
 
         if @user.save
             render json: @user
@@ -17,7 +17,7 @@ class Api::UsersController < ApplicationController
     def update
         @user.find(params[:id])
 
-        if @user.update
+        if @user.update(user_params)
             render json: @user
         else
             render json @user.errors.full_messages
@@ -25,11 +25,7 @@ class Api::UsersController < ApplicationController
     end
 
     private
-    def new_user_params
-        params.require(:user).permit(:email, :password)
-    end
-
-    def about_user_params
-        params.require(:user).permit(:shop_name, :image_url, :gender, :location, :birthday, :about, :favorite_material)
+    def user_params
+        params.require(:user).permit(:email, :password, :shop_name, :image_url, :gender, :location, :birthday, :about, :favorite_material)
     end
 end

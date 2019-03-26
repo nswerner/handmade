@@ -24,7 +24,7 @@ class User < ApplicationRecord
 
     validates :session_token, :cart_id, presence: true, uniqueness: true
     validates :password_digest, presence: true
-    validates :shop_name, uniqueness: true
+    validates :shop_name, uniqueness: true, allow_nil: true
     validates :password, length: {minimum: 6, allow_nil: true}
 
     after_initialize :ensure_session_token, :ensure_cart
@@ -45,7 +45,7 @@ class User < ApplicationRecord
     end
 
     def self.find_by_credentials(email, password)
-        user = user.find_by(email: email)
+        user = User.find_by(email: email)
         user && user.is_password?(password) ? user : nil
     end
 
