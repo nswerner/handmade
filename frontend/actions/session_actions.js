@@ -31,7 +31,8 @@ const receiveErrors = (errors) => {
 // thunk action creators
 
 export const signIn = (user) => (dispatch) => {
-    return SessionApiUtil.signIn(user).then(user => dispatch(receiveCurrentUser(user)), error => dispatch(receiveErrors(error.responseJSON)));
+    return SessionApiUtil.signIn(user).then(user => dispatch(receiveCurrentUser(user)), 
+        error => dispatch(receiveErrors(error.responseJSON)));
 };
 
 export const signUp = (user) => (dispatch) => {
