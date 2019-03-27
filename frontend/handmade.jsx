@@ -5,7 +5,6 @@ import Root from "./components/root";
 
 // testing imports
 
-import * as SessionApiUtil from './util/session_api_util';
 import * as SessionActions from './actions/session_actions';
 
 // testing imports
@@ -27,4 +26,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // testing
 
     ReactDOM.render(<Root store={store}/>, root);
-})
+});

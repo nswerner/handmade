@@ -14,10 +14,10 @@ class Modal extends React.Component {
 
     switch (this.props.modal) {
       case 'signin':
-        modal = <SignInForm closeModal={this.props.closeModal}/>;
+        modal = <SignInForm closeModal={this.props.closeModal}/>
         break;
       case 'signup':
-        modal = <SignUpForm closeModal={this.props.closeModal}/>;
+        modal = <SignUpForm closeModal={this.props.closeModal}/>
         break;
       default:
         return null;

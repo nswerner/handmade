@@ -1,0 +1,49 @@
+.nav-bar {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.logo-search {
+  display: flex;
+  padding: 25px;
+  width: 550px;
+
+}
+
+.logo-search > h3 {
+  font-family: 'Lora', serif;
+  color: #f45800;
+  font-size: 25px;
+  padding: 0px 10px;
+}
+
+.logo-search .search-bar-and-button {
+  box-sizing: border-box;
+  width: 40%;
+}
+
+.search-bar {
+  height: 26px;
+  font-size: 12px;
+  border: 1px solid black;
+  border-radius: 1px;
+  border-right: 0px;
+}
+
+
+.search-bar-and-button > .search-button {
+  background-color: black;
+  padding: 6px 8px;
+  color: white;
+  border-radius: 3px;
+  border: 0px;
+}
+
+
+.icon-nav {
+  display: flex;
+  justify-content: space-around;
+  width: 350px;
+}
