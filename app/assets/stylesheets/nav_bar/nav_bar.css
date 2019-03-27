@@ -12,11 +12,16 @@
 
 }
 
-.logo-search > h3 {
+.logo-search h3 a {
   font-family: 'Lora', serif;
   color: #f45800;
   font-size: 25px;
   padding: 0px 10px;
+  text-decoration: none;
+}
+
+.logo-search h3 a:hover {
+  text-decoration: none;
 }
 
 .logo-search .search-bar-and-button {
@@ -32,6 +37,10 @@
   border-right: 0px;
 }
 
+.search-bar:focus {
+  outline: none;
+}
+
 
 .search-bar-and-button > .search-button {
   background-color: black;
@@ -39,6 +48,10 @@
   color: white;
   border-radius: 3px;
   border: 0px;
+}
+
+.search-button:hover {
+  cursor: pointer;
 }
 
 
