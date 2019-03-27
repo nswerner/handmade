@@ -33,13 +33,18 @@ class NavBar extends React.Component {
       );
     }
 
-
+// CHANGE THIS .logo-search will render div with an image tag and a search react component
+// CHANGE THIS .icon-nav will conditionally render signup/in or signout icon nav 
     return(
-    <>
-      <h3>Handmade</h3>
-      <div>This Will be my Search Bar</div>
-      {section}
-    </>
+    <div className="nav-bar">
+      <div className="logo-search">
+        <h3>Handmade</h3>
+        <div class="search">This Will be my Search Bar</div>
+      </div>
+      <div className="icon-nav">
+        {section}
+      </div>
+    </div>
     )
   }
 
