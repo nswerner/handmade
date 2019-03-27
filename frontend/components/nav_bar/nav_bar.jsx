@@ -32,8 +32,6 @@ class NavBar extends React.Component {
         </>
       );
     }
-    // CHANGE THIS
-    // <Profile signOut={this.props.signOut}/>
 
 
     return(
@@ -41,7 +39,6 @@ class NavBar extends React.Component {
       <h3>Handmade</h3>
       <div>This Will be my Search Bar</div>
       {section}
-
     </>
     )
   }
