@@ -39,7 +39,10 @@ class NavBar extends React.Component {
     <div className="nav-bar">
       <div className="logo-search">
         <h3>Handmade</h3>
-        <div class="search">This Will be my Search Bar</div>
+        <div className="search-bar-and-button">
+          <input className="search-bar" type="search"/>
+          <button className="search-button">search</button>
+        </div>
       </div>
       <div className="icon-nav">
         {section}
