@@ -1,0 +1,46 @@
+.session-form {
+  background-color: white;
+  padding: 25px 10px;
+  border-radius: 3px;
+  border: 1px solid black;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form-header {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 35px;
+}
+
+.session-form input {
+  margin: 10px;
+  width: 90%
+} 
+
+.session-form .submit {
+  width: 90%;
+  background-color: black;
+  color: white;
+  font-weight: 400px;
+}
+
+.session-form > label {
+  font-family: 'Mukta', sans-serif;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.session-form > label > input {
+  height: 26px;
+  font-size: 12px;
+  border: 1px solid lightgray;
+  border-radius: 1px;
+}
+
+.session-form > label > input:focus {
+  border: 1px solid black;
+  outline: none;
+}

@@ -28,10 +28,10 @@ class SessionForm extends React.Component {
     render() {
         return(
             <>
-                <h3>{this.props.formType}</h3>
-                <form onSubmit={this.handleSubmit}>
+                <form className="session-form" onSubmit={this.handleSubmit}>
+                    <h3 className="modal-form-header">{this.props.formType}</h3>
                     <label>
-                        Email:
+                        Email Address:
                         <br/>
                         <input type="text" value={this.state.email} onChange={this.handleChange('email')}/>
                     </label>
@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
                         <input type="password" value={this.state.password} onChange={this.handleChange('password')}/>
                     </label>
                     <br/>
-                    <input type="submit" value={this.props.formType}/>
+                    <input className="submit" type="submit" value={this.props.formType}/>
                 </form>
             </>
         )

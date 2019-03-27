@@ -9,7 +9,7 @@
   display: flex;
   padding: 25px;
   width: 550px;
-
+  flex-wrap: nowrap;
 }
 
 .logo-search h3 a {
