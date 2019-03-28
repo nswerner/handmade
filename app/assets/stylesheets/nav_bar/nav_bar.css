@@ -57,7 +57,6 @@
   border: 1px solid black;
 }
 
-
 .search-bar-and-button > .search-button {
   background-color: black;
   color: white;
@@ -94,6 +93,7 @@
 .white-button:hover {
   background-color:black;
   color: white;
+  cursor: pointer;
 }
 
 .white-button:focus {
@@ -114,6 +114,10 @@
   color: gray;
 }
 
+.button-to-link:focus {
+  outline: none;
+}
+
 .icon-button {
   display: flex;
   flex-flow: column wrap;
@@ -122,7 +126,16 @@
   border-left: 1px solid lightgray;
   font-size: 12px;
   align-items: center;
-  padding: 3px 8px;
+  padding: 3px 10px;
+}
+
+.icon-button:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.icon-button:focus {
+  outline: none;
 }
 
 .store-mngr {
@@ -134,11 +147,37 @@
   margin-bottom: 4px;
 }
 
-.icon-button:hover {
-  color: black;
-  cursor: pointer;
+.profile-button {
+  margin-top: -3px;
 }
 
-.profile-button {
-  
+.profile-button > img {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin-bottom: 3px;
+  padding: 0px;
+}
+
+.cart-button {
+  padding-top: 10px;
+  padding-bottom: 8px;
+}
+
+.profile-button span {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+
+.profile-button span i {
+  color: rgb(167, 167, 167);
+}
+
+.sign-out {
+  margin-right: 7px;
+}
+
+.sign-in {
+  margin-left: 5px;
 }

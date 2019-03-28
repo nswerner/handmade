@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 
 class SessionNav extends React.Component {
     constructor(props) {
@@ -14,10 +14,10 @@ class SessionNav extends React.Component {
             // CHANGE THIS PROFILE IMAGE
             return (
                 <div className="icon-nav">
+                    <button className="white-button sign-out" onClick={this.props.signOut}> Sign Out</button>
                     <button className="icon-button store-mngr"> <i className="fas fa-store"/> Shop Manager</button>
-                    <button className="icon-button profile-button">  You </button>
-                    <button className="white-button" onClick={this.props.signOut}> Sign Out</button>
-                    <button className="icon-button"> <i className="fas fa-shopping-cart"/> Cart</button>
+                    <button className="icon-button profile-button"> <img src={window.proDefSmall} alt="small default profile image" /> <span>You <i class="fas fa-caret-down"/></span> </button>
+                    <button className="icon-button cart-button"> <i className="fas fa-shopping-cart"/> Cart</button>
                 </div>
             )
         } else {
@@ -25,8 +25,8 @@ class SessionNav extends React.Component {
                 <div className="icon-nav">
                     <button className="button-to-link">Demo</button>
                     <button className="button-to-link" onClick={() => this.props.openModal('signup')}>Register</button>
-                    <button className="white-button" onClick={() => this.props.openModal('signin')}>Sign In</button>
-                    <button className="icon-button" onClick={() => this.props.openModal('signin')}><i className="fas fa-shopping-cart"/>Cart</button>
+                    <button className="white-button sign-in" onClick={() => this.props.openModal('signin')}>Sign In</button>
+                    <button className="icon-button cart-button" onClick={() => this.props.openModal('signin')}><i className="fas fa-shopping-cart"/>Cart</button>
                 </div>
             )
         }
