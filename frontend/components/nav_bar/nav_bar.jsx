@@ -17,38 +17,15 @@ class NavBar extends React.Component {
   }
 
   render() {
-    //CHANGE THIS
-    let section;
-    if (this.props.currentUser) {
-      section = (
-        <>
-          <h4>Welcome {this.props.currentUser.email}</h4>
-          <button onClick={() => this.signoutButton()}>Signout</button>
-        </>
-      );
-    } else {
-      section = (
-        <>
-          <button onClick={() => this.props.openModal('signin')}>Sign In</button>
-          <br />
-          <button onClick={() => this.props.openModal('signup')}>Sign Up</button>
-        </>
-      );
-    }
 
-// CHANGE THIS .logo-search will render div with an Link tag and a search react component
-// CHANGE THIS .icon-nav will conditionally render signup/in or signout icon nav 
     return(
-    <div className="nav-bar">
-      <div className="logo-search">
-        <h3><Link to="/">Handmade</Link></h3>
-        <Search/>
-      </div>
-      <div className="icon-nav">
-        {section}
-        <SessionNav/>
-      </div>
-    </div>
+      <header className="nav-bar">
+        <div className="logo-search">
+          <h3><Link to="/">Handmade</Link></h3>
+          <Search/>
+        </div>
+        <SessionNav className="icon-nav"/>
+      </header>
     )
   }
 

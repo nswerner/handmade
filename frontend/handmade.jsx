@@ -11,17 +11,31 @@ import * as SessionActions from './actions/session_actions';
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const store = configureStore();
+
+    let store;
+    if (window.currentUser) {
+        const preloadedState = {
+            entities: {
+                users: { [window.currentUser.id]: window.currentUser }
+            },
+            session: { id: window.currentUser.id }
+        };
+        store = configureStore(preloadedState);
+        delete window.currentUser;
+    } else {
+        store = configureStore();
+    }
+
     const root = document.getElementById('root');
 
     // testing
 
-    window.signIn = SessionActions.signIn;
-    window.signOut = SessionActions.signOut;
-    window.signUp = SessionActions.signUp;
-    
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
+        window.signIn = SessionActions.signIn;
+        window.signOut = SessionActions.signOut;
+        window.signUp = SessionActions.signUp;
+
+        window.getState = store.getState;
+        window.dispatch = store.dispatch;
 
     // testing
 

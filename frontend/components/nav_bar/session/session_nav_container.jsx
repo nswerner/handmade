@@ -1,5 +1,7 @@
 import { connect } from "react-redux";
 import SessionNav from './session_nav';
+import { signOut } from '../../../actions/session_actions';
+import { openModal } from '../../../actions/modal_actions';
 
 const msp = state => {
 
@@ -11,7 +13,8 @@ const msp = state => {
 const mdp = dispatch => {
 
     return({
-
+        signOut: () => dispatch(signOut()),
+        openModal: (modal) => dispatch(openModal(modal))
     });
 };
 

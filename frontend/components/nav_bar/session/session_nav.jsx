@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionNav extends React.Component {
     constructor(props) {
@@ -10,27 +11,22 @@ class SessionNav extends React.Component {
 
     sessionNav() {
         if (this.props.currentUser) {
-            // html for logged in
-                // buttons:
-                    // Shop Manager
-                    // My Orders
-                    // Profile
-                    // Cart
+            // CHANGE THIS PROFILE IMAGE
             return (
-                <div>
-                    Inside the LoggedInNav
+                <div className="icon-nav">
+                    <button className="icon-button store-mngr"> <i className="fas fa-store"/> Shop Manager</button>
+                    <button className="icon-button profile-button">  You </button>
+                    <button className="white-button" onClick={this.props.signOut}> Sign Out</button>
+                    <button className="icon-button"> <i className="fas fa-shopping-cart"/> Cart</button>
                 </div>
             )
         } else {
-            // html for logged out
-                // buttons:
-                    // Demo
-                    // Register
-                    // Sign In
-                    // Cart => opens signin modal
             return (
-                <div>
-                    Inside the LoggedOutNav
+                <div className="icon-nav">
+                    <button className="button-to-link">Demo</button>
+                    <button className="button-to-link" onClick={() => this.props.openModal('signup')}>Register</button>
+                    <button className="white-button" onClick={() => this.props.openModal('signin')}>Sign In</button>
+                    <button className="icon-button" onClick={() => this.props.openModal('signin')}><i className="fas fa-shopping-cart"/>Cart</button>
                 </div>
             )
         }

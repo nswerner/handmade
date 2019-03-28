@@ -1,11 +1,11 @@
 import React from 'react';
-import SignInForm from '../session/signin_form_container';
-import SignUpForm from '../session/signup_form_container';
+import SignInForm from './session/signin_form_container';
+import SignUpForm from './session/signup_form_container';
 
 class Modal extends React.Component {
   constructor(props) {
     super(props);
-
+ 
 
   }
 
