@@ -4,9 +4,9 @@ import SessionForm from './session_form';
 import { withRouter } from 'react-router-dom';
 
 const msp = state => {
-
     return({
-        formType: "Sign In"
+        formType: "Sign In",
+        errors: state.errors.session
     });
 };
 

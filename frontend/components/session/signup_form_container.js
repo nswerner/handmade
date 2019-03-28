@@ -6,7 +6,8 @@ import { withRouter } from 'react-router-dom';
 const msp = state => {
 
     return ({
-        formType: "Sign Up"
+        formType: "Sign Up",
+        errors: state.errors.session
     });
 };
 

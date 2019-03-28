@@ -96,7 +96,7 @@ input, select {
 input[type="password"],
 input[type="email"],
 input[type="text"],
-input[type="submit"]
+input[type="submit"],
 input[type="search"],
 textarea,
 button {

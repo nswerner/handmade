@@ -1,13 +1,20 @@
 class Api::UsersController < ApplicationController
 
     def create
-        @user = User.new(user_params)
-
-        if @user.save
-            login(@user)
-            render 'api/users/show'
+        @user = User.find_by(email: user_params[:email])
+        
+        if @user
+            render json: ["There is already an account associated with this email address"], status: 401
         else
-            render json: @user.errors.full_messages
+            @user = User.new(user_params)
+
+            if @user.save
+                login(@user)
+                render 'api/users/show'
+            else
+    
+                render json: ["Password must be at least 6 characters long"], status: 401
+            end
         end
     end
 
@@ -22,7 +29,7 @@ class Api::UsersController < ApplicationController
         if @user.update(user_params)
             render 'api/users/show'
         else
-            render json @user.errors.full_messages
+            render json: @user.errors.full_messages
         end
     end
 

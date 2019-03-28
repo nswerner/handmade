@@ -4,16 +4,15 @@ import { merge } from 'lodash';
 const SessionErrorsReducer = (oldState = [], action) => {
 
   Object.freeze(oldState);
-  let newState = merge({}, oldState);
+  let newState = [];
 
   switch (action.type) {
 
     case RECEIVE_CURRENT_USER:
-      newState.errors = [];
       return newState;
 
     case RECEIVE_ERRORS:
-      newState.errors = action.errors;
+      newState = newState.concat(action.errors);
       return newState;
 
     default: 

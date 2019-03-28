@@ -46,7 +46,14 @@ class User < ApplicationRecord
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
-        user && user.is_password?(password) ? user : nil
+
+        if !user
+            return ["This email address is not associated with an account"]
+        elsif !user.is_password?(password)
+            return ["Password was incorrect"]
+        else 
+            return user
+        end
     end
 
     def is_password?(password)
