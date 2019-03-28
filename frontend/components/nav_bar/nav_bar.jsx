@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Search from './search/search_container';
+import SessionNav from './session/session_nav_container';
+
 
 
 class NavBar extends React.Component {
@@ -33,19 +36,17 @@ class NavBar extends React.Component {
       );
     }
 
-// CHANGE THIS .logo-search will render div with an image tag and a search react component
+// CHANGE THIS .logo-search will render div with an Link tag and a search react component
 // CHANGE THIS .icon-nav will conditionally render signup/in or signout icon nav 
     return(
     <div className="nav-bar">
       <div className="logo-search">
         <h3><Link to="/">Handmade</Link></h3>
-        <div className="search-bar-and-button">
-          <input className="search-bar" type="search"/>
-          <button className="search-button">Search</button>
-        </div>
+        <Search/>
       </div>
       <div className="icon-nav">
         {section}
+        <SessionNav/>
       </div>
     </div>
     )
