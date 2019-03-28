@@ -4,10 +4,10 @@ import Modal from './modal/modal_container';
 import NavBar from './nav_bar/nav_bar_container';
 
 const App = () => (
-  <div>
+  <>
     <Modal/>
     <NavBar/>
-  </div>
+  </>
 );
 
 export default App;
