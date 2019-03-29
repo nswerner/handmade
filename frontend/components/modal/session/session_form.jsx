@@ -49,27 +49,53 @@ class SessionForm extends React.Component {
     
 
     render() {
+       this.header = <></>
+
+        if (this.props.formType === "Sign In") {
+            this.header = <h1 className="modal-form-header"> Sign in to continue </h1>
+        } else {
+            this.header =
+                <div className="modal-form-header">
+                    <h1 className="modal-form-h1"> Create your account </h1>
+                    <span className="modal-form-header-span"> Registration is easy.</span>
+                </div>
+        }
+
         return(
             <>
                 <form className="session-form" onSubmit={this.handleSubmit}>
-                    <h3 className="modal-form-header">{this.props.formType}</h3>
-                    <label>
-                        Email Address:
-                        <br/>
-                        <input ref={(input) => this.emailInput = input } type="text" value={this.state.email}
-                            onChange={this.handleChange('email')} />
-                        <span className="email-errors">{this.state.emailError}</span>
-                    </label>
+
+                    {this.header}
+
+                    <label> Email address </label>
+
+                    <input ref={(input) => this.emailInput = input } className="email-input" type="text" value={this.state.email}
+                        onChange={this.handleChange('email')} />
+                    <span className="email-errors">{this.state.emailError}</span>
+                    
                     <br/>
-                    <label>
-                        Password:
-                        <br/>
-                        <input ref={(input) => this.passwordInput = input} type="password" value={this.state.password}
-                                onChange={this.handleChange('password')} />
-                        <span className="password-errors">{this.state.passwordError}</span>
-                    </label>
+
+                    <label> Password </label>
+
+                    <input ref={(input) => this.passwordInput = input} className="password-input" type="password" value={this.state.password}
+                            onChange={this.handleChange('password')} />
+                    <span className="password-errors">{this.state.passwordError}</span>
+
                     <br/>
-                    <input className="submit" type="submit" value={this.props.formType}/>
+                    
+                    <input className="session-submit" type="submit" value={this.props.formType}/>
+
+                    <br/>
+
+                    <span className="light-gray-horizontal-border">
+                        <label className="or"> OR </label>
+                    </span>
+                    
+                    <button className="form-demo">Demo</button>
+                    
+                    <p className="session-lorem">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
                 </form>
             </>
         )

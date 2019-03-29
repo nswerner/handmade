@@ -1,46 +1,128 @@
 .session-form {
   background-color: white;
-  padding: 25px 10px;
+  padding: 25px 20px;
   border-radius: 3px;
   border: 0.5px solid lightgray;
-  width: 200px;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .modal-form-header {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin-bottom: 35px;
+  font-size: 26px;
 }
 
-.session-form input {
-  margin: 10px;
-  width: 90%
-} 
-
-.session-form .submit {
-  width: 90%;
-  background-color: black;
-  color: white;
-  font-weight: 400px;
+.modal-form-header-span {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
 }
 
 .session-form > label {
   font-family: 'Mukta', sans-serif;
   text-align: left;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-left: 10px;
 }
 
-.session-form > label > input {
+.email-input,
+.password-input {
+  margin: 10px;
+  margin-top: 0px;
+  width: 90%;
   height: 26px;
   font-size: 12px;
   border: 1px solid lightgray;
   border-radius: 1px;
+  height: 34px;
+  text-indent: 3px;
+  border-radius: 3px;
 }
 
-.session-form > label > input:focus {
+.email-input:focus,
+.password-input:focus {
   border: 1px solid black;
   outline: none;
+} 
+
+.email-errors,
+.password-errors  {
+  color: #C13C27;
+  margin-left: 10px;
+}
+
+.session-submit {
+  width: 90%;
+  background-color: black;
+  color: white;
+  font-weight: 400px;
+  padding: 12px 28px;
+  margin: 10px;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.session-submit:hover {
+  cursor: pointer;
+  background-color: #3c3c3c;
+}
+
+.session-submite:focus {
+  outline: none;
+}
+
+.light-gray-horizontal-border {
+  border-bottom: 1px solid lightgray;
+  width: 112%;
+  margin-left: -20px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.or {
+  padding: 7px;
+  background-color: white;
+  position: absolute;
+  z-index: 2;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 12px;
+  left: 160px;
+  top: -12px;
+  font-weight: 300;
+}
+
+.form-demo {
+  width: 90%;
+  background-color: white;
+  color: black;
+  font-weight: 400px;
+  padding: 12px 28px;
+  margin: 10px;
+  border-radius: 3px;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.form-demo:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.form-demo:focus {
+  outline: none;
+}
+
+.session-lorem {
+  margin-top: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 12px;
+  color: gray;
+  margin-left: 2px;
+  margin-right: 2px;
 }
