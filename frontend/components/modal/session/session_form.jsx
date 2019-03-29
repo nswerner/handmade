@@ -72,12 +72,16 @@ class SessionForm extends React.Component {
                     <h1 className="modal-form-h1"> Sign in to continue </h1>
                     <span className="modal-form-header-span"> </span>
                 </div>  
+
+            this.submit = <input className="signin-submit session-submit" type="submit" value={this.props.formType} />
         } else {
             this.header =
                 <div className="modal-form-header">
                     <h1 className="modal-form-h1"> Create your account </h1>
                     <span className="modal-form-header-span"> Registration is easy.</span>
                 </div>
+
+            this.submit = <input className="session-submit" type="submit" value={this.props.formType} />
         }
 
         return(
@@ -102,7 +106,7 @@ class SessionForm extends React.Component {
 
                     <br/>
                     
-                    <input className="signin-submit session-submit" type="submit" value={this.props.formType}/>
+                    {this.submit}
 
                     <br/>
 
