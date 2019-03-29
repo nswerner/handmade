@@ -9,7 +9,7 @@ class Footer extends React.Component {
 
     }
 
-
+    /* <Link className="footer-personal" to="wwww.hand-made.app">Nicholas Werner</Link> */ 
     render () {
         // CHANGE THIS PERSONAL LINK TO LOAD PERSONAL SITE
         return (
@@ -20,9 +20,8 @@ class Footer extends React.Component {
                 </div>
                 <div className="footer-box-flex-right">
                     <div className="footer-copyright">&copy; 2019 Handmade, Inc.</div>
-                    <Link className="footer-git" to="www.github.com/r0ckf0rd/handmade"><i class="fab fa-github"/>Github</Link>
-                    <Link className="footer-linkedin" to="www.linkedin.com/in/nicholas-werner-7971606b/"><i class="fab fa-linkedin"/>LinkedIn</Link>
-                    {/* <Link className="footer-personal" to="wwww.hand-made.app">Nicholas Werner</Link> */}
+                    <Link className="footer-git" to="www.github.com/r0ckf0rd/handmade"><i className="fab fa-github"/>Github</Link>
+                    <Link className="footer-linkedin" to="www.linkedin.com/in/nicholas-werner-7971606b/"><i className="fab fa-linkedin"/>LinkedIn</Link>
                 </div>
             </footer>
         )
