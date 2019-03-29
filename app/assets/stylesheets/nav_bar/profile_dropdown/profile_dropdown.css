@@ -1,0 +1,181 @@
+.flag-background {
+    position: absolute;
+    background-color: transparent;
+    height: 15px;
+    width: 15px;
+    top: -8.5px;
+    left: 209px;
+}
+
+.flag-foreground {
+    background-color: white;
+    height: 15px;
+    width: 15px;
+    transform: rotate(45deg);
+    border-left: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+}
+
+
+.profile-dropdown {
+    background-color: white;
+    height: 250px;
+    width: 285px;
+    position: absolute;
+    top: 84px;
+    border: 1px solid lightgray;
+}
+
+.dropdown-header {
+    height: 85px;
+    border-bottom: 1px solid lightgray;
+}
+
+.dd-img {
+    display: inline;
+    margin: 20px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.dd-img > img {
+    display: inline;
+    margin: 20px;
+    border-radius: 50%;
+    position: relative;
+    right: 20px;
+}
+
+
+.dd-img:hover {
+    cursor: pointer;
+}
+
+.dd-name {
+    position: absolute;
+    left: 85px;
+    top: 25px;
+}
+
+.name-link {
+    font-family: "Guardian-EgypTT",Arial,Helvetica,sans-serif;
+    text-decoration-color: black;
+    color: black;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.name-link:hover {
+    text-decoration-color: black;
+    text-decoration: underline;
+}
+
+.view-profile {
+    position: absolute;
+    left: 85px;
+    top: 48px;
+}
+
+.view-pro-link {
+    display: inline-block;
+    padding: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
+    text-decoration: none;
+    color: black;
+    text-decoration-color: black;
+    font-size: 13px;
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
+}
+
+.view-pro-link > i {
+    margin-left: 3px;
+    color: gray;
+}
+
+.view-pro-link:hover {
+    cursor: pointer;
+}
+
+.dropdown-list-box {
+    /* padding-bottom: 20px; */
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    justify-content: space-around;
+    border-bottom: 1px solid lightgray;
+}
+
+.dropdown-list-ul {
+    list-style: none;
+}
+
+.purchases-reviews{
+    line-height: 20px;
+    font-size: 15px;
+    font-family:  "Guardian-EgypTT",Arial,Helvetica,sans-serif;
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    width: auto;
+    margin: 0;
+    padding-top: 12px;
+}
+
+.purchases-reviews:hover{
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.account-settings {
+    line-height: 20px;
+    font-size: 15px;
+    font-family:  "Guardian-EgypTT",Arial,Helvetica,sans-serif;
+    display: block;
+    padding: 8px 20px;
+    color: #333;
+    width: auto;
+    margin: 0;
+}
+
+.account-settings:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.sign-out-box:hover {
+   background-color: lightgray;
+   cursor: pointer;
+}
+
+.pro-dd-signout-button {
+    border: none;
+    font-family: "Guardian-EgypTT",Arial,Helvetica,sans-serif;
+    text-decoration-color: black;
+    color: black;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-color: transparent;
+    padding-bottom:25px;
+    display: block;
+}
+
+.pro-dd-signout-button:hover {
+    text-decoration-color: black;
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.pro-dd-signout-button:focus{
+    outline: none;
+}

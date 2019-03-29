@@ -150,6 +150,7 @@
 .profile-button {
   margin-top: -3px;
   padding-bottom: 2px;
+  position: relative;
 }
 
 .profile-button > img {
