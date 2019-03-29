@@ -88,6 +88,9 @@
   height: 30%;
   font-size: 14px;
   margin: 0px 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .white-button:hover {

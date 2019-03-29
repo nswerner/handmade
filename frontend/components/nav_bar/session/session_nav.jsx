@@ -27,7 +27,7 @@ class SessionNav extends React.Component {
                 this.dropdown = null;
             }
 
-            // CHANGE THIS PROFILE IMAGE
+            // CHANGE THIS PROFILE IMAGE TO RENDER THE DEFAULT OR THE USERS PICTURE IF PRESENT
             return (
                 <div className="icon-nav">
                     <button className="icon-button store-mngr"> <i className="fas fa-store"/> Shop Manager</button>
