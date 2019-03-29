@@ -13,7 +13,7 @@ class SessionForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleDemo = this.handleDemo.bind(this);
+        // this.handleDemo = this.handleDemo.bind(this);
     }
 
     handleChange(field) {
@@ -30,18 +30,18 @@ class SessionForm extends React.Component {
         });
     }
 
-    handleDemo(e) {
-        if (this.props.formType === "Sign Up") {
-            e.stopPropagation();
-            e.preventDefault();
-        }
+    // handleDemo(e) {
+    //     if (this.props.formType === "Sign Up") {
+    //         e.stopPropagation();
+    //         e.preventDefault();
+    //     }
 
-        const demoUser = this.props.demoUser;
-        this.setState({ email: demoUser.email, password: demoUser.password });
-        this.props.demoLogin(demoUser).then( () => {
-            return this.props.closeModal();
-        });
-    }
+    //     const demoUser = this.props.demoUser;
+    //     this.setState({ email: demoUser.email, password: demoUser.password });
+    //     this.props.demoLogin(demoUser).then( () => {
+    //         return this.props.closeModal();
+    //     });
+    // }
 
 
     componentDidUpdate() {
@@ -66,7 +66,12 @@ class SessionForm extends React.Component {
        this.header = <></>
 
         if (this.props.formType === "Sign In") {
-            this.header = <h1 className="modal-form-header"> Sign in to continue </h1>
+
+            this.header = 
+                <div className="modal-form-header signin-header">
+                    <h1 className="modal-form-h1"> Sign in to continue </h1>
+                    <span className="modal-form-header-span"> </span>
+                </div>  
         } else {
             this.header =
                 <div className="modal-form-header">
@@ -105,12 +110,6 @@ class SessionForm extends React.Component {
                         <label className="or"> OR </label>
                     </span>
                     
-                    {/* <input className="form-demo" type="submit" value="Demo" onClick={() => this.handleDemo()} /> */}
-                    <button className="form-demo">Demo</button>
-
-                    <p className="session-lorem">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
                 </form>
             </>
         )
