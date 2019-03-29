@@ -16,7 +16,7 @@ class SessionNav extends React.Component {
                 <div className="icon-nav">
                     <button className="white-button sign-out" onClick={this.props.signOut}> Sign Out</button>
                     <button className="icon-button store-mngr"> <i className="fas fa-store"/> Shop Manager</button>
-                    <button className="icon-button profile-button"> <img src={window.proDefSmall} alt="small default profile image" /> <span>You <i class="fas fa-caret-down"/></span> </button>
+                    <button className="icon-button profile-button"> <img src={window.proDefSmall} alt="small default profile image" /> <span>You <i className="fas fa-caret-down"/></span> </button>
                     <button className="icon-button cart-button"> <i className="fas fa-shopping-cart"/> Cart</button>
                 </div>
             )

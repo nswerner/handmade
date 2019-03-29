@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
     }
 
     handleChange(field) {
@@ -25,6 +26,19 @@ class SessionForm extends React.Component {
         e.preventDefault();
         this.props.action(this.state).then( () => {
             this.setState({ email: "", password: "" });
+            return this.props.closeModal();
+        });
+    }
+
+    handleDemo(e) {
+        if (this.props.formType === "Sign Up") {
+            e.stopPropagation();
+            e.preventDefault();
+        }
+
+        const demoUser = this.props.demoUser;
+        this.setState({ email: demoUser.email, password: demoUser.password });
+        this.props.demoLogin(demoUser).then( () => {
             return this.props.closeModal();
         });
     }
@@ -91,8 +105,9 @@ class SessionForm extends React.Component {
                         <label className="or"> OR </label>
                     </span>
                     
-                    <button className="form-demo">Demo</button>
-                    
+                    <input className="form-demo" type="submit" value="Demo" onClick={() => this.handleDemo()} />
+                    {/* <button className="form-demo" onClick={this.handleDemo}>Demo</button> */}
+
                     <p className="session-lorem">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
