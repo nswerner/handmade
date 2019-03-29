@@ -63,11 +63,12 @@
   background-color: black;
   color: white;
   font-weight: 400px;
-  padding: 12px 28px;
-  margin: 10px;
+  padding: 20px 28px;
+  margin: 12px;
   border-radius: 3px;
   font-size: 16px;
   margin-bottom: 15px;
+  line-height: 3px;
 }
 
 .session-submit:hover {
