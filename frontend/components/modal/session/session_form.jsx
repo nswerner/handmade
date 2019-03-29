@@ -105,8 +105,8 @@ class SessionForm extends React.Component {
                         <label className="or"> OR </label>
                     </span>
                     
-                    <input className="form-demo" type="submit" value="Demo" onClick={() => this.handleDemo()} />
-                    {/* <button className="form-demo" onClick={this.handleDemo}>Demo</button> */}
+                    {/* <input className="form-demo" type="submit" value="Demo" onClick={() => this.handleDemo()} /> */}
+                    <button className="form-demo">Demo</button>
 
                     <p className="session-lorem">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
