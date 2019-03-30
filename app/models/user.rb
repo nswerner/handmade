@@ -29,6 +29,8 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token, :ensure_cart
 
+    has_one_attached :photo
+
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)
