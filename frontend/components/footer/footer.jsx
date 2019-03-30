@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 
 class Footer extends React.Component {
@@ -20,8 +20,8 @@ class Footer extends React.Component {
                 </div>
                 <div className="footer-box-flex-right">
                     <div className="footer-copyright">&copy; 2019 Handmade, Inc.</div>
-                    <Link className="footer-git" to="www.github.com/r0ckf0rd/handmade"><i className="fab fa-github"/>Github</Link>
-                    <Link className="footer-linkedin" to="www.linkedin.com/in/nicholas-werner-7971606b/"><i className="fab fa-linkedin"/>LinkedIn</Link>
+                    <a className="footer-git" href="http://www.github.com/r0ckf0rd/handmade"><i className="fab fa-github"/>Github</a>
+                    <a className="footer-linkedin" href="http://www.linkedin.com/in/nicholas-werner-7971606b/"><i className="fab fa-linkedin"/>LinkedIn</a>
                 </div>
             </footer>
         )
