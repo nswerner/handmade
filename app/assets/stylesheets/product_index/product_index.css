@@ -1,0 +1,127 @@
+.product-index {
+    position: relative;
+}
+
+.product-index-main-header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5%;
+}
+
+.product-index-subheader {
+    align-self: center;
+    margin-left: 2.5%;
+    margin-top: 1.5%;
+}
+
+.product-index-subheader-h1 {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+}
+
+.index-page-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 2.5%;
+    margin-top: 1.5%;
+}
+
+.start-button {
+    color: black;
+    border: 0;
+    text-decoration: underline;
+    margin: 0 6px;
+    padding: 0px;
+}
+
+.start-button:hover {
+    cursor: pointer;
+}
+
+.start-button:focus {
+    outline: none;
+}
+
+.page-x-of-y {
+    color: #595959;
+    font-size: 12px;
+    text-align: right;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    line-height: 1.4;
+    box-sizing: border-box;
+    margin: 0 6px;
+}
+
+.previous-page-button {
+    transition: all 0.2s ease;
+    border-radius: 50%;
+    padding: 14px 14px;
+    height: 48px;
+    width: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #FFF;
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #222;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    margin: 0 6px;
+}
+
+.previous-page-button:hover {
+    cursor: pointer;
+    background-color: #f9f9f7
+}
+
+.previous-page-button:focus {
+    outline: none;
+}
+
+.previous-page-button:active {
+  background-color: #f0f0ec;
+  border-color: rgba(0, 0, 0, 0.5);
+  color: #222;
+}
+
+.next-page-button {
+    transition: all 0.2s ease;
+    border-radius: 50%;
+    padding: 14px 14px;
+    height: 48px;
+    width: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #FFF;
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #222;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    margin: 0 6px;
+}
+
+.next-page-button:hover {
+    cursor: pointer;
+    background-color: #f9f9f7
+}
+
+.next-page-button:focus {
+    outline: none;
+}
+
+.next-page-button:active {
+  background-color: #f0f0ec;
+  border-color: rgba(0, 0, 0, 0.5);
+  color: #222;
+}
+
+.product-index-ul {
+
+}

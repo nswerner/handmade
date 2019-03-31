@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.getState = store.getState;
         window.dispatch = store.dispatch;
 
-        window.fetchAllProducts = ProductActions.fetchAllProducts;
+        window.fetchProducts = ProductActions.fetchProducts;
         window.removeProduct = ProductActions.deleteProduct;
         window.fetchProduct = ProductActions.fetchProduct;
         window.updateProduct = ProductActions.updateProduct;

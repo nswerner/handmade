@@ -1,3 +1,4 @@
+json.totalPages @pages
 @products.each do |product|
 
     pictures_array = product.product_pictures.map{ |picture| url_for(picture) }
@@ -8,3 +9,4 @@
         end
     end
 end
+

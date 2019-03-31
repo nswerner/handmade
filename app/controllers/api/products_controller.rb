@@ -3,6 +3,7 @@ class Api::ProductsController < ApplicationController
     # This is where we can incorporate search - Product.where(url_query)
     def index
         @products = Product.all.page(params[:page])
+        @pages = Product.page(1).total_pages
         render 'api/products/index'
     end
     

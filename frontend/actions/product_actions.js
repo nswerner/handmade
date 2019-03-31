@@ -34,7 +34,8 @@ const receiveErrors = (errors) => ({
 
 export const fetchProducts = (page) => (dispatch) => {
     return productApiUtil.fetchProducts(page)
-        .then( products => dispatch(receiveAllProducts(products)),
+        .then( (products) => {
+            return dispatch(receiveAllProducts(products))   }   ,
         error => dispatch(receiveErrors(error.responseJSON)));
 };
 
