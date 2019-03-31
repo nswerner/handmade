@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import ModalReducer from './modal_reducer';
+import ModalReducer from './modal/modal_reducer';
 
 const UIReducer = combineReducers({
   modal: ModalReducer

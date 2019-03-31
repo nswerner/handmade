@@ -6,6 +6,7 @@ import Root from "./components/root";
 // testing imports
 
 import * as SessionActions from './actions/session_actions';
+import * as ProductActions from './actions/product_actions';
 
 // testing imports
 
@@ -30,12 +31,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // testing
 
-        window.signIn = SessionActions.signIn;
-        window.signOut = SessionActions.signOut;
-        window.signUp = SessionActions.signUp;
-
         window.getState = store.getState;
         window.dispatch = store.dispatch;
+
+        window.fetchAllProducts = ProductActions.fetchAllProducts;
+        window.removeProduct = ProductActions.deleteProduct;
+        window.fetchProduct = ProductActions.fetchProduct;
+        window.updateProduct = ProductActions.updateProduct;
+        window.createProduct = ProductActions.createProduct;
 
     // testing
 

@@ -2,7 +2,7 @@ class Api::ProductsController < ApplicationController
 
     # This is where we can incorporate search - Product.where(url_query)
     def index
-        @products = Product.all
+        @products = Product.all.page(params[:page])
         render 'api/products/index'
     end
     
@@ -53,19 +53,25 @@ class Api::ProductsController < ApplicationController
                 end
             else
 
-                return render json: ["You do not have permission to edit this product"]
+                return render json: ["You do not have permission to edit this product"], status: 401
             end
         else
             
-            return render json: ["Could not locate that product"]
+            return render json: ["Could not locate that product"], status: 404
         end
     end
 
     def destroy
         @product = Product.find_by(id: params[:id])
 
-        if @product.merchant_id == current_user.id
-            @product.destroy
+        if @product
+            if @product.merchant_id == current_user.id
+                @product.destroy
+            else
+                return render json: ["You do not have permission to delete this product"], status: 401
+            end
+        else
+            return render json: ["Could not locate that product"], status: 404
         end
     end
 
