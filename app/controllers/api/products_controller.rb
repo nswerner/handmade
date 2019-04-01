@@ -2,7 +2,7 @@ class Api::ProductsController < ApplicationController
 
     # This is where we can incorporate search - Product.where(url_query)
     def index
-        @products = Product.all.with_attached_product_pictures
+        @products = Product.all.includes(:merchant).with_attached_product_pictures
         render 'api/products/index'
     end
     

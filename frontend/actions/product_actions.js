@@ -7,11 +7,12 @@ export const RECEIVE_PRODUCT_ERRORS = "RECEIVE_PRODUCT_ERRORS";
 
 // normal action creators
 
-const receiveAllProducts = (products) => {
+const receiveAllProducts = (response) => {
     return({
     type: RECEIVE_ALL_PRODUCTS,
-    products
-    })
+    products: response.products,
+    merchants: response.merchants
+    });
 }
 
 const receiveProduct = (product) => ({
@@ -34,8 +35,8 @@ const receiveErrors = (errors) => ({
 
 export const fetchProducts = () => (dispatch) => {
     return productApiUtil.fetchProducts()
-        .then( (products) => {
-            return dispatch(receiveAllProducts(products))   }   ,
+        .then( (response) => {
+            return dispatch(receiveAllProducts(response))   }   ,
         error => dispatch(receiveErrors(error.responseJSON)));
 };
 

@@ -1,19 +1,76 @@
-.item-box {
+.index-item-li:hover * {
+    cursor: pointer;
+}
 
+
+.index-item-li {
+    width: 14.5%;
+    margin: 9px;
+    box-sizing: border-box;
+    margin-bottom: 6%;
+    max-height: 9%;
+}
+
+.index-item-li:first-child,
+.index-item-li:nth-child(7) {
+    margin-left: 0px;
+}
+
+.index-item-li:last-child,
+.index-item-li:nth-child(6) {
+    margin-right: 0px;
+}
+
+
+.item-box:hover > .item-image {
+    transition: 0.2s;
+    box-shadow: 1px 1px 7px 1px lightgray;
+    /* box-shadow: none|h-offset v-offset blur spread color */
+}
+
+
+.item-box  {
+   text-decoration: none;
+   transition: 0.3s;
 }
 
 .item-image {
-
+    width: 100%;
+    height: 70%;
 }
 
 .item-title {
+    color: #222222;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
 }
 
 .item-merchant {
-
+    color: #222222;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .item-price {
-    
-}
+    color: #222222;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+} 
+

@@ -17,7 +17,7 @@ class ProductIndex extends React.Component {
         this.state = {
             page: 1,
             sliceStart: 0,
-            sliceEnd: 2,
+            sliceEnd: 12,
             totalPages: null,
             loading: false
         }
@@ -34,7 +34,7 @@ class ProductIndex extends React.Component {
     getProducts() {
         this.setState({ loading: true });
         this.props.fetchProducts().then( () => {
-            this.setState({ loading: false, totalPages: Math.ceil(Object.values(this.props.products).length / 2 )})
+            this.setState({ loading: false, totalPages: Math.ceil(Object.values(this.props.products).length / 12 )})
         }); 
         this.setState({ page: this.state.page + 1 });
     }
@@ -43,7 +43,7 @@ class ProductIndex extends React.Component {
         this.setState({
             page: 2,
             sliceStart: 0,
-            sliceEnd: 2
+            sliceEnd: 12
         })
     }
 
@@ -54,7 +54,7 @@ class ProductIndex extends React.Component {
         }
 
         this.getProducts();
-        this.setState({ page: this.state.page + 1, sliceStart: this.state.sliceStart + 2, sliceEnd: this.state.sliceEnd + 2 });
+        this.setState({ page: this.state.page + 1, sliceStart: this.state.sliceStart + 12, sliceEnd: this.state.sliceEnd + 12 });
     }
 
     // CHANGE THIS DECREMENT TO 12
@@ -63,7 +63,7 @@ class ProductIndex extends React.Component {
             return null;
         }
 
-        this.setState({ page: this.state.page - 1, sliceStart: this.state.sliceStart - 2, sliceEnd: this.state.sliceEnd - 2 });
+        this.setState({ page: this.state.page - 1, sliceStart: this.state.sliceStart - 12, sliceEnd: this.state.sliceEnd - 12 });
     }
 
 
@@ -95,6 +95,7 @@ class ProductIndex extends React.Component {
                <ProductIndexItem
                     product={product}
                     key={product.id}
+                    merchant={this.props.users[product.merchant_id]}
                />
             );
         });

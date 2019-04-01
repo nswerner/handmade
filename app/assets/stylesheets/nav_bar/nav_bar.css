@@ -10,14 +10,12 @@
   width: 40%;
   flex-wrap: nowrap;
   justify-content: flex-end;
-  margin-left: 35px;
 }
 
 .icon-nav {
   display: flex;
   justify-content: flex-end;
   width: 35%;
-  margin-right: 35px;
   align-items: center;
 }
 

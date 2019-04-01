@@ -37,7 +37,7 @@ ActiveRecord::Base.transaction do
     product = Product.create({
         title: "Meteorite Ring", 
         description: "All of our rings are made from scientifically verified meteorites. Show your special someone just how special they are to you with a one of a kind meteorite ring!", 
-        price: 4699.00,
+        price: 4699.97,
         merchant_id: user1.id
     })
 
@@ -64,7 +64,7 @@ ActiveRecord::Base.transaction do
     product = Product.create({
         title: "Hand-Cut Reliefs of your Favorite Waterways", 
         description: "We hand cut multiple layers of high-quality posterboard to make three-dimensional reliefs of your favorite bodies of water! Show off your home town pride in three-dimensional style!", 
-        price: 129.00,
+        price: 129.01,
         merchant_id: user3.id
     })
 
@@ -79,7 +79,7 @@ ActiveRecord::Base.transaction do
     product = Product.create({
         title: "Modern Black and White Photographs", 
         description: "Inspire a sense of drama with these high contrast black and white photographs. Shipped with a beautiful frame that is bound to add dramatic flair to any wall.", 
-        price: 39.00,
+        price: 39.98,
         merchant_id: user4.id
     })
 
@@ -118,18 +118,18 @@ ActiveRecord::Base.transaction do
 
     ########
 
-    product = Product.create({
-        title: "Funny Cat Tote Bag", 
-        description: "All cat people are crazy cat people deep down. Let everyone know where your priorities lie: You'd do anything for your furry ones.", 
-        price: 14.29,
-        merchant_id: user5.id
-    })
+    # product = Product.create({
+    #     title: "Funny Cat Tote Bag", 
+    #     description: "All cat people are crazy cat people deep down. Let everyone know where your priorities lie: You'd do anything for your furry ones.", 
+    #     price: 14.29,
+    #     merchant_id: user5.id
+    # })
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/cat_tote_00.jpg')
-    product.product_pictures.attach(io: file, filename: 'cat_tote_00.jpg')
+    # file = open('https://s3.amazonaws.com/handmade-seeds/cat_tote_00.jpg')
+    # product.product_pictures.attach(io: file, filename: 'cat_tote_00.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/cat_tote_01.jpg')
-    product.product_pictures.attach(io: file, filename: 'cat_tote_01.jpg')
+    # file = open('https://s3.amazonaws.com/handmade-seeds/cat_tote_01.jpg')
+    # product.product_pictures.attach(io: file, filename: 'cat_tote_01.jpg')
 
     ########
 
@@ -214,6 +214,7 @@ ActiveRecord::Base.transaction do
     product = Product.create({
         title: "Dad's Hammer", 
         description: "Customize your message to dad on these high-quality hammers. Share a family saying, punny joke, or just let him know how special he is to you. We use only the best materials so you can ensure that this hammer endures, just like the love between a father and son.",
+        price: 48.99,
         merchant_id: user9.id
     })
 
@@ -226,12 +227,19 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/dad_hammer_02.jpg')
     product.product_pictures.attach(io: file, filename: 'dad_hammer_02.jpg')
 
-end
-# create a File from the url
-# file = open('<your_file_url>')
+    ########
 
-# # attach to user
-# user.avatar.attach(io: file, filename: 'this_users_avatar.jpg')
-# end
+    product = Product.create({
+        title: "Set of Three Landscape Prints", 
+        description: "Artworks printed on high quality matte or glossy paper (depends on your choice) that have archival value of many years in home display. Professional paper with a matte non-reflective surface that feels velvety soft or with a bright, glossy finish.",
+        price: 45.55,
+        merchant_id: user4.id
+    })
+
+    file = open('https://s3.amazonaws.com/handmade-seeds/desert_prints_00.jpg')
+    product.product_pictures.attach(io: file, filename: 'desert_prints_00.jpg')
+
+end
+
 
 

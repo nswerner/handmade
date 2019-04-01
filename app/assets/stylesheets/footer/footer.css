@@ -1,6 +1,4 @@
 .footer-box {
-    position: absolute;
-    bottom: 0px;
     height: 80px;
     display: flex;
     justify-content: space-between;
@@ -14,13 +12,11 @@
 .footer-box-flex-left {
     display: flex;
     justify-content: space-around;
-    margin-left: 2.5%;
 }   
 
 .footer-box-flex-right {
     display: flex;
     justify-content: space-around;
-    margin-right: 2.5%;
 }
 
 .footer-logo {

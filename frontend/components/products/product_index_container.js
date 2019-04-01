@@ -5,7 +5,8 @@ import { fetchProducts } from '../../actions/product_actions';
 const msp = state => {
 
     return ({
-        products: state.entities.products
+        products: state.entities.products,
+        users: state.entities.users
     });
 };
 

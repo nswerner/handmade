@@ -6,16 +6,17 @@
     display: flex;
     justify-content: space-between;
     margin-top: 1.5%;
+    margin-bottom: 1.5%;
 }
 
 .product-index-subheader {
     align-self: center;
-    margin-left: 2.5%;
     margin-top: 1.5%;
+    
 }
 
 .product-index-subheader-h1 {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
 }
@@ -24,7 +25,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-right: 3.25%;
     margin-top: 1.5%;
 }
 
@@ -105,6 +105,7 @@
     -webkit-tap-highlight-color: transparent;
     -webkit-appearance: none;
     margin: 0 6px;
+    margin-right: 0px;
 }
 
 .next-page-button:hover {
@@ -119,9 +120,14 @@
 .next-page-button:active {
   background-color: #f0f0ec;
   border-color: rgba(0, 0, 0, 0.5);
-  color: #222;
+  color: #222222;
 }
 
 .product-index-ul {
-
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 2.5%;
+    justify-content: space-evenly;
+    list-style: none;
+    max-height: 70%;
 }
