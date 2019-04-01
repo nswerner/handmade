@@ -32,8 +32,8 @@ const receiveErrors = (errors) => ({
 
 // thunk action creators
 
-export const fetchProducts = (page) => (dispatch) => {
-    return productApiUtil.fetchProducts(page)
+export const fetchProducts = () => (dispatch) => {
+    return productApiUtil.fetchProducts()
         .then( (products) => {
             return dispatch(receiveAllProducts(products))   }   ,
         error => dispatch(receiveErrors(error.responseJSON)));

@@ -2,13 +2,12 @@ class Api::ProductsController < ApplicationController
 
     # This is where we can incorporate search - Product.where(url_query)
     def index
-        @products = Product.all.page(params[:page])
-        @pages = Product.page(1).total_pages
+        @products = Product.all.with_attached_product_pictures
         render 'api/products/index'
     end
     
     def show
-        @product = Product.find_by(id: params[:id])
+        @product = Product.find_by(id: params[:id]).with_attached_product_pictures
         render 'api/products/show'
     end
 

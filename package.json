@@ -42,5 +42,9 @@
     "redux-thunk": "^2.3.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.12.4"
   }
 }

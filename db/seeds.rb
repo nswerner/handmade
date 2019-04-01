@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+require 'open-uri'
+
 ActiveRecord::Base.transaction do
 
     User.destroy_all
@@ -16,4 +19,24 @@ ActiveRecord::Base.transaction do
     User.create({email: "test@email.com", password: "password"})
     User.create({email: "test@test.com", password: "password"})
     User.create({email: "demo@email.com", password: "demopassword"})
-end
+
+    Product.destroy_all
+
+    Product.create({
+        title: "Meteorite Ring", 
+        description: "All of our rings are made from scientifically verified meteorites. Show your significant other just how special they are to you with a one of a kind meteorite ring!", 
+        price: 4699.00,
+        merchant_id: 1
+    })
+
+}
+
+
+# create a File from the url
+# file = open('<your_file_url>')
+
+# # attach to user
+# user.avatar.attach(io: file, filename: 'this_users_avatar.jpg')
+# end
+
+

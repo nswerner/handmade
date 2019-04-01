@@ -7,7 +7,7 @@ import ProductIndexItem from "./product_index_items";
     // NEED TO STOP THE GETPRODUCTS CALL WHEN STATE IS FULLY LOADED
 
     // REFACTOR PAGES USING CONTROLLER KAMINARI BUILT IN METHODS AND PASS AS PROPS
-    
+ 
 
 class ProductIndex extends React.Component {
     constructor(props) {
@@ -15,10 +15,11 @@ class ProductIndex extends React.Component {
 
         // CHANGE THIS DEFAULT STATE TO sS: 0, sE: 11
         this.state = {
-            nextPreloadedPage: 1,
-            viewPage: 1,
+            page: 1,
             sliceStart: 0,
-            sliceEnd: 2
+            sliceEnd: 2,
+            totalPages: null,
+            loading: false
         }
 
         this.getProducts = this.getProducts.bind(this);
@@ -29,15 +30,18 @@ class ProductIndex extends React.Component {
     
     /////////
 
+    // CHANGE THIS TO DIVIDE BY 12
     getProducts() {
-        this.props.fetchProducts(this.state.nextPreloadedPage);
-        this.setState({ nextPreloadedPage: this.state.nextPreloadedPage += 1 });
+        this.setState({ loading: true });
+        this.props.fetchProducts().then( () => {
+            this.setState({ loading: false, totalPages: Math.ceil(Object.values(this.props.products).length / 2 )})
+        }); 
+        this.setState({ page: this.state.page + 1 });
     }
 
     firstPage() {
         this.setState({
-            nextPreloadedPage: this.state.nextPreloadedPage,
-            viewPage: 1,
+            page: 2,
             sliceStart: 0,
             sliceEnd: 2
         })
@@ -45,13 +49,21 @@ class ProductIndex extends React.Component {
 
     // CHANGE THIS INCREMENT TO 12 
     nextPage() {
+        if (this.state.page === this.state.totalPages + 1) {
+            return null;
+        }
+
         this.getProducts();
-        this.setState({ nextPreloadedPage: this.state.nextPreloadedPage, viewPage: this.state.viewPage += 1, sliceStart: this.state.sliceStart += 2, sliceEnd: this.state.sliceEnd += 2 });
+        this.setState({ page: this.state.page + 1, sliceStart: this.state.sliceStart + 2, sliceEnd: this.state.sliceEnd + 2 });
     }
 
     // CHANGE THIS DECREMENT TO 12
     previousPage() {
-        this.setState({ nextPreloadedPage: this.state.nextPreloadedPage, viewPage: this.state.viewPage -= 1, sliceStart: this.state.sliceStart -= 2, sliceEnd: this.state.sliceEnd -= 2 });
+        if (this.state.page === 2) {
+            return null;
+        }
+
+        this.setState({ page: this.state.page - 1, sliceStart: this.state.sliceStart - 2, sliceEnd: this.state.sliceEnd - 2 });
     }
 
 
@@ -59,16 +71,25 @@ class ProductIndex extends React.Component {
 
     componentDidMount() {
         this.getProducts();
-        this.getProducts();
     }  
 
     render() {
 
-        this.productArray = Object.values(this.props.products).filter( (value, idx, productArray) => {
-            return value != "totalPages";
-        });
-        
+        // if (this.state.loading) {
+        //     return (
+        //         <div className="loading">Loading</div>
+        //     )
+        // }
+
+        if (this.state.page > 1) {
+            this.start = <button className="start-button" onClick={this.firstPage}> Back to start </button>
+        } else {
+            this.start = null;
+        } 
+
+        this.productArray = Object.values(this.props.products);
         this.productsSlice = this.productArray.slice(this.state.sliceStart, this.state.sliceEnd);
+
         this.products = this.productsSlice.map( product => {
             return (
                <ProductIndexItem
@@ -78,15 +99,13 @@ class ProductIndex extends React.Component {
             );
         });
         
-        if (this.state.viewPage > 1) {
-            this.start = <button className="start-button" onClick={this.firstPage}> Back to start </button>
-        } else {
-            this.start = null;
-        } 
+
+
 
 
         return (
             <div className="product-index">
+            
                 <header className="product-index-main-header">
                     <header className="product-index-subheader">
                         <h1 className="product-index-subheader-h1">
@@ -95,7 +114,7 @@ class ProductIndex extends React.Component {
                     </header>
                     <nav className="index-page-nav">
                         {this.start}
-                        <span className="page-x-of-y">Page {this.state.viewPage} of {this.props.products.totalPages} </span>
+                        <span className="page-x-of-y">Page {this.state.page - 1} of {this.state.totalPages} </span>
                         <button className="previous-page-button" onClick={this.previousPage}><i className="fas fa-angle-left"></i></button>
                         <button className="next-page-button" onClick={this.nextPage}><i className="fas fa-angle-right"></i></button>
                     </nav>

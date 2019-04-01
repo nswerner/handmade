@@ -12,7 +12,7 @@ const msp = state => {
 const mdp = dispatch => {
 
     return ({
-        fetchProducts: (page) => dispatch(fetchProducts(page))
+        fetchProducts: () => dispatch(fetchProducts())
     });
 };
 
