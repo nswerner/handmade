@@ -81,7 +81,7 @@ class ProductIndex extends React.Component {
         //     )
         // }
 
-        if (this.state.page > 1) {
+        if (this.state.page > 2) {
             this.start = <button className="start-button" onClick={this.firstPage}> Back to start </button>
         } else {
             this.start = null;
