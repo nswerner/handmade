@@ -5,8 +5,8 @@
 .product-index-main-header{
     display: flex;
     justify-content: space-between;
-    margin-top: 1.5%;
-    margin-bottom: 1.5%;
+    margin-top: 1.0%;
+    margin-bottom: 0.5%;
 }
 
 .product-index-subheader {
@@ -126,7 +126,7 @@
 .product-index-ul {
     display: flex;
     flex-flow: row wrap;
-    margin-top: 2.5%;
+    margin-top: 1.0%;
     justify-content: space-evenly;
     list-style: none;
     height: 68%;
