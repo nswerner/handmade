@@ -10,19 +10,37 @@ class SessionNav extends React.Component {
             showDropdown: false
         };
 
+        // this.handleDD = this.handleDD.bind(this);
         this.sessionNav = this.sessionNav.bind(this);
-        this.handleDD = this.handleDD.bind(this);
+        this.showDropdown = this.showDropdown.bind(this);
+        this.closeDropdown = this.closeDropdown.bind(this);
     }
 
-    handleDD() {
-        this.state.showDropdown ? this.setState({ showDropdown: false }) : this.setState({ showDropdown: true });
+
+    showDropdown(e) {
+        e.preventDefault();
+
+        this.setState({ showDropdown: true }, () => {
+            document.addEventListener('click', this.closeDropdown);
+        });
     }
+
+    closeDropdown() {
+        this.setState({ showDropdown: false }, () => {
+            document.removeEventListener('click', this.closeDropdown);
+        });
+    }
+
+
+    // handleDD() {
+    //     this.state.showDropdown ? this.setState({ showDropdown: false }) : this.setState({ showDropdown: true });
+    // }
 
     sessionNav() {
         if (this.props.currentUser) {
             
             if (this.state.showDropdown) {
-                this.dropdown = <ProfileDropdown handleDD={this.handleDD}/>
+                this.dropdown = <ProfileDropdown closeDropdown={this.closeDropdown}/>
             } else {
                 this.dropdown = null;
             }
@@ -31,7 +49,7 @@ class SessionNav extends React.Component {
             return (
                 <div className="icon-nav">
                     <button className="icon-button store-mngr"> <i className="fas fa-store"/> Shop Manager</button>
-                    <button onClick={this.handleDD} className="icon-button profile-button"> <img src={window.proDefSmall} alt="small default profile image" /> <span>You <i className="fas fa-caret-down"/></span> </button>
+                    <button onClick={this.showDropdown} className="icon-button profile-button"> <img src={window.proDefSmall} alt="small default profile image" /> <span>You <i className="fas fa-caret-down"/></span> </button>
                     {this.dropdown}
                     <button className="icon-button cart-button"> <i className="fas fa-shopping-cart"/> Cart</button>
                 </div>

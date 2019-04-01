@@ -27,6 +27,7 @@
     position: absolute;
     top: 84px;
     border: 1px solid lightgray;
+    z-index: 3;
 }
 
 .dropdown-header {
@@ -164,10 +165,10 @@
     text-decoration-color: black;
     color: black;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 15px;
     text-decoration: none;
     padding-left: 20px;
-    padding-top: 20px;
+    padding-top: 23px;
     background-color: transparent;
     padding-bottom:25px;
     display: block;

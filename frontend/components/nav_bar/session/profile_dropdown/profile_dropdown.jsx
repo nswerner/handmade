@@ -10,7 +10,7 @@ class ProfileDropdown extends React.Component {
 
     render() {
         return(
-            <div onClick={this.props.handleDD} className="profile-dropdown">
+            <div onClick={this.props.closeDropdown} className="profile-dropdown">
                 <div className="flag-background"> 
                     <div className="flag-foreground"></div>
                 </div>
@@ -30,7 +30,7 @@ class ProfileDropdown extends React.Component {
                     </ul>
                 </div>
                 <div className="sign-out-box">
-                    <button className="pro-dd-signout-button" onClick={this.props.signOut}>Sign Out</button>
+                    <Link to={'/'} className="pro-dd-signout-button" onClick={this.props.signOut}>Sign Out</Link>
                 </div>
             </div>
         )
