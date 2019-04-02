@@ -15,9 +15,11 @@
   transform: translate(-50%, -50%);
   width: 320px;
   height: 540px;
+  background-color: red;
 }
 
 .demo-div {
+  transform: translate(-10%, -1%);
   background-color: white;
   padding: 25px 20px;
   border-radius: 3px;

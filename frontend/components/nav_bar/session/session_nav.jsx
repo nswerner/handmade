@@ -56,7 +56,6 @@ class SessionNav extends React.Component {
             )
         } else {
 
-            // CHANGE THIS - NEED TO USE AUTH ROUTES TO FOR HOME PAGE
             return (
                 <div className="icon-nav">
                     <button className="button-to-link" onClick={ () => this.props.demoLogin(this.props.demoUser).then( () => this.props.history.push('/products') ) } >Demo</button>

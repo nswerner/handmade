@@ -13,7 +13,6 @@ class ProductIndex extends React.Component {
     constructor(props) {
         super(props);
 
-        // CHANGE THIS DEFAULT STATE TO sS: 0, sE: 11
         this.state = {
             page: 1,
             sliceStart: 0,
@@ -30,7 +29,6 @@ class ProductIndex extends React.Component {
     
     /////////
 
-    // CHANGE THIS TO DIVIDE BY 12
     getProducts() {
         this.setState({ loading: true });
         this.props.fetchProducts().then( () => {
@@ -47,7 +45,6 @@ class ProductIndex extends React.Component {
         })
     }
 
-    // CHANGE THIS INCREMENT TO 12 
     nextPage() {
         if (this.state.page === this.state.totalPages + 1) {
             return null;
@@ -57,7 +54,6 @@ class ProductIndex extends React.Component {
         this.setState({ page: this.state.page + 1, sliceStart: this.state.sliceStart + 12, sliceEnd: this.state.sliceEnd + 12 });
     }
 
-    // CHANGE THIS DECREMENT TO 12
     previousPage() {
         if (this.state.page === 2) {
             return null;
@@ -73,8 +69,10 @@ class ProductIndex extends React.Component {
         this.getProducts();
     }  
 
+
     render() {
 
+        // CHANGE THIS IF LOAD TIMES BECOME EXCESSIVE
         // if (this.state.loading) {
         //     return (
         //         <div className="loading">Loading</div>

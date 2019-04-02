@@ -111,9 +111,9 @@ class SessionForm extends React.Component {
 
                     <br/>
 
-                    <span className="light-gray-horizontal-border">
+                    {/* <span className="light-gray-horizontal-border">
                         <label className="or"> OR </label>
-                    </span>
+                    </span> */}
                     
                 </form>
             </>

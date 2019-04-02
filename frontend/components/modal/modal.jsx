@@ -42,6 +42,9 @@ class Modal extends React.Component {
     return (
       <div className="modal-background" onClick={this.props.closeModal}>
         <div className="modal-foreground" onClick={e => e.stopPropagation()}>
+          <span className="light-gray-horizontal-border">
+            <label className="or"> OR </label>
+          </span>
           { modal }
           { demo }
         </div>
