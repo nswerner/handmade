@@ -118,10 +118,24 @@ input[type="search"] {
     font-size: 14px;
 }
 
-#root {
+/* #root {
     width: 80vw;
     margin: 0 auto;
     min-width: 1200px;
     padding: 10px;
+} */
+
+.nav-bar-container {
+    width: 100%;
+    border-bottom: 1px solid lightgray;
 }
 
+.nav-bar {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.top-level-container {
+    width: 80%;
+    margin: 0 auto;
+}

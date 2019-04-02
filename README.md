@@ -2,28 +2,42 @@ NEEDS WORK:
 
     1) -COMPLETE- Product Index CSS: Hovering over a parent li gives the child image a drop shadow
 
-    2) After changing the shape of my state, from time to time, navigating to the / will throw errors
+    2) -COMPLETE- Long email addresses push up against DD border
+
+    3) -COMPLETE- Product Index Divs (.item-box) need to actually link to product show page
+
+    4) -COMPLETE- Navigating to ProductShow component from my ProductIndex breaks
+
+    5) -COMPLETE- After changing the shape of my state, from time to time, navigating to the / will throw errors
         - when at a product show page and navigating back to root
         - may have fixed it with a Protected Route
         - seems okay but needs more testing
         - errors are back after working on the product show page
+    5) -ANSWER- What I declared the key in jbuilder was different among index and show
 
-    3) -COMPLETE- Long email addresses push up against DD border
+    6) -COMPLETE- ProductShow: next and previous buttons over image in certain conditions
 
-    4) Error handing on the session form still doesn't activate a red focus/active on the trouble element
+    6) -COMPLETE- ProductShow: Can't get li opacity to stay at 1 on selected
 
-    5) -HACKY COMPLETE- Modal isn't perfectly centered, it's slightly to the right
+    7) -HACKY COMPLETE- Modal isn't perfectly centered, it's slightly to the right
         - I am using multiple divs, one at top: 50%, left: 50%; and the inner with an odd translation of ~(-11%, -7%);
         - .or class is translated something like %1000;
 
-    6) Need to properly create horizontal lines that span 100vw
+    8) Need to properly create horizontal lines that span 100vw
         - IDEA: create thin block element + border that has an id selector and goes 100%vw
 
-    7) -COMPLETE- Product Index Divs (.item-box) need to actually link to product show page
+    9) Error handing on the session form still doesn't activate a red focus/active on the trouble element
 
-    8) -COMPLETE- Navigating to ProductShow component from my ProductIndex breaks
+    10) -PARTIALLY COMPLETE- Coffee dictionary has a duplicate picture in the seed file
+        - changed seed file, will need to reseed to make change
 
-    9) Can't get li opacity to stay at 1 on selected
+
+    12) ? DEVELOP FULLSIZE PICTURE MODAL ?
+
+    13) SPEND MORE TIME IN SEED DATA 
+        - REMOVE UNPROFESSIONAL/BAD PICTURES (or at least make them the second picture)
+        - ADD MORE PICTURES
+        - CHANGE DADS HAMMER, FAVORITE WATERWAYS DEFAULT
 
 
 NOTES: 
@@ -36,7 +50,8 @@ NOTES:
         - The reducers must be modified to listen (case statements) and extract data from that action
         - Verify state looks like you expect it too on several actions, if not every action related to those reducers
     
-    2) 
+    2) !important
+        - spend more time getting great seed pictures! You've done all the work of making the css look great so you really want to show it off with great images and content. MAKE SURE THE DEFAULT PICTURE IS THE BEST PICTURE IN THE GROUP AND ADD MULTIPLE PICTURES TO ITEMS SO THAT THE FUNCTIONALITY OF THE PICTURE CAROUSEL WORKS.
 
 
 

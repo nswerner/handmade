@@ -161,8 +161,6 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/coffee_chart_01.jpg')
     product.product_pictures.attach(io: file, filename: 'coffee_chart_01.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/coffee_chart_02.jpg')
-    product.product_pictures.attach(io: file, filename: 'coffee_chart_02.jpg')
 
     ########
 

@@ -36,14 +36,12 @@ class ProductShow extends React.Component {
 
     picturesArray() {
         const pictures = [];
-        
-        if (this.product.productPictures.length > 1) {
 
-            for (let idx = 0; idx < this.product.productPictures.length; idx += 1) {
-                pictures.push(<li className="thumbnail-li"><img className="thumbnail" src={this.product.productPictures[`${idx}`]} alt={`${this.product.title} thumbnail`} /></li>);
-            }
+        for (let idx = 0; idx < this.product.productPictures.length; idx += 1) {
+            const klass = (idx === this.state.selectedPicture) ? "thumbnail-li thumb-selected" : "thumbnail-li"
+            pictures.push(<li className={klass} onClick={() => this.setState({selectedPicture: idx})}><img className="thumbnail" src={this.product.productPictures[`${idx}`]} alt={`${this.product.title} thumbnail`} /></li>);
         }
-
+    
         return pictures;
     }
 
@@ -62,9 +60,9 @@ class ProductShow extends React.Component {
                 <div className="product-show-component">
                     <div className="left-col-66">   
                         <div className="image-box">
-                            <button className="previous-picture" onClick={() => this.setState({selectedPicture: ((this.state.selectedPicture - 1) % this.pictures.length) })}><i className="fas fa-angle-left"/></button>
+                            <button className="previous-picture" onClick={() => this.setState({ selectedPicture: Math.abs((this.state.selectedPicture - 1) % this.pictures.length ) })}><i className="fas fa-angle-left"/></button>
                             <img className="display-image" src={this.product.productPictures[this.state.selectedPicture]} alt=""/>
-                            <button className="next-picture"><i className="fas fa-angle-right"></i></button>
+                            <button className="next-picture" onClick={() => this.setState({ selectedPicture: ((this.state.selectedPicture + 1) % this.pictures.length) })}><i className="fas fa-angle-right"></i></button>
                         </div>
                         <ul className="product-pictures-ul">
                             {this.pictures}

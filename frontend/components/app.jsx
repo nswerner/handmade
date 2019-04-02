@@ -11,12 +11,17 @@ import ProductShow from './products/product_show_container';
 const App = () => (
   <>
     <Modal/>
-    <NavBar/>
-    <Route exact path="/" component={null}/>
-    <ProtectedRoute path="/products" exact={true} component={ProductIndex} />
-    <Route exact path="/products/:id" component={ProductShow}/>
-    <Footer/>
+    <div className="nav-bar-container"> 
+      <NavBar/>
+    </div>
+    <div className="top-level-container">
+      <Route exact path="/" component={null}/>
+      <ProtectedRoute path="/products" exact={true} component={ProductIndex} />
+      <Route exact path="/products/:id" component={ProductShow}/>
+      <Footer/>
+    </div>
   </>
 );
 
 export default App;
+
