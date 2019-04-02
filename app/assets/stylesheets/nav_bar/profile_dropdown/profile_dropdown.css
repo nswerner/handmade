@@ -58,16 +58,24 @@
 .dd-name {
     position: absolute;
     left: 85px;
-    top: 25px;
+    top: 24px;
+    text-overflow: ellipsis;
+    max-width: 225px;
 }
 
 .name-link {
-    font-family: "Guardian-EgypTT",Arial,Helvetica,sans-serif;
-    text-decoration-color: black;
-    color: black;
-    font-weight: 500;
-    font-size: 16px;
-    text-decoration: none;
+  font-family: "Guardian-EgypTT",Arial,Helvetica,sans-serif;
+  text-decoration-color: black;
+  color: black;
+  font-weight: 500;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+    
 }
 
 .name-link:hover {
