@@ -35,6 +35,7 @@
     /* margin-left: 5%; */
     margin-right: 3%;
     align-items: center;
+    box-sizing: border-box;
     
 }
     
@@ -61,7 +62,7 @@
         display: inline-block;
         vertical-align: middle;
         width: auto;
-        max-width: 100%;
+        max-width: 90%;
         height: auto;
         max-height: 650px;
     }
@@ -115,8 +116,51 @@
 }
 
 
+.product-description-box {
+    border-top: 1px solid lightgray;
+    margin-top: 20px;
+}
 
+    .description-header {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin-top: 12px;
+        font-size: 16px;
+        font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+        font-weight: 500;
+        line-height: 1.6;
+        letter-spacing: n
+    }
 
+    input[type="checkbox"] {
+        display:none;
+    }
+
+    .readmore-label {
+        color:black;
+        text-decoration:underline;
+        margin-top:10px;
+        cursor:pointer;
+        display:inline-block;
+    }
+
+    .readmore-label:after {
+        content: "More";  
+    }
+
+    input:checked ~ .readmore-label:after {
+        content:"less";  
+    }
+
+    .inner-description {
+        max-height:100px;
+        overflow:hidden;
+        transition:all .3s ease;
+        width: 100%;
+    }
+
+    input:checked + .inner-description {
+        max-height: 500px;
+    }
 
 .buy-box {
     margin-top: 1%;

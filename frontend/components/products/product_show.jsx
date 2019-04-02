@@ -67,7 +67,18 @@ class ProductShow extends React.Component {
                         <ul className="product-pictures-ul">
                             {this.pictures}
                         </ul>
-                        <section>{this.product.description}</section>
+                        {/* CHANGE THIS MAYBE A BOX POINTING TO THE USERS PROFILE INSTEAD OF ASKING A ? */}
+                        <section className="product-description-box">
+                            <h3 className="description-header">Description</h3>
+                            <div class="outer-description">
+                                <input type="checkbox" id="readmore" />
+                                <div class="inner-description">
+                                    { this.product.description }
+                                </div>
+                                    <br/>
+                                    <label className="readmore-label"> <i className="fas fa-plus"/>More </label>
+                            </div>
+                        </section>
                     </div>
                     <div className="right-col-33">
                         <div className="buy-box">

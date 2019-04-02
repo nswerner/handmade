@@ -39,6 +39,8 @@ NEEDS WORK:
         - ADD MORE PICTURES
         - CHANGE DADS HAMMER, FAVORITE WATERWAYS DEFAULT
 
+    14) PUT APP ON CUSTOM DOMAIN
+ 
 
 NOTES: 
 
@@ -52,6 +54,9 @@ NOTES:
     
     2) !important
         - spend more time getting great seed pictures! You've done all the work of making the css look great so you really want to show it off with great images and content. MAKE SURE THE DEFAULT PICTURE IS THE BEST PICTURE IN THE GROUP AND ADD MULTIPLE PICTURES TO ITEMS SO THAT THE FUNCTIONALITY OF THE PICTURE CAROUSEL WORKS.
+
+    3) As the database increases in size, it will probably be necessary to implement indexes that grab smaller pieces of the database at a time. Before that time, there may be a middle stage where a boolean for loading renders a loading animation. Once that no longer works, Kamanari could be used to grab one page at a time. 
+        -Anticipated changes: controller, jbuilder, ajax, action, reducers, and components.
 
 
 
