@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import SessionNav from './session_nav';
+import { withRouter } from 'react-router-dom';
 import { signOut, signIn } from '../../../actions/session_actions';
 import { openModal } from '../../../actions/modal_actions';
 
@@ -20,4 +21,4 @@ const mdp = dispatch => {
     });
 };
 
-export default connect(msp, mdp)(SessionNav);
+export default withRouter(connect(msp, mdp)(SessionNav));

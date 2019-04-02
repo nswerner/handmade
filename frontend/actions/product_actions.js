@@ -9,16 +9,19 @@ export const RECEIVE_PRODUCT_ERRORS = "RECEIVE_PRODUCT_ERRORS";
 
 const receiveAllProducts = (response) => {
     return({
-    type: RECEIVE_ALL_PRODUCTS,
-    products: response.products,
-    merchants: response.merchants
+        type: RECEIVE_ALL_PRODUCTS,
+        products: response.products,
+        merchants: response.merchants
     });
 }
 
-const receiveProduct = (product) => ({
-    type: RECEIVE_PRODUCT,
-    product
-})
+const receiveProduct = (response) => {
+    return({
+        type: RECEIVE_PRODUCT,
+        product: response.products,
+        merchant: response.merchant
+    })
+}
 
 const removeProduct = (id) => ({
     type: REMOVE_PRODUCT,

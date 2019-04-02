@@ -18,10 +18,16 @@ class NavBar extends React.Component {
 
   render() {
 
+    if (this.props.currentUser) {
+      this.link = <Link to="/products">Handmade</Link>
+    } else {
+      this.link = <Link to="/">Handmade</Link>
+    }
+
     return(
       <header className="nav-bar">
         <div className="logo-search">
-          <h3><Link to="/">Handmade</Link></h3>
+          <h3>{this.link}</h3>
           <Search/>
         </div>
         <SessionNav className="icon-nav"/>

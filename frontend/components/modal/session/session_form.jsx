@@ -26,6 +26,7 @@ class SessionForm extends React.Component {
         e.preventDefault();
         this.props.action(this.state).then( () => {
             this.setState({ email: "", password: "" });
+            this.props.history.push('/products');
             return this.props.closeModal();
         });
     }

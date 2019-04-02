@@ -55,9 +55,11 @@ class SessionNav extends React.Component {
                 </div>
             )
         } else {
+
+            // CHANGE THIS - NEED TO USE AUTH ROUTES TO FOR HOME PAGE
             return (
                 <div className="icon-nav">
-                    <button className="button-to-link" onClick={() => this.props.demoLogin(this.props.demoUser)}>Demo</button>
+                    <button className="button-to-link" onClick={ () => this.props.demoLogin(this.props.demoUser).then( () => this.props.history.push('/products') ) } >Demo</button>
                     <button className="button-to-link" onClick={() => this.props.openModal('signup')}>Register</button>
                     <button className="white-button sign-in" onClick={() => this.props.openModal('signin')}>Sign In</button>
                     <button className="icon-button cart-button" onClick={() => this.props.openModal('signin')}><i className="fas fa-shopping-cart"/>Cart</button>

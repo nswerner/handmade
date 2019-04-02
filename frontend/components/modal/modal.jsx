@@ -10,8 +10,10 @@ class Modal extends React.Component {
   }
 
   handleDemo() {
-    this.props.demoLogin(this.props.demoUser);
-    this.props.closeModal();
+    this.props.demoLogin(this.props.demoUser).then( () => {
+      this.props.history.push('/products');
+      this.props.closeModal();
+    });
   }
 
   render() {

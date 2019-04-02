@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal_container';
 import NavBar from './nav_bar/nav_bar_container';
 import Footer from "./footer/footer_container";
@@ -11,7 +12,8 @@ const App = () => (
   <>
     <Modal/>
     <NavBar/>
-    <Route exact path="/" component={ProductIndex} />
+    <Route exact path="/" component={null}/>
+    <ProtectedRoute path="/products" exact={true} component={ProductIndex} />
     <Route path="/products/:id" component={ProductShow}/>
     <Footer/>
   </>

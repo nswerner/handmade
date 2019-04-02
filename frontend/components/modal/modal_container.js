@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { signIn } from "../../actions/session_actions";
 import Modal from './modal';  
@@ -20,4 +21,4 @@ const mdp = dispatch => {
   });
 };
 
-export default connect(msp, mdp)(Modal);
+export default withRouter(connect(msp, mdp)(Modal));

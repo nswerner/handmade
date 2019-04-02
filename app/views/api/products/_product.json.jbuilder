@@ -1,8 +1,10 @@
 pictures_array = product.product_pictures.map{ |picture| url_for(picture) }
 
-json.set! product.id do
-    json.extract! product, :id, :title, :description, :price, :merchant_id
-    json.productPictures { json.array! pictures_array } 
+json.products do
+    json.set! product.id do
+        json.extract! product, :id, :title, :description, :price, :merchant_id
+        json.productPictures { json.array! pictures_array } 
+    end
 end
 
 listed_products = product.merchant.listed_products.map { |product| product.id }
