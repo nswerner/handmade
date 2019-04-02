@@ -15,6 +15,11 @@ NEEDS WORK:
         - I am using multiple divs, one at top: 50%, left: 50%; and the inner with an odd translation of ~(-11%, -7%);
         - .or class is translated something like %1000;
 
+    6) Still need to properly create horizontal lines that span 100vw
+        - IDEA: create thin block element + border that has an id selector and goes 100%vw
+
+    7) Product Index Divs (.item-box) need to actually link to product show page
+
 
 NOTES: 
 

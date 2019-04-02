@@ -6,12 +6,12 @@
     display: flex;
     justify-content: space-between;
     margin-top: 1.0%;
-    margin-bottom: 0.5%;
+    margin-bottom: 2.0%;
 }
 
 .product-index-subheader {
     align-self: center;
-    margin-top: 1.5%;
+    margin-top: 2.0%;
     
 }
 
@@ -127,7 +127,7 @@
     display: flex;
     flex-flow: row wrap;
     margin-top: 1.0%;
-    justify-content: space-evenly;
+    justify-content: space-between;
     list-style: none;
     height: 68%;
 }
