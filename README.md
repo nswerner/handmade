@@ -6,8 +6,9 @@ NEEDS WORK:
         - when at a product show page and navigating back to root
         - may have fixed it with a Protected Route
         - seems okay but needs more testing
+        - errors are back after working on the product show page
 
-    3) - COMPLETE- Long email addresses push up against DD border
+    3) -COMPLETE- Long email addresses push up against DD border
 
     4) Error handing on the session form still doesn't activate a red focus/active on the trouble element
 
@@ -15,10 +16,14 @@ NEEDS WORK:
         - I am using multiple divs, one at top: 50%, left: 50%; and the inner with an odd translation of ~(-11%, -7%);
         - .or class is translated something like %1000;
 
-    6) Still need to properly create horizontal lines that span 100vw
+    6) Need to properly create horizontal lines that span 100vw
         - IDEA: create thin block element + border that has an id selector and goes 100%vw
 
-    7) Product Index Divs (.item-box) need to actually link to product show page
+    7) -COMPLETE- Product Index Divs (.item-box) need to actually link to product show page
+
+    8) -COMPLETE- Navigating to ProductShow component from my ProductIndex breaks
+
+    9) Can't get li opacity to stay at 1 on selected
 
 
 NOTES: 

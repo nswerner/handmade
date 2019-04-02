@@ -5,7 +5,7 @@ json.products do
 
         json.set! product.id do
             json.extract! product, :id, :title, :description, :price, :merchant_id
-            json.product_pictures { json.array! pictures_array }
+            json.productPictures { json.array! pictures_array }
         end
     end
 end

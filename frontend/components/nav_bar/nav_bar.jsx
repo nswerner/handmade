@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Search from './search/search_container';
 import SessionNav from './session/session_nav_container';
 
@@ -19,9 +19,9 @@ class NavBar extends React.Component {
   render() {
 
     if (this.props.currentUser) {
-      this.link = <Link to="/products">Handmade</Link>
+      this.link = <Link to={"/products"}>Handmade</Link>
     } else {
-      this.link = <Link to="/">Handmade</Link>
+      this.link = <Link to={"/"}>Handmade</Link>
     }
 
     return(

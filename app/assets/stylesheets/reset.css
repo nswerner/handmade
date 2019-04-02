@@ -121,6 +121,7 @@ input[type="search"] {
 #root {
     width: 80vw;
     margin: 0 auto;
-    min-width: 1245px;
+    min-width: 1200px;
     padding: 10px;
 }
+

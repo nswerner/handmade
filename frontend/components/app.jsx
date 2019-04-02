@@ -14,7 +14,7 @@ const App = () => (
     <NavBar/>
     <Route exact path="/" component={null}/>
     <ProtectedRoute path="/products" exact={true} component={ProductIndex} />
-    <Route path="/products/:id" component={ProductShow}/>
+    <Route exact path="/products/:id" component={ProductShow}/>
     <Footer/>
   </>
 );
