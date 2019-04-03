@@ -28,7 +28,7 @@ class Api::ProductsController < ApplicationController
             end
         end
 
-
+        debugger
         @product = Product.new(product_params)
         @product.merchant_id = current_user.id
         if @product.save

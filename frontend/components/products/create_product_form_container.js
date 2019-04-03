@@ -6,6 +6,16 @@ const msp = state => {
 
     return({
 
+        product: {
+            title: "",
+            description: "",
+            price: null,
+            productPictures: null
+        },
+
+        formType: "Publish",
+        h1: "Add a New Listing"
+
     });
 };
 
