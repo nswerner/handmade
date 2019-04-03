@@ -22,7 +22,7 @@
 .left-col-66 {
     /* width: 57vw; */
     width: 66.66%;
-    margin-right: 20px;
+    margin-right: 4%;
 }
 
 .right-col-33 {
@@ -34,9 +34,9 @@
     display: flex;
     justify-content: space-between;
     /* margin-left: 5%; */
-    margin-right: 3%;
     align-items: center;
     box-sizing: border-box;
+    margin-right: 4%;
     
 }
     
@@ -89,7 +89,7 @@
     display: flex;
     justify-content: center;
     list-style: none;
-    width: calc(100% - 34px);
+    width: calc(100% - 2%);
 }
 
 .thumbnail {

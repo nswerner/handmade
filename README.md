@@ -13,7 +13,7 @@ NEEDS WORK:
         - may have fixed it with a Protected Route
         - seems okay but needs more testing
         - errors are back after working on the product show page
-    5) -ANSWER- What I declared the key in jbuilder was different among index and show
+       -ANSWER- What I declared the key in jbuilder was different among index and show
 
     6) -COMPLETE- ProductShow: next and previous buttons over image in certain conditions
 

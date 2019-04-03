@@ -28,7 +28,7 @@ class ProductShow extends React.Component {
         const options = [];
 
         for (let idx = 2; idx <= stock; idx += 1) {
-            options.push(<option value={`${idx}`}>{idx}</option>);
+            options.push(<option key={idx} value={`${idx}`}>{idx}</option>);
         }
 
         return options;
@@ -39,7 +39,7 @@ class ProductShow extends React.Component {
 
         for (let idx = 0; idx < this.product.productPictures.length; idx += 1) {
             const klass = (idx === this.state.selectedPicture) ? "thumbnail-li thumb-selected" : "thumbnail-li"
-            pictures.push(<li className={klass} onClick={() => this.setState({selectedPicture: idx})}><img className="thumbnail" src={this.product.productPictures[`${idx}`]} alt={`${this.product.title} thumbnail`} /></li>);
+            pictures.push(<li key={idx} className={klass} onClick={() => this.setState({selectedPicture: idx})}><img className="thumbnail" src={this.product.productPictures[`${idx}`]} alt={`${this.product.title} thumbnail`} /></li>);
         }
     
         return pictures;
@@ -70,9 +70,9 @@ class ProductShow extends React.Component {
                         {/* CHANGE THIS MAYBE A BOX POINTING TO THE USERS PROFILE INSTEAD OF ASKING A ? */}
                         <section className="product-description-box">
                             <h3 className="description-header">Description</h3>
-                            <div class="outer-description">
+                            <div className="outer-description">
                                 <input type="checkbox" id="readmore" />
-                                <div class="inner-description">
+                                <div className="inner-description">
                                     { this.product.description }
                                 </div>
                                     <br/>
@@ -90,7 +90,7 @@ class ProductShow extends React.Component {
                         
                                 {/* CHANGE THIS TO ACCOUNT FOR ACTUAL PRODUCT STOCK */}
                                 <select className="quantity-select" type="select">
-                                    <option value="1" selected="">1</option>
+                                    <option value="1" defaultValue="">1</option>
                                     {this.selectOptions(20)}
                                 </select>
 
