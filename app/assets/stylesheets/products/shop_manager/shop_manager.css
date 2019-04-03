@@ -1,0 +1,35 @@
+.shop-manager-box {
+    min-height: 50vw;
+}
+
+    .shop-manager-header {
+        height: 80px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+        .add-listing {
+            text-decoration: none;
+            width: fit-content;
+            background-color: black;
+            color: white;
+            padding: 8px 28px;
+            border-radius: 3px;
+            font-size: 14px;
+            line-height: 3px;
+            margin-left: 0px;
+            height: 12px;
+            padding-bottom: 10px
+        }
+
+        .add-listing:hover {
+            background-color: #3c3c3c;
+            cursor: pointer;
+        }
+
+        .add-listing:focus {
+            outline: none;
+        }
+
+}

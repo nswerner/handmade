@@ -58,29 +58,38 @@ class ProductShow extends React.Component {
             this.pictures = this.picturesArray();
             content = (
                 <div className="product-show-component">
+
+
                     <div className="left-col-66">   
+
                         <div className="image-box">
                             <button className="previous-picture" onClick={() => this.setState({ selectedPicture: Math.abs((this.state.selectedPicture - 1) % this.pictures.length ) })}><i className="fas fa-angle-left"/></button>
                             <img className="display-image" src={this.product.productPictures[this.state.selectedPicture]} alt=""/>
                             <button className="next-picture" onClick={() => this.setState({ selectedPicture: ((this.state.selectedPicture + 1) % this.pictures.length) })}><i className="fas fa-angle-right"></i></button>
                         </div>
+
                         <ul className="product-pictures-ul">
                             {this.pictures}
                         </ul>
+
                         {/* CHANGE THIS MAYBE A BOX POINTING TO THE USERS PROFILE INSTEAD OF ASKING A ? */}
+
                         <section className="product-description-box">
                             <h3 className="description-header">Description</h3>
-                            <div className="outer-description">
-                                <input type="checkbox" id="readmore" />
+                            {/* <div className="outer-description">
+                                <input type="checkbox" id="readmore-label" />
                                 <div className="inner-description">
                                     { this.product.description }
                                 </div>
-                                    <br/>
-                                    <label className="readmore-label"> <i className="fas fa-plus"/>More </label>
-                            </div>
+                                <br/>
+                                <label htmlFor="readmore-label" className="readmore-label">  </label>
+                            </div> */}
+                            <p className="product-description">{this.product.description}</p>
                         </section>
+
                     </div>
                     <div className="right-col-33">
+
                         <div className="buy-box">
                             <header className="shop-name">{this.props.merchant.shop_name}</header>
                             <h1 className="product-title">{this.product.title}</h1>
@@ -101,14 +110,15 @@ class ProductShow extends React.Component {
                             {/* CHANGE THIS WHEN SHOPPING CART ITEMS IS POPULATED */}
                             {/* <span className="demand"><i className="fas fa-shopping-cart"></i>Other people want this. </span> */}
                         </div>
+
                         <div className="product-overview-box">
-                            <span className="product-materials">Materials</span>
+                            <h3 className="product-overview-h3">Overview</h3>
                         </div>
                         <div className="shipping-returns-box">
-                            <span>Shipping and Returns</span>
+                            <h3 className="shipping-returns-h3">Shipping and Returns</h3>
                         </div>
-                        <div className="merchant-listings">
-                            {this.props.merchant.shop_name}
+                        <div className="merchant-listings-box">
+                            <h3 className="merchant-listings-h3">{this.props.merchant.shop_name}</h3>
                         </div>
                     </div>
                 </div>

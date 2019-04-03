@@ -23,14 +23,13 @@ NEEDS WORK:
         - I am using multiple divs, one at top: 50%, left: 50%; and the inner with an odd translation of ~(-11%, -7%);
         - .or class is translated something like %1000;
 
-    8) Need to properly create horizontal lines that span 100vw
+    8) -COMPLETE- Need to properly create horizontal lines that span 100vw
         - IDEA: create thin block element + border that has an id selector and goes 100%vw
 
     9) Error handing on the session form still doesn't activate a red focus/active on the trouble element
 
     10) -PARTIALLY COMPLETE- Coffee dictionary has a duplicate picture in the seed file
         - changed seed file, will need to reseed to make change
-
 
     12) ? DEVELOP FULLSIZE PICTURE MODAL ?
 
@@ -40,6 +39,18 @@ NEEDS WORK:
         - CHANGE DADS HAMMER, FAVORITE WATERWAYS DEFAULT
 
     14) PUT APP ON CUSTOM DOMAIN
+
+    15) ProductShow component will need revisiting after Review/Shopping Cart components are created
+        - Add quantity to Products via migration
+        - Add quantity to Docs
+        - All of ProductShow could use some refactoring into smaller components, its starting to get unwieldly.
+
+    16) Vertical Overflow of Description
+
+    17) ProductShow CompDidUpdate throws an error when trying to setState of SelectedPicture to 0, even on a promise of the new data coming back
+        - error claims to try render an object
+    
+
  
 
 NOTES: 
@@ -57,6 +68,10 @@ NOTES:
 
     3) As the database increases in size, it will probably be necessary to implement indexes that grab smaller pieces of the database at a time. Before that time, there may be a middle stage where a boolean for loading renders a loading animation. Once that no longer works, Kamanari could be used to grab one page at a time. 
         -Anticipated changes: controller, jbuilder, ajax, action, reducers, and components.
+
+
+    4) Etsy During My Doc Design:
+        http://web.archive.org/web/20190320192053/https://www.etsy.com/
 
 
 

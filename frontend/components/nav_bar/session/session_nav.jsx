@@ -1,5 +1,6 @@
 import React from 'react';
 import ProfileDropdown from "./profile_dropdown/profile_dropdown_container";
+import { Link } from 'react-router-dom';
 
 
 class SessionNav extends React.Component {
@@ -48,7 +49,7 @@ class SessionNav extends React.Component {
             // CHANGE THIS PROFILE IMAGE TO RENDER THE DEFAULT OR THE USERS PICTURE IF PRESENT
             return (
                 <div className="icon-nav">
-                    <button className="icon-button store-mngr"> <i className="fas fa-store"/> Shop Manager</button>
+                    <Link to="/shopManager" className="icon-button store-mngr"> <i className="fas fa-store"/> Shop Manager</Link>
                     <button onClick={this.showDropdown} className="icon-button profile-button"> <img src={window.proDefSmall} alt="small default profile image" /> <span>You <i className="fas fa-caret-down"/></span> </button>
                     {this.dropdown}
                     <button className="icon-button cart-button"> <i className="fas fa-shopping-cart"/> Cart</button>
