@@ -18,6 +18,7 @@ class Api::ProductsController < ApplicationController
     end
 
     def create
+        
         existing_product = Product.find_by(title: product_params[:title])
 
         if existing_product
@@ -47,8 +48,12 @@ class Api::ProductsController < ApplicationController
 
         if @product
             if @product.merchant_id == current_user.id
-                debugger
-                if @product.update(product_params)
+                # debugger
+
+                duped_params = product_params.dup
+                duped_params['product_pictures'].reject! { |picture| picture.class == String }
+
+                if @product.update(duped_params)
 
                     return render 'api/products/show'
                 else

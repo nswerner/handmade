@@ -180,13 +180,6 @@ class ProductForm extends React.Component {
 
     render() {
 
-        
-        // if (this.state.savedSquares === null) {
-        //     saveLength = 0
-        // } else {
-        //     saveLength = this.state.savedSquares.length;
-        // }  
-        
         let previewSquares = this.createPreviewSquares(this.state.pictureURLs.length);
         let previewLength = previewSquares.length;
         let defaultLength = 9 - previewLength - this.saveLength;

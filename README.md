@@ -56,6 +56,10 @@ NEEDS WORK:
         - suspect I'm having an issue in my container but I'm not sure how to pass that information forward.
         -ANSWER- javascript.push returns the length of the array. Memoize the result and setState to the result.
 
+    20) HACKY update photos 
+
+    
+
 
  
 
