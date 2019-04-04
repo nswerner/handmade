@@ -50,6 +50,7 @@ NEEDS WORK:
     17) ProductShow CompDidUpdate throws an error when trying to setState of SelectedPicture to 0, even on a promise of the new data coming back
         - error claims to try render an object
     
+    18) User photos
 
  
 

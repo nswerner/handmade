@@ -6,15 +6,23 @@ const msp = state => {
 
     return({
 
+        defaultState: {
+            title: "",
+            description: "",
+            price: "",
+            pictureFiles: [],
+            pictureURLs: []
+        },
         product: {
             title: "",
             description: "",
-            price: null,
-            productPictures: null
+            price: "",
+            pictureFiles: [],
+            pictureURLs: []
         },
-
         formType: "Publish",
-        h1: "Add a New Listing"
+        h1: "Add a New Listing",
+        ajaxMethod: "POST"
 
     });
 };

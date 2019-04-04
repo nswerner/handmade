@@ -7,13 +7,12 @@ class Api::ProductsController < ApplicationController
     end
     
     def show
-        @product = Product.find_by(id: params[:id])
+        @product = Product.with_attached_product_pictures.find_by(id: params[:id])
         render 'api/products/show'
     end
 
 
     def create
-
         existing_product = Product.find_by(title: product_params[:title])
 
         if existing_product
@@ -27,8 +26,7 @@ class Api::ProductsController < ApplicationController
                 return render json: ["This product has already been listed"]
             end
         end
-
-        debugger
+        
         @product = Product.new(product_params)
         @product.merchant_id = current_user.id
         if @product.save
@@ -77,6 +75,6 @@ class Api::ProductsController < ApplicationController
 
     private
     def product_params
-        params.require(:product).permit(:title, :description, :price, :product_pictures)
+        params.require(:product).permit(:title, :description, :price, product_pictures: [])
     end
 end

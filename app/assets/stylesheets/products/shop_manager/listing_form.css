@@ -31,26 +31,35 @@
         justify-content: center;
         padding: 12px;
         margin: 12px auto;
+        display: flex;
+        justify-content: space-between;
     }
 
+
+        .product-form-left-col {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-content: flex-start;
+        }
+
+        .product-form-right-col {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        
         .listing-form {
             height: 100%;
             width: 100%;
             display: flex;
-            flex-direction: column;
+            flex-flow: column wrap;
             justify-content: center;
-            align-items: center stretch;
         }
 
-            .picture-input-box {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                /* border-bottom: 1px solid lightgray; */
-            }
-
                 .pictures-label {
-                    width: 33%;
+                    width: 95%;
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
@@ -58,44 +67,222 @@
                 }
 
                     .listing-form-h2 {
-
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                        padding: 4px;
+                        padding-left: 0px;
+                        margin-top: 4px;
+                        font-weight: 500;
+                        font-size: 20px;
                     }
 
                     .about-pictures {
-
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                        font-size: 12px;
+                        font-weight: 400;
+                        color: #595959;
+                        margin-bottom: 8px;
                     }
 
                         .picture-tips {
                             display: flex;
                             flex-direction: column;
                             align-items: flex-start;
-                            margin-left: 25px;
+                            margin-left: 17px;
+                            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                            font-size: 12px;
+                            font-weight: 400;
+                            color: #595959;
+                            margin-bottom: 8px;
                         }   
+                        
+    .title-label {
+        /* display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 95% */
+    }
 
-                .file-input {
+        .about-title {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: #595959;
+            margin-bottom: 8px;
+        }
+
+    .title-input {
+        width: 66%;
+    }
+
+
+    #title-connected {
+        position: element("#title-target");
+        transform: translateY(100%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            .picture-input-box {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                height: 360px;
+                /* border-bottom: 1px solid lightgray; */
+            }
+
+
+                
+                
+                
+                        
+
+                .upload-photo-square {
                     width: 66%;
+                    display: flex;
+                    flex-direction: center;
+                }  
+
+                    .file-input {
+                        width: 33%;
+                        margin-left: 3%;
+                        margin-top: 3%;
+                        height: fit-content;
+                        padding: 33px 33px;
+                        content: "<i className="fa fa-camera" aria-hidden="true"/>";
+                        border: 1px solid lightgray;
+                    }
+
+                .file-preview-box {
+
                 }
 
+                .file-squares-ul {
+                    list-style: none;
+                    display: flex;
+                    flex-flow: row wrap;
+                    width: 90%;
+                    justify-content: space-evenly;
+                }
+
+                    .default-square {
+                        background-color: #FAF9F5;
+                        width: 100px;
+                        height: 100px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 12px;
+                    }
+
+                    .inner-default-square {
+                        background-color: white;
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 4px;
+                        text-align: center;
+                        vertical-align: center;
+                        border: 2px dashed lightgray;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 36px;
+                        color: gray;
+                    }
+
+
+
+                    .upload-square {
+                        background-color: #FAF9F5;
+                        width: 100px;
+                        height: 100px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .inner-upload-square {
+                        background-color: white;
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 4px;
+                        text-align: center;
+                        vertical-align: center;
+                        border: 2px dashed lightgray;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 36px;
+                        color: gray;
+                        position: relative;
+                    }
+
+                    .innermost-upload-square {
+                        position: relative;
+                        z-index: 2;
+                        top: 48px;
+                        left: 0px;
+                    }
+
+                    .file-input {
+                        border: 0;
+                        opacity: 0;
+                        background-color: lightgreen;
+                        padding: 45px;
+                        height: 1px;
+                        /* position: absolute; */
+                        width: 1px;
+                        z-index: 3;
+                        /* top: -29px; */
+                        /* left: 55px; */
+                        transform: translate(0%, -70%);
+                    }
+
+                    
+
+
+                    .preview-square {
+                        background-color: #FAF9F5;
+                        width: 100px;
+                        height: 100px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .inner-preview-square {
+                        background-color: white;
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 4px;
+                        text-align: center;
+                        vertical-align: center;
+                        border: 2px dashed lightgray;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 36px;
+                        color: gray;
+                    }
+/* 
             .title-box {
                 width: 100%;
                 display: flex;
                 justify-content: center;
-            }
-                .title-label {
-                    width: 33%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    margin-left: 5%;
-                }
+            } */
 
-                    .about-title {
-
-                    }
-                
-                .title-input {
-                    width: 66%;
-                }
 
             
 
@@ -127,3 +314,6 @@
             .listing-form-submit {
 
             }
+
+
+            

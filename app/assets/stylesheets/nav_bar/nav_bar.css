@@ -89,6 +89,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 44px;
 }
 
 .white-button:hover {
@@ -142,6 +143,12 @@
 .store-mngr {
   border: 0px;
   text-decoration: none;
+  font-family: system-ui;
+}
+
+.store-mngr > i {
+  padding-bottom: 3px;
+  padding-top: 1px;
 }
 
 .icon-button > i {
@@ -172,6 +179,7 @@
   font-size: 12px;
   font-weight: 500;
   font-family: sans-serif;
+  margin-top: 1px;
 }
 
 .profile-button span i {
