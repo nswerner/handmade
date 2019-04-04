@@ -181,7 +181,7 @@ class ProductForm extends React.Component {
     render() {
 
         let previewSquares;
-        if (this.state.photoURLs) {
+        if (this.state.pictureURLs.length > 0) {
             previewSquares = this.createPreviewSquares(this.state.pictureURLs.length);
         } else {
             previewSquares = this.createPreviewSquares(0);
