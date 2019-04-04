@@ -183,6 +183,7 @@
                         align-items: center;
                         font-size: 36px;
                         color: lightgray;
+
                     }
 
 
@@ -282,6 +283,7 @@
                         align-items: center;
                         font-size: 36px;
                         color: lightgray;
+                        overflow: hidden;
                     }
 
             .title-section {

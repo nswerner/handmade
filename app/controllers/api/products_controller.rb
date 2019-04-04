@@ -2,7 +2,6 @@ class Api::ProductsController < ApplicationController
 
     # This is where we can incorporate search - Product.where(url_query)
     def index
-
         if params[:user_id]
             @products = Product.where(merchant_id: params[:user_id]).includes(:merchant).with_attached_product_pictures
         else
@@ -48,7 +47,6 @@ class Api::ProductsController < ApplicationController
 
         if @product
             if @product.merchant_id == current_user.id
-                # debugger
 
                 duped_params = product_params.dup
                 duped_params['product_pictures'].reject! { |picture| picture.class == String }
@@ -76,6 +74,7 @@ class Api::ProductsController < ApplicationController
         if @product
             if @product.merchant_id == current_user.id
                 @product.destroy
+                render 'api/products/show'
             else
                 return render json: ["You do not have permission to delete this product"], status: 401
             end

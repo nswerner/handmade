@@ -12,6 +12,8 @@ class ShopManager extends React.Component {
         
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.filterProducts = this.filterProducts.bind(this);
+        this.removeProduct = this.removeProduct.bind(this);
     }
 
     handleChange() {
@@ -33,6 +35,21 @@ class ShopManager extends React.Component {
         this.props.fetchUserProducts(this.props.currentUser.id);
     }
 
+    filterProducts(id) {
+
+        const filteredProducts = this.props.products.filter( product => {
+            return (product.merchant_id === id)
+        })
+
+        return filteredProducts;
+    }
+
+    removeProduct(id) {
+        this.props.removeProduct(id).then( () => {
+            this.props.fetchUserProducts(this.props.currentUser.id);
+        });
+    }
+
     render() {
 
         if (this.props.shop_name) {
@@ -48,11 +65,9 @@ class ShopManager extends React.Component {
         
             if (this.props.products.length > 0) {
 
-                this.products = this.props.products.filter( (product) => {
-                    return (product.merchant_id === this.props.currentUser.id)
-                })
+                this.products = this.filterProducts(this.props.currentUser.id);
 
-                this.products = this.props.products.map( (product, idx)=> {
+                this.products = this.products.map( (product, idx)=> {
                     return(
                         <div key={idx} className="managers-product-index-items">
                             <ProductIndexItem
@@ -61,7 +76,8 @@ class ShopManager extends React.Component {
                                 merchant={this.props.shop_name}
                                 updateProduct={this.props.updateProduct}
                                 />
-                            <Link to={`/updateListing/${product.id}`}> Update Product </Link>
+                            <Link className="update-listing" to={`/updateListing/${product.id}`}> Update Product </Link>
+                            <button onClick={() => this.removeProduct(product.id)} className="remove-listing"> End Listing </button>
                         </div>
                     )
                 })

@@ -13,7 +13,7 @@ NEEDS WORK:
         - may have fixed it with a Protected Route
         - seems okay but needs more testing
         - errors are back after working on the product show page
-       -ANSWER- What I declared the key in jbuilder was different among index and show
+      -ANSWER- What I declared the key in jbuilder was different among index and show
 
     6) -COMPLETE- ProductShow: next and previous buttons over image in certain conditions
 
@@ -56,9 +56,19 @@ NEEDS WORK:
         - suspect I'm having an issue in my container but I'm not sure how to pass that information forward.
         -ANSWER- javascript.push returns the length of the array. Memoize the result and setState to the result.
 
-    20) HACKY update photos 
+    20) -HACKY COMPLETE- Updating Product Listings throws a 500 server error
+        - The problem came from data type issues:
+            - On #create, the files appended to the form were file datatypes
+            - On #update, the fetchProduct request returned stringified urls which were throwing errors.
+        - ANSWER - Duplicate product params and filter out the strings from product_pictures 
 
-    
+    21) Managers Products is not properly filtering for merchant id === current user id
+
+    22) Force price have 2 decimal places
+
+    23) Preview photos arent rendering
+
+
 
 
  
@@ -72,9 +82,11 @@ NOTES:
         - Normal actions must be modified if we'll be receiving pieces of state that live in utilize different reducers
         - The reducers must be modified to listen (case statements) and extract data from that action
         - Verify state looks like you expect it too on several actions, if not every action related to those reducers
-    
+
+
     2) !important
         - spend more time getting great seed pictures! You've done all the work of making the css look great so you really want to show it off with great images and content. MAKE SURE THE DEFAULT PICTURE IS THE BEST PICTURE IN THE GROUP AND ADD MULTIPLE PICTURES TO ITEMS SO THAT THE FUNCTIONALITY OF THE PICTURE CAROUSEL WORKS.
+
 
     3) As the database increases in size, it will probably be necessary to implement indexes that grab smaller pieces of the database at a time. Before that time, there may be a middle stage where a boolean for loading renders a loading animation. Once that no longer works, Kamanari could be used to grab one page at a time. 
         -Anticipated changes: controller, jbuilder, ajax, action, reducers, and components.
@@ -82,6 +94,10 @@ NOTES:
 
     4) Etsy During My Doc Design:
         http://web.archive.org/web/20190320192053/https://www.etsy.com/
+
+
+    5) Bug:
+        Had not tested my delete product action until its implementation. There were a number of problems. In the controller, I was not rendering a json object back to the thunk action, so it was dispatching the normal action without access to the id of the item, and thus, not leaving my state. After that, my views had changed since I originally wrote the action, so the data I needed was actually nested in a high level key of products.
 
 
 

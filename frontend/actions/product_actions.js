@@ -23,10 +23,12 @@ const receiveProduct = (response) => {
     })
 }
 
-const removeProduct = (id) => ({
+const removeProduct = (response) => {
+    return({
     type: REMOVE_PRODUCT,
-    id
-})
+    id: Object.values(response.products)[0].id
+    })
+}
 
 const receiveErrors = (errors) => ({
     type: RECEIVE_PRODUCT_ERRORS,
@@ -68,7 +70,10 @@ export const updateProduct = (product) => (dispatch) => {
 }
 
 export const deleteProduct = (id) => (dispatch) => {
+
     return productApiUtil.deleteProduct(id)
-        .then( product => dispatch(removeProduct(product)),
-        error => dispatch(receiveErrors(error.responseJSON)));
+        .then( response => {
+            return dispatch(removeProduct(response)),
+        error => dispatch(receiveErrors(error.responseJSON))
+        });
 }
