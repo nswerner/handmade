@@ -52,6 +52,9 @@ NEEDS WORK:
     
     18) User photos
 
+    19) !important - 
+        rendering preview of multiple files
+
  
 
 NOTES: 

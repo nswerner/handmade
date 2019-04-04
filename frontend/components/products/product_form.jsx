@@ -7,10 +7,25 @@ class ProductForm extends React.Component {
 
         this.state = this.props.product;
         
+        this.handleFiles = this.handleFiles.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.createDefaultSquares = this.createDefaultSquares.bind(this);
         this.createPreviewSquares = this.createPreviewSquares.bind(this);
         this.createUploadSquare = this.createUploadSquare.bind(this);
+    }
+
+    handleFiles(e) {
+        const files = e.currentTarget.files;
+        for (let idx = 0; idx < files.length;idx += 1) {
+            const file = files[idx];
+            const fileReader = new FileReader();
+            fileReader.onloadend = () => {
+                this.setState({ pictureFiles: this.state.pictureFiles.push(file), pictureURLs: this.state.pictureURLs.push(fileReader.result) });
+            }
+            
+            fileReader.readAsDataURL(file);
+        }
+
     }
 
     // CHANGE THIS WHEN QUANTITY IS ADDED
@@ -38,7 +53,8 @@ class ProductForm extends React.Component {
                 this.setState(this.props.defaultState); 
                 const newId = Object.keys(response.products)[0]
                 this.props.history.push(`/products/${newId}`)       
-            });
+            }
+        );
     }
 
 
@@ -80,14 +96,24 @@ class ProductForm extends React.Component {
 
 
     // will make the array of actual preview files
-    createPreviewSquares() {
+    createPreviewSquares(number) {
+        const squares = [];
 
-        return(
-            <li className="preview-square">
-                <div className="inner-preview-square"></div>
-            </li>
-        )
 
+        for (let idx = 0; idx < number; idx += 1) {
+
+            const preview = <img className="preview-image" src={this.state.pictureURLs[idx]}/>
+            
+            squares.push(
+                <li className="preview-square">
+                    <div className="inner-preview-square">
+                        {preview}
+                    </div>
+                </li>
+            )
+        }
+        debugger
+        return squares;
     }
 
 
@@ -99,7 +125,7 @@ class ProductForm extends React.Component {
                         <i className="fa fa-camera" aria-hidden="true"></i>
                         <br/>
                         {/* <span className="upload-button-text">Add a photo</span> */}
-                        <input className="file-input" type="file" multiple onChange={e => this.setState({ pictureFiles: e.target.files })}/>
+                        <input className="file-input" type="file" multiple onChange={this.handleFiles}/>
                     </div>
                 </div>
             </li>
@@ -109,7 +135,7 @@ class ProductForm extends React.Component {
     render() {
 
         let previewSquares = [];
-        previewSquares.concat(this.createPreviewSquares());
+        previewSquares.concat(this.createPreviewSquares(this.state.pictureFiles.length));
 
         let previewLength = previewSquares.length;
         let defaultLength = 9 - previewLength;
@@ -119,6 +145,8 @@ class ProductForm extends React.Component {
 
         let allSquares = [];
         allSquares = Object.assign(allSquares, previewSquares, uploadSquare, defaultSquares);
+
+        debugger
 
         return (
             <div className="form-component-box">
