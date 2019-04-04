@@ -96,7 +96,9 @@ class ProductForm extends React.Component {
             <li className="upload-square">
                 <div className="inner-upload-square">
                     <div className="innermost-upload-square">
-                        <i className="fa fa-camera" aria-hidden="true" /> 
+                        <i className="fa fa-camera" aria-hidden="true"></i>
+                        <br/>
+                        {/* <span className="upload-button-text">Add a photo</span> */}
                         <input className="file-input" type="file" multiple onChange={e => this.setState({ pictureFiles: e.target.files })}/>
                     </div>
                 </div>
@@ -118,105 +120,105 @@ class ProductForm extends React.Component {
         let allSquares = [];
         allSquares = Object.assign(allSquares, previewSquares, uploadSquare, defaultSquares);
 
-
-        return(
+        return (
             <div className="form-component-box">
                 <Link className="back-link" to="/shopManager"> <i className="fas fa-angle-left"/> Back to listings</Link>
                 <h1 className="form-listing-component-header">{this.props.h1}</h1>
-                <div className="form-box">
+                <form className="form-box" onSubmit={this.handleSubmit}>
 
+                    <div className="photo-section">
 
-                    <div className="product-form-left-col">
-
-                        <label className="pictures-label"> 
-                            <h2 className="listing-form-h2">Photos: </h2>
-                            <p className="about-pictures">
-                                Use up to ten photos to show your item's most important qualities.
+                        <div className="left-col">
+                            <label className="pictures-label">
+                                <h2 className="listing-form-h2">Photos: </h2>
+                                <p className="about-pictures">
+                                    Use up to ten photos to show your item's most important qualities.
                                     <br />
                                     <br />
-                                Tips:
-                            </p>
-                            <ul className="picture-tips">
-                                <li key={0}> Use natural light and no flash.            </li>
-                                <li key={1}> Include a common object for scale.         </li>
-                                <li key={2}> Show the item being held, worn, or used.   </li>
-                                <li key={3}> Shoot against a clean, simple background.  </li>
-                            </ul> 
-                        </label>
-                        <label className="title-label" id="title-connected">
-                            <h2 className="listing-form-h2">Title: </h2>
-                            <p className="about-title">
-                                Include keywords that buyers would use to search for your item.
-                            </p>
-                        </label>
+                                    Tips:
+                                </p>
+                                <ul className="picture-tips">
+                                    <li key={0}> Use natural light and no flash.            </li>
+                                    <li key={1}> Include a common object for scale.         </li>
+                                    <li key={2}> Show the item being held, worn, or used.   </li>
+                                    <li key={3}> Shoot a clean, simple background.  </li>
+                                </ul> 
+                            </label>
+                        </div>
 
-                    </div>
-
-                    <div className="product-form-right-col">
-                        <form className="listing-form" onSubmit={this.handleSubmit}>
-
+                        <div className="right-col">
                             <ul className="file-squares-ul">
                                 {previewSquares}
                                 {uploadSquare}
                                 {defaultSquares}
                             </ul>
-                            <br/>
-                            <br/>
-                            <input id="title-target" className="title-input" type="text" value={this.state.title} onChange={this.handleChange('title')} />
-                        </form>
+                        </div>
+                    
                     </div>
 
-                    
+                    <div className="title-section">
 
-                        {/* <div className="picture-input-box"> 
-
-                            
-                                
-                            
-                            <div className="photo-form-right-side">
-                                <div className="upload-photo-square">
-                                    {/* <input className="file-input" type="file" multiple onChange={e => this.setState({ pictureFiles: e.target.files })} /> 
-                                </div>
-                                <div className="file-preview-box">
-                                    <ul className="file-squares-ul">
-                                        {previewSquares}
-                                        {uploadSquare}
-                                        {defaultSquares}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="title-box">
-                            <label className="title-label">Title: 
-                                <p className="about-title">Include keywords that buyers would use to search for your item.</p>
+                        <div className="left-col">
+                            <label className="title-label" id="title-connected">
+                                <h2 className="listing-form-h2">Title: </h2>
+                                <p className="about-title">
+                                    Include keywords that buyers would use to search for your item.
+                                </p>
                             </label>
-
-                            <input className="title-input" type="text" value={this.state.title} onChange={this.handleChange('title')}/>
+                        </div>
+                        
+                        <div className="right-col">
+                            <input id="title-target" className="title-input" type="text" value={this.state.title} onChange={this.handleChange('title')} />
                         </div>
 
-                        <div className="description-box">
-                            <label className="description-label">Description: </label>
+                    </div>
+
+
+                    <div className="description-section">
+                    
+                        <div className="left-col">
+                            <label className="description-label">
+                                <h2 className="listing-form-h2">Description: </h2>
+                                <p className="about-description">
+                                    Start with a brief overview that describes your item's finest features.
+
+                                    List details like dimensions and key features in easy-to-read bullet points.
+
+                                    Tell buyers a bit about your process or the story behind this item.
+                                </p>
+                             </label>
+                        </div>
+
+                        <div className="right-col">
                             <textarea className="description-textarea" name="" cols="30" rows="10" value={this.state.description} onChange={this.handleChange('description')}></textarea>
                         </div>
+                    </div>
 
-                        <div className="price-box">
-                            <label className="price-label">Price: </label>
-                            <input className="price-input" type="float" value={this.state.price} onChange={this.handleChange('price')}/>
+                    <div className="price-section">
+                    
+                        <div className="left-col">
+                            <label className="price-label">
+                                <h2 className="listing-form-h2">Price: </h2>
+                                <p className="about-price">
+                                    Factor in the costs of materials and labor, plus any related business expenses.
+                                    Consider the total price buyers will pay too—including shipping.
+                                </p>
+                            </label>
+                        
                         </div>
 
+                        <div className="right-col">
+                            <input className="price-input" type="float" value={this.state.price} onChange={this.handleChange('price')} /> 
+                        </div>
 
-                        
-                        <input className="listing-form-submit" type="submit" value={this.props.formType}/>
-                    
-                    
-                    </form>*/}
-                 </div>
-        </div>
-        )
+                    </div>
+
+                    <input className="listing-form-submit" type="submit" value={this.props.formType} />
+                </form>
+            </div>
+        );
     }
-}
-
+};
 
 
 export default ProductForm;
