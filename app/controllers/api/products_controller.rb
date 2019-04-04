@@ -11,6 +11,10 @@ class Api::ProductsController < ApplicationController
         render 'api/products/show'
     end
 
+    def merchant_index
+        @products = Product.where(id: params[:])
+        render 'api/products'
+    end
 
     def create
         existing_product = Product.find_by(title: product_params[:title])

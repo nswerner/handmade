@@ -6,14 +6,28 @@ const msp = state => {
     const currentUser = state.entities.users[state.session.id]
     let shop_name;
     
-    // debugger
     if (currentUser.shop_name) {
         shop_name = currentUser.shop_name;
     } else { 
         shop_name = "";
     }
 
+
+    let products = [];
+
+    Object.values(state.entities.products).forEach( product => {
+
+        if (product.merchant_id === currentUser.id) {
+            products.push(product);
+        }
+
+    })
+    
+
+
+
     return({
+        products: products,
         currentUser,
         shop_name: shop_name
     });

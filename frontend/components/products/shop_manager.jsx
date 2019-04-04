@@ -45,6 +45,9 @@ class ShopManager extends React.Component {
                     {this.addListing}
                 </div> 
             )
+
+            this.products = this.props.products.length > 0 ? this.props.products : null;
+            debugger
         } else {
             this.shopName = <input className="shop-name-input" type="text" value={this.state.shopName} onChange={this.handleChange()} />
             this.addListing = null;
@@ -54,12 +57,17 @@ class ShopManager extends React.Component {
                     <input className="create-shop-button" type="submit" value="Create Shop"/>
                 </form>
             )
+
+          this.products = null;
         }
 
         return(
             <div className="shop-manager-box">
                 <header className="shop-manager-header">
                     {this.form}
+                    <ul>
+                        {this.products}
+                    </ul>
                 </header>
             </div>
         );

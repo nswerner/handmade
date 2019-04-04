@@ -15,12 +15,18 @@ class ProductForm extends React.Component {
     }
 
     handleFiles(e) {
+
         const files = e.currentTarget.files;
         for (let idx = 0; idx < files.length;idx += 1) {
             const file = files[idx];
             const fileReader = new FileReader();
             fileReader.onloadend = () => {
-                this.setState({ pictureFiles: this.state.pictureFiles.push(file), pictureURLs: this.state.pictureURLs.push(fileReader.result) });
+                const newPictureFiles = this.state.pictureFiles;
+                newPictureFiles.push(file);
+
+                const newPictureURLs = this.state.pictureURLs;
+                newPictureURLs.push(fileReader.result);
+                this.setState({ pictureFiles: newPictureFiles, pictureURLs: newPictureURLs });
             }
             
             fileReader.readAsDataURL(file);
@@ -83,7 +89,7 @@ class ProductForm extends React.Component {
         // TO RECREATE THE LI ARRAY EACH TIME WE RERENDER
         for (let idx = 0; idx < number; idx ++) {
             squares.push(
-                <li key={idx} className="default-square">
+                <li key={`default-${idx}`} className="default-square">
                     <div className="inner-default-square">
                         {iClasses[idx]}
                     </div>
@@ -97,6 +103,7 @@ class ProductForm extends React.Component {
 
     // will make the array of actual preview files
     createPreviewSquares(number) {
+        debugger
         const squares = [];
 
 
@@ -105,7 +112,7 @@ class ProductForm extends React.Component {
             const preview = <img className="preview-image" src={this.state.pictureURLs[idx]}/>
             
             squares.push(
-                <li className="preview-square">
+                <li key={`preview-${idx}`} className="preview-square">
                     <div className="inner-preview-square">
                         {preview}
                     </div>
@@ -133,9 +140,8 @@ class ProductForm extends React.Component {
     }
 
     render() {
-
-        let previewSquares = [];
-        previewSquares.concat(this.createPreviewSquares(this.state.pictureFiles.length));
+        debugger
+        let previewSquares = this.createPreviewSquares(this.state.pictureFiles.length);
 
         let previewLength = previewSquares.length;
         let defaultLength = 9 - previewLength;

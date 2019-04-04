@@ -1,5 +1,5 @@
 
-        return(
+
             <div className="form-component-box">
                 <Link className="back-link" to="/shopManager"> <i className="fas fa-angle-left"/> Back to listings</Link>
                 <h1 className="form-listing-component-header">{this.props.h1}</h1>
