@@ -7,6 +7,8 @@ class ProductForm extends React.Component {
 
         this.state = this.props.product;
         
+        this.saveLength = 0;
+
         this.handleFiles = this.handleFiles.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.createDefaultSquares = this.createDefaultSquares.bind(this);
@@ -190,7 +192,13 @@ class ProductForm extends React.Component {
         let defaultLength = 9 - previewLength - this.saveLength;
 
         let defaultSquares = this.createDefaultSquares(defaultLength);
-        let uploadSquare = this.createUploadSquare();
+        let uploadSquare;
+        if ( (this.saveLength + previewLength + defaultSquares.length) > 9 ) {
+            uploadSquare = null;
+        } else {
+            uploadSquare = this.createUploadSquare();
+        }
+    
 
         return (
             <div className="form-component-box">
