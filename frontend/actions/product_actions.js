@@ -49,6 +49,12 @@ export const fetchProduct = (id) => (dispatch) => {
         error => dispatch(receiveErrors(error.responseJSON)));
 }
 
+export const fetchUserProducts = (userId) => (dispatch) => {
+    return productApiUtil.fetchUserProducts(userId)
+        .then( response => dispatch(receiveAllProducts(response)),
+        error => dispatch(receiveErrors(error.responseJSON)));
+}
+
 export const createProduct = (product) => (dispatch) => {
     return productApiUtil.createProduct(product)
         .then( product => dispatch(receiveProduct(product)),

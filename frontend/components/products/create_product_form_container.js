@@ -22,7 +22,8 @@ const msp = state => {
         },
         formType: "Publish",
         h1: "Add a New Listing",
-        ajaxMethod: "POST"
+        ajaxMethod: "POST",
+        path: "api/products"
 
     });
 };
@@ -31,6 +32,7 @@ const mdp = dispatch => {
 
     return({
         submitForm: (formData) => dispatch(createProduct(formData)),
+
     });
 };
 

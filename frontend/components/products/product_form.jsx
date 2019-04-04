@@ -12,6 +12,7 @@ class ProductForm extends React.Component {
         this.createDefaultSquares = this.createDefaultSquares.bind(this);
         this.createPreviewSquares = this.createPreviewSquares.bind(this);
         this.createUploadSquare = this.createUploadSquare.bind(this);
+        this.createSavedSquares = this.createSavedSquares.bind(this);
     }
 
     handleFiles(e) {
@@ -34,7 +35,6 @@ class ProductForm extends React.Component {
 
     }
 
-    // CHANGE THIS WHEN QUANTITY IS ADDED
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
@@ -49,8 +49,10 @@ class ProductForm extends React.Component {
             }
         }
 
+
+
         return $.ajax({
-            url: '/api/products',
+            url: `${this.props.path}`,
             method: `${this.props.ajaxMethod}`,
             data: formData,
             contentType: false,
@@ -85,8 +87,6 @@ class ProductForm extends React.Component {
             <i className="fas fa-horse"/>
         ]
 
-        // CHANGE THIS - IDX < (10) TO ACCOUNT TO HOW FILES HAVE BEEN UPLOADED
-        // TO RECREATE THE LI ARRAY EACH TIME WE RERENDER
         for (let idx = 0; idx < number; idx ++) {
             squares.push(
                 <li key={`default-${idx}`} className="default-square">
@@ -101,21 +101,40 @@ class ProductForm extends React.Component {
     }
 
 
-    // will make the array of actual preview files
     createPreviewSquares(number) {
         const squares = [];
 
 
         for (let idx = 0; idx < number; idx += 1) {
+            let preview;
+        
+            preview = <img className="preview-image" src={this.state.pictureURLs[idx]}/>
 
-            const preview = <img className="preview-image" src={this.state.pictureURLs[idx]}/>
-            
             squares.push(
                 <li key={`preview-${idx}`} className="preview-square">
                     <div className="inner-preview-square">
                         {preview}
                     </div>
                 </li>
+            )
+        }
+
+        return squares;
+    }
+
+    createSavedSquares(number) {
+        const squares = [];
+
+        for (let idx = 0; idx < number; idx += 1) {
+            const preview = <img className="preview-image" src={this.state.pictureFiles[idx]} />
+
+            squares.push( 
+                < li key={`preview-${idx}`}
+                    className = "preview-square" >
+                    <div className="inner-preview-square">
+                        {preview}
+                    </div>
+                </li >
             )
         }
 
@@ -138,18 +157,40 @@ class ProductForm extends React.Component {
         )
     }
 
+    componentDidMount() {
+
+        if (this.props.ajaxMethod === "PATCH") {
+            this.props.fetchProduct().then( (response) => {
+                const product  = Object.values(response.product)[0];
+                let title = product.title;
+                let description = product.description;
+                let price = product.price;
+                let pictureFiles = product.productPictures;
+
+                this.setState({title: title, description: description, price: price, pictureFiles: pictureFiles});
+                
+                const savedSquares = this.createSavedSquares(pictureFiles.length);
+                this.saveLength = pictureFiles.length;
+                this.setState({savedSquares: savedSquares})
+            });
+        }
+    }
+
     render() {
 
-        let previewSquares = this.createPreviewSquares(this.state.pictureFiles.length);
-
+        
+        // if (this.state.savedSquares === null) {
+        //     saveLength = 0
+        // } else {
+        //     saveLength = this.state.savedSquares.length;
+        // }  
+        
+        let previewSquares = this.createPreviewSquares(this.state.pictureURLs.length);
         let previewLength = previewSquares.length;
-        let defaultLength = 9 - previewLength;
+        let defaultLength = 9 - previewLength - this.saveLength;
 
         let defaultSquares = this.createDefaultSquares(defaultLength);
         let uploadSquare = this.createUploadSquare();
-
-        let allSquares = [];
-        allSquares = Object.assign(allSquares, previewSquares, uploadSquare, defaultSquares);
 
         return (
             <div className="form-component-box">
@@ -179,6 +220,7 @@ class ProductForm extends React.Component {
 
                         <div className="right-col">
                             <ul className="file-squares-ul">
+                                {this.state.savedSquares}
                                 {previewSquares}
                                 {uploadSquare}
                                 {defaultSquares}

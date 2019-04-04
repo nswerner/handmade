@@ -47,6 +47,7 @@ class Api::ProductsController < ApplicationController
 
         if @product
             if @product.merchant_id == current_user.id
+                debugger
                 if @product.update(product_params)
 
                     return render 'api/products/show'

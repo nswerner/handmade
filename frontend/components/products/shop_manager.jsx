@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import ProductIndexItem from './product_index_items';
 
 class ShopManager extends React.Component {
     constructor(props) {
@@ -28,11 +29,9 @@ class ShopManager extends React.Component {
         }).then( (user) => this.props.receiveCurrentUser(user));    
     }
 
-    // componentDidUpdate(oldState, oldProps) {
-    //     if (this.props.shop_name !== oldProps.shop_name) {
-    //         this.setState({shop_name: this.props.shop_name})
-    //     }
-    // }
+    componentDidMount() {
+        this.props.fetchUserProducts(this.props.currentUser.id);
+    }
 
     render() {
 
@@ -46,14 +45,37 @@ class ShopManager extends React.Component {
                 </div> 
             )
 
-            this.products = this.props.products.length > 0 ? this.props.products : null;
-            debugger
+        
+            if (this.props.products.length > 0) {
+
+                this.products = this.props.products.filter( (product) => {
+                    return (product.merchant_id === this.props.currentUser.id)
+                })
+
+                this.products = this.props.products.map( (product, idx)=> {
+                    return(
+                        <div key={idx} className="managers-product-index-items">
+                            <ProductIndexItem
+                                product={product}
+                                key={product.id}
+                                merchant={this.props.shop_name}
+                                updateProduct={this.props.updateProduct}
+                                />
+                            <Link to={`/updateListing/${product.id}`}> Update Product </Link>
+                        </div>
+                    )
+                })
+
+            } else {
+                this.products = null;
+            }
+
         } else {
-            this.shopName = <input className="shop-name-input" type="text" value={this.state.shopName} onChange={this.handleChange()} />
+            this.shop_name = <input className="shop-name-input" type="text" value={this.state.shop_name} onChange={this.handleChange()} />
             this.addListing = null;
             this.form = (
                 <form className="manager-form-real" onSubmit={this.handleSubmit}>
-                    {this.shopName}
+                    {this.shop_name}
                     <input className="create-shop-button" type="submit" value="Create Shop"/>
                 </form>
             )
@@ -65,10 +87,10 @@ class ShopManager extends React.Component {
             <div className="shop-manager-box">
                 <header className="shop-manager-header">
                     {this.form}
-                    <ul>
-                        {this.products}
-                    </ul>
                 </header>
+                <ul className="manager-products-ul">
+                    {this.products}
+                </ul>
             </div>
         );
     }

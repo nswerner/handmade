@@ -1,5 +1,7 @@
 .shop-manager-box {
     min-height: 50vw;
+    display: flex;
+    flex-direction: column;
 }
 
     .shop-manager-header {
@@ -90,4 +92,20 @@
             outline: none;
         }
 
+
+        .manager-products-ul {
+            width: 100%;
+            display: flex;
+            list-style-type: none;
+            justify-content: space-evenly;
+        }
+
+        .managers-product-index-items {
+            width: 200%;
+            height: 200%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
 }
+

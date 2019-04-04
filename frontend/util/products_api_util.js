@@ -12,6 +12,13 @@ export const fetchProduct = (id) => (
     })
 )
 
+export const fetchUserProducts = (userId) => (
+    $.ajax({
+        method: "GET",
+        url: `/api/users/${userId}/products`
+    })
+)
+
 export const createProduct = (product) => (
     $.ajax({
         method: "POST",
