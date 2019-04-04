@@ -62,11 +62,22 @@ NEEDS WORK:
             - On #update, the fetchProduct request returned stringified urls which were throwing errors.
         - ANSWER - Duplicate product params and filter out the strings from product_pictures 
 
-    21) Managers Products is not properly filtering for merchant id === current user id
+    21) -COMPLETE- Managers Products is not properly filtering for merchant id === current user id
+        - did not have access to this.props.currentUser.id inside my function? 
+        - after I filtered, I did not refactor later code to use the filtered version
 
-    22) Force price have 2 decimal places
+    22) -COMPLETE- Force price have 2 decimal places
+        -USED .toFixed(2); right in the display component
 
-    23) Preview photos arent rendering
+    23) Need to implement the ability to remove a picture attachment from product in my update form
+        - idea: boolean in state that defaults false, and returns true if a photo has been deleted
+        - some logic to send two HTML requests in the event that a photo has been deleted
+            - PATCH: used to add any photos
+            - PUT: used to set exactly how we want (i.e. exclude the deleted product picture)
+
+    24) Need to validate the presence of atleast one picture and render errors
+
+    
 
 
 

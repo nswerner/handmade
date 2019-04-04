@@ -93,7 +93,7 @@ class ProductShow extends React.Component {
                         <div className="buy-box">
                             <header className="shop-name">{this.props.merchant.shop_name}</header>
                             <h1 className="product-title">{this.product.title}</h1>
-                            <div className="product-price">${this.product.price}</div>
+                            <div className="product-price">${this.product.price.toFixed(2)}</div>
                             <div className="buy-quantity">
                                 <label className="quantity-label">Quantity:</label>
                         
