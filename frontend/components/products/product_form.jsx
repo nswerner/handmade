@@ -103,7 +103,6 @@ class ProductForm extends React.Component {
 
     // will make the array of actual preview files
     createPreviewSquares(number) {
-        debugger
         const squares = [];
 
 
@@ -119,7 +118,7 @@ class ProductForm extends React.Component {
                 </li>
             )
         }
-        debugger
+
         return squares;
     }
 
@@ -140,7 +139,7 @@ class ProductForm extends React.Component {
     }
 
     render() {
-        debugger
+
         let previewSquares = this.createPreviewSquares(this.state.pictureFiles.length);
 
         let previewLength = previewSquares.length;
@@ -151,8 +150,6 @@ class ProductForm extends React.Component {
 
         let allSquares = [];
         allSquares = Object.assign(allSquares, previewSquares, uploadSquare, defaultSquares);
-
-        debugger
 
         return (
             <div className="form-component-box">

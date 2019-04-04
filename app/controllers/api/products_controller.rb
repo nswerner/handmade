@@ -2,18 +2,19 @@ class Api::ProductsController < ApplicationController
 
     # This is where we can incorporate search - Product.where(url_query)
     def index
-        @products = Product.all.includes(:merchant).with_attached_product_pictures
+
+        if params[:user_id]
+            @products = Product.where(merchant_id: params[:user_id]).includes(:merchant).with_attached_product_pictures
+        else
+            @products = Product.all.includes(:merchant).with_attached_product_pictures
+        end
+
         render 'api/products/index'
     end
     
     def show
         @product = Product.with_attached_product_pictures.find_by(id: params[:id])
         render 'api/products/show'
-    end
-
-    def merchant_index
-        @products = Product.where(id: params[:])
-        render 'api/products'
     end
 
     def create

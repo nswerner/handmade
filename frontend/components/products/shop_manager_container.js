@@ -12,22 +12,8 @@ const msp = state => {
         shop_name = "";
     }
 
-
-    let products = [];
-
-    Object.values(state.entities.products).forEach( product => {
-
-        if (product.merchant_id === currentUser.id) {
-            products.push(product);
-        }
-
-    })
-    
-
-
-
-    return({
-        products: products,
+        return({
+        products: state.entities.products,
         currentUser,
         shop_name: shop_name
     });

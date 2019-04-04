@@ -52,8 +52,9 @@ NEEDS WORK:
     
     18) User photos
 
-    19) !important - rendering preview of multiple files
+    19) -COMPLETE- !important - rendering preview of multiple files
         - suspect I'm having an issue in my container but I'm not sure how to pass that information forward.
+        -ANSWER- javascript.push returns the length of the array. Memoize the result and setState to the result.
 
 
  
