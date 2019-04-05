@@ -274,7 +274,7 @@ ActiveRecord::Base.transaction do
 
     product = Product.new({
         title: "Set of Three Landscape Prints", 
-        description: "Artworks printed on high quality matte or glossy paper (depends on your choice) that have archival value of many years in home display. Professional paper with a matte non-reflective surface that feels velvety soft or with a bright, glossy finish.",
+        description: "Three prints on high quality matte or glossy paper (depends on your choice) that have archival value of many years in home display. Professional paper with a matte non-reflective surface that feels velvety soft or with a bright, glossy finish.",
         price: 45.55,
         merchant_id: user4.id
     })
@@ -305,11 +305,11 @@ ActiveRecord::Base.transaction do
         merchant_id: user4.id
     })
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/eucalyptus_art_00.jpg')
-    product.product_pictures.attach(io: file, filename: 'eucalyptus_art_00.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/eucalyptus_wall_art_00.jpg')
+    product.product_pictures.attach(io: file, filename: 'eucalyptus_wall_art_00.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/eucalyptus_art_01.jpg')
-    product.product_pictures.attach(io: file, filename: 'eucalyptus_art_01.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/eucalyptus_wall_art_01.jpg')
+    product.product_pictures.attach(io: file, filename: 'eucalyptus_wall_art_01.jpg')
 
     product.save
 
