@@ -28,7 +28,7 @@ ActiveRecord::Base.transaction do
     User.create({email: "test", password: "password"})
     User.create({email: "test@email.com", password: "password"})
     User.create({email: "test@test.com", password: "password"})
-    demo_user = User.create({email: "demo@email.com", password: "demopassword"})
+    demo_user = User.create({email: "demo@email.com", password: "demopassword", shop_name: "Demo Shop"})
 
     ########
 
@@ -116,14 +116,14 @@ ActiveRecord::Base.transaction do
         merchant_id: user8.id
     })
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/one_shoulder_dress_00.jpg')
-    product.product_pictures.attach(io: file, filename: 'one_shoulder_dress_00.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/wire_camera_00.jpg')
+    product.product_pictures.attach(io: file, filename: 'wire_camera_00.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/one_shoulder_dress_01.jpg')
-    product.product_pictures.attach(io: file, filename: 'one_shoulder_dress_01.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/wire_camera_01.jpg')
+    product.product_pictures.attach(io: file, filename: 'wire_camera_01.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/one_shoulder_dress_02.jpg')
-    product.product_pictures.attach(io: file, filename: 'one_shoulder_dress_02.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/wire_camera_02.jpg')
+    product.product_pictures.attach(io: file, filename: 'wire_camera_02.jpg')
 
     product.save
 
@@ -265,8 +265,11 @@ ActiveRecord::Base.transaction do
         merchant_id: user2.id
     })
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/baby_bodysuit_00.jpg')
-    product.product_pictures.attach(io: file, filename: 'baby_bodysuit_00.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/geometric_mountain_00.jpg')
+    product.product_pictures.attach(io: file, filename: 'geometric_mountain_00.jpg')
+
+    file = open('https://s3.amazonaws.com/handmade-seeds/geometric_mountain_01.jpg')
+    product.product_pictures.attach(io: file, filename: 'geometric_mountain_01.jpg')
 
     product.save
 
