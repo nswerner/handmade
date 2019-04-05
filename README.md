@@ -85,6 +85,10 @@ NEEDS WORK:
 
     28) Add a Are you sure? (this action is final) prompt to end listings
 
+    29) subSplash image has Etsy in it still
+
+    30) Product Index - one tall image throws the row size for every image
+
     
 
 

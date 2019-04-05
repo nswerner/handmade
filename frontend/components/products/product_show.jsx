@@ -113,9 +113,21 @@ class ProductShow extends React.Component {
 
                         <div className="product-overview-box">
                             <h3 className="product-overview-h3">Overview</h3>
+                            <p className="overview-paragraph">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut diam quam nulla porttitor. 
+                                Scelerisque varius morbi enim nunc faucibus a pellentesque sit. 
+                            </p>
                         </div>
                         <div className="shipping-returns-box">
                             <h3 className="shipping-returns-h3">Shipping and Returns</h3>
+                            <div className="shipping-paragraph-box">
+                                <i className="fas fa-shipping-fast"></i>
+                                <p className="shipping-paragraph">
+                                    Free Shipping within the continental U.S.
+                                    Made to Order items are ready to ship within in 1 - 2 weeks.
+                                    No exchanges or returns.
+                                </p>
+                            </div>
                         </div>
                         <div className="merchant-listings-box">
                             <h3 className="merchant-listings-h3">{this.props.merchant.shop_name}</h3>
