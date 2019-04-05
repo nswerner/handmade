@@ -48,6 +48,7 @@ ActiveRecord::Base.transaction do
     product.product_pictures.attach(io: file, filename: 'meteorite_ring_01.jpg')
 
     product.save
+end
 
     ########
 
