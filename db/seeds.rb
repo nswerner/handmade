@@ -112,7 +112,7 @@ ActiveRecord::Base.transaction do
     product = Product.new({
         title: "Copper Wire Camera", 
         description: "100% Handmade sculptures are sure to bring any of your inspirations to life in captivating detail. Copper wire was reclaimed from local salvage yards and coated in a black before being handfolded.", 
-        price: 56.99
+        price: 56.99,
         merchant_id: user8.id
     })
 
