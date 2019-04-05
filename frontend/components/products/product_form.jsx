@@ -151,7 +151,6 @@ class ProductForm extends React.Component {
                     <div className="innermost-upload-square">
                         <i className="fa fa-camera" aria-hidden="true"></i>
                         <br/>
-                        {/* <span className="upload-button-text">Add a photo</span> */}
                         <input className="file-input" type="file" multiple onChange={this.handleFiles}/>
                     </div>
                 </div>
