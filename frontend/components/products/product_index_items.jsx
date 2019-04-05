@@ -12,7 +12,7 @@ const ProductIndexItem = ({ product, merchant }) => {
                 <h2 className="item-title">{product.title}</h2>
                 <span className="item-merchant">{merchant.shop_name}</span>
                 <br/>
-                <span className="item-price">${product.price}</span>
+                <span className="item-price">${product.price.toFixed(2)}</span>
             </Link>&nbsp;
         </li>);
 };
