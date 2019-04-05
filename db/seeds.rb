@@ -379,19 +379,19 @@ ActiveRecord::Base.transaction do
         merchant_id: user4.id
     })
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_dandys_00.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_dandys_00.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_dandys_00.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_dandys_01.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_dandys_01.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_dandys_01.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_dandys_02.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_dandys_02.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_dandys_02.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_dandys_03.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_dandys_03.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_dandys_03.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_dandys_04.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_dandys_04.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_dandys_04.jpg')
 
     product.save
@@ -407,16 +407,16 @@ ActiveRecord::Base.transaction do
         merchant_id: user4.id
     })
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_landscape_00.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_landscape_00.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_landscape_00.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_landscape_01.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_landscape_01.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_landscape_01.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_landscape_02.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_landscape_02.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_landscape_02.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_landscape_03.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_landscape_03.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_landscape_03.jpg')
 
     product.save
@@ -448,16 +448,16 @@ ActiveRecord::Base.transaction do
         merchant_id: user4.id
     })
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_foothills_00.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_foothills_00.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_foothills_00.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_foothills_01.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_foothills_01.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_foothills_01.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_foothills_02.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_foothills_02.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_foothills_02.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_foothills_03.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_foothills_03.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_foothills_03.jpg')
 
     product.save
@@ -472,19 +472,19 @@ ActiveRecord::Base.transaction do
         merchant_id: user4.id
     })
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_factory_00.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_factory_00.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_factory_00.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_factory_01.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_factory_01.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_factory_01.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_factory_02.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_factory_02.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_factory_02.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_factory_03.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_factory_03.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_factory_03.jpg')
 
-    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_factory_04.jpg.jpg')
+    file = open('https://s3.amazonaws.com/handmade-seeds/b&w_factory_04.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_factory_04.jpg')
 
     product.save
