@@ -16,7 +16,7 @@ class Product < ApplicationRecord
     validates :title, uniqueness: { scope: :merchant_id }
     validates :title, uniqueness: { scope: :description }
 
-    validate :ensure_picture
+
 
     has_many_attached :product_pictures
     belongs_to :merchant,

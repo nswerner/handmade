@@ -9,6 +9,7 @@ import ProductShow from './products/product_show_container';
 import ShopManager from './products/shop_manager_container';
 import AddListingForm from './products/create_product_form_container';
 import UpdateListingForm from './products/update_product_form_container';
+import Splash from './splash/splash_container';
 
 const App = () => (
   <>
@@ -17,7 +18,7 @@ const App = () => (
       <NavBar/>
     </div>
     <div className="top-level-container">
-      <Route exact path="/" component={null}/>
+      <Route exact path="/" component={Splash}/>
       <ProtectedRoute path="/products" exact={true} component={ProductIndex} />
       <Route exact path="/products/:id" component={ProductShow}/>
       <ProtectedRoute path="/shopManager" exact={true} component={ShopManager}/>
