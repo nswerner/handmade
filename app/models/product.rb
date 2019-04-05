@@ -16,7 +16,7 @@ class Product < ApplicationRecord
     validates :title, uniqueness: { scope: :merchant_id }
     validates :title, uniqueness: { scope: :description }
 
-    validate :ensure_picture
+    # validate :ensure_picture
 
     has_many_attached :product_pictures
     belongs_to :merchant,
@@ -24,9 +24,9 @@ class Product < ApplicationRecord
         primary_key: :id,
         foreign_key: :merchant_id
     
-    def ensure_picture
-        unless self.product_pictures.attached?
-            errors[:product] << "must be attached"
-        end
-    end
+    # def ensure_picture
+    #     unless self.product_pictures.attached?
+    #         errors[:product] << "must be attached"
+    #     end
+    # end
 end
