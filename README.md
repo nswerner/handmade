@@ -81,6 +81,10 @@ NEEDS WORK:
 
     26) Need to handle AJAX request error in form in the event that theres no photo
 
+    27) PRODUCTSHOW - picture ul is off kilter to the right after heroku push
+
+    28) Add a Are you sure? (this action is final) prompt to end listings
+
     
 
 
