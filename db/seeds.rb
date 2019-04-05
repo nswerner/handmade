@@ -112,7 +112,7 @@ ActiveRecord::Base.transaction do
     product = Product.new({
         title: "Copper Wire Camera", 
         description: "100% Handmade sculptures are sure to bring any of your inspirations to life in captivating detail. Copper wire was reclaimed from local salvage yards and coated in a black before being handfolded.", 
-        price: 56.99,
+        price: 56.99
         merchant_id: user8.id
     })
 
@@ -373,7 +373,7 @@ ActiveRecord::Base.transaction do
     ########
 
     product = Product.new({
-        title: "Modern Black and White Photographs - Factory", 
+        title: "Modern Black and White Photographs - Dandelions", 
         description: "Inspire a sense of drama with these high contrast black and white photographs. Shipped with a beautiful frame that is bound to add dramatic flair to any wall.", 
         price: 39.98,
         merchant_id: user4.id
@@ -401,7 +401,7 @@ ActiveRecord::Base.transaction do
 
 
     product = Product.new({
-        title: "Modern Black and White Photographs - Factory", 
+        title: "Modern Black and White Photographs - Landscape", 
         description: "Inspire a sense of drama with these high contrast black and white photographs. Shipped with a beautiful frame that is bound to add dramatic flair to any wall.", 
         price: 39.98,
         merchant_id: user4.id
@@ -442,7 +442,7 @@ ActiveRecord::Base.transaction do
     ########
 
     product = Product.new({
-        title: "Modern Black and White Photographs - Field", 
+        title: "Modern Black and White Photographs - Foothills", 
         description: "Inspire a sense of drama with these high contrast black and white photographs. Shipped with a beautiful frame that is bound to add dramatic flair to any wall.", 
         price: 39.98,
         merchant_id: user4.id
