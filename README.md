@@ -77,6 +77,10 @@ NEEDS WORK:
 
     24) Need to validate the presence of atleast one picture and render errors
 
+    25) Add lorem ipsum or even better, static information, to product show page
+
+    26) Need to handle AJAX request error in form in the event that theres no photo
+
     
 
 

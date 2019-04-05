@@ -90,10 +90,13 @@ class ShopManager extends React.Component {
             this.shop_name = <input className="shop-name-input" type="text" value={this.state.shop_name} onChange={this.handleChange()} />
             this.addListing = null;
             this.form = (
-                <form className="manager-form-real" onSubmit={this.handleSubmit}>
-                    {this.shop_name}
-                    <input className="create-shop-button" type="submit" value="Create Shop"/>
-                </form>
+                <div className="create-shop">
+                    <h1 className="manager-h2">Create a Shop</h1>
+                    <form className="manager-form-real" onSubmit={this.handleSubmit}>
+                        {this.shop_name}
+                        <input className="create-shop-button" type="submit" value="Create Shop"/>
+                    </form>
+                </div>
             )
 
           this.products = null;
