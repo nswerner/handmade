@@ -15,6 +15,26 @@ class ProductForm extends React.Component {
         this.createPreviewSquares = this.createPreviewSquares.bind(this);
         this.createUploadSquare = this.createUploadSquare.bind(this);
         this.createSavedSquares = this.createSavedSquares.bind(this);
+        this.handleFileReader = this.handleFileReader.bind(this);
+    }
+
+    handleFileReader(fileReader, file) {
+        fileReader.onloadend = () => {
+
+            this.setState(prevState => ({
+                pictureFiles: [...prevState.pictureFiles, file ]
+            }))
+            // const newPictureFiles = this.state.pictureFiles;
+            // newPictureFiles.push(file);
+
+            this.setState(prevState => ({
+                pictureURLs: [...prevState.pictureURLs, fileReader.result]
+            }))
+
+            // const newPictureURLs = this.state.pictureURLs;
+            // newPictureURLs.push(fileReader.result);
+            // this.setState({ pictureFiles: newPictureFiles, pictureURLs: newPictureURLs });
+        }
     }
 
     handleFiles(e) {
@@ -23,14 +43,17 @@ class ProductForm extends React.Component {
         for (let idx = 0; idx < files.length;idx += 1) {
             const file = files[idx];
             const fileReader = new FileReader();
-            fileReader.onloadend = () => {
-                const newPictureFiles = this.state.pictureFiles;
-                newPictureFiles.push(file);
+            this.handleFileReader(fileReader, file);
+            // Issue: inside the fat arrow function, 'this' was fileReader
+            // fileReader.onloadend = () => {
+            //     const newPictureFiles = this.state.pictureFiles;
+            //     newPictureFiles.push(file);
 
-                const newPictureURLs = this.state.pictureURLs;
-                newPictureURLs.push(fileReader.result);
-                this.setState({ pictureFiles: newPictureFiles, pictureURLs: newPictureURLs });
-            }
+            //     debugger
+            //     const newPictureURLs = this.state.pictureURLs;
+            //     newPictureURLs.push(fileReader.result);
+            //     this.setState({ pictureFiles: newPictureFiles, pictureURLs: newPictureURLs });
+            // }
             
             fileReader.readAsDataURL(file);
         }
