@@ -8,6 +8,7 @@ const msp = (state, ownProps) => {
     let product;
     if (state.entities.products[productId]) {
         product = state.entities.products[productId];
+        product["pictureURLs"] = [];
     } else {
         product = {
             title: "",

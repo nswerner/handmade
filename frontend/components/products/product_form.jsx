@@ -8,7 +8,7 @@ class ProductForm extends React.Component {
         this.state = this.props.product;
         
         this.saveLength = 0;
-
+        debugger
         this.handleFiles = this.handleFiles.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.createDefaultSquares = this.createDefaultSquares.bind(this);
@@ -26,7 +26,7 @@ class ProductForm extends React.Component {
             }))
             // const newPictureFiles = this.state.pictureFiles;
             // newPictureFiles.push(file);
-
+            debugger
             this.setState(prevState => ({
                 pictureURLs: [...prevState.pictureURLs, fileReader.result]
             }))
@@ -190,6 +190,7 @@ class ProductForm extends React.Component {
                 let description = product.description;
                 let price = product.price;
                 let pictureFiles = product.productPictures;
+                debugger
 
                 this.setState({title: title, description: description, price: price, pictureFiles: pictureFiles});
                 
@@ -201,7 +202,7 @@ class ProductForm extends React.Component {
     }
 
     render() {
-
+        debugger
         let previewSquares;
         if (this.state.pictureURLs) {
             previewSquares = this.createPreviewSquares(this.state.pictureURLs.length);
