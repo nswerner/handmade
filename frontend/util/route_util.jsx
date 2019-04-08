@@ -37,9 +37,18 @@ const Shop = ({ component: Component, path, loggedIn, createdShop, exact }) => (
 
 // access the Redux state to check if the user is logged in
 const mapStateToProps = state => {
+    const loggedIn = Boolean(state.session.id);
+    let createdShop;
+    
+    if (loggedIn) {
+        createdShop = Boolean((state.entities.users[state.session.id].shop_name));
+    } else {
+        createdShop = null;
+    }
+
     return ({ 
-        loggedIn: Boolean(state.session.id),
-        createdShop: Boolean((state.entities.users[state.session.id].shop_name))
+        loggedIn,
+        createdShop
     });
 }
 
