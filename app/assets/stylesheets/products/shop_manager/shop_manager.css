@@ -390,3 +390,7 @@
 .remove-listing:hover {
     cursor: pointer;
 }
+
+.remove-listing:focus {
+    outline: none;
+}

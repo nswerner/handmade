@@ -96,7 +96,7 @@ NEEDS WORK:
 
     33) Remove Lorem Ipsum on the Product Show Overview Page
 
-    
+    34) Will need to Refactor the Shop Manager Header to render based on the selection in the left nav;
 
 
 
