@@ -72,7 +72,9 @@ class ShopManager extends React.Component {
                             <img className="mngr-item-img" src={product.productPictures[0]} />
                         </div>
                         <div className="mngr-item-prod-details">
-                            <h4 className="mngr-item-prod-title">{product.title}</h4>
+                            <div className="mngr-item-prod-tite">
+                                <span className="mngr-item-prod-h4">{product.title}</span>
+                            </div>
                             <div className="mngr-item-stock-price">
                                 <span className="mngr-item-stock">stock </span>
                                 <span className="mngr-item-detail-separator"> | </span>

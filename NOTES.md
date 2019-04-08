@@ -89,6 +89,8 @@ NEEDS WORK:
 
     30) Product Index - one tall image throws the row size for every image
         - Maybe add div around image itself, make image height auto and the surrounding div 11vw with overflow hidden
+        - Not sure that works well because it makes the wider images go out of the picture
+        - May need logic to decide if image is tall or wide or let users set thumbnail images on listing
 
     31) App looks slightly shifted to the right
 
@@ -97,6 +99,8 @@ NEEDS WORK:
     33) Remove Lorem Ipsum on the Product Show Overview Page
 
     34) Will need to Refactor the Shop Manager Header to render based on the selection in the left nav;
+
+    35) Anticipating Very Long Product Titles will overrun the Shop Manager List Items
 
 
 
