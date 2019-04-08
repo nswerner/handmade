@@ -21,5 +21,3 @@ export default ProductIndexItem;
 
 
 
-
-// Line 13 - product merchant name - tried including users in my query but its not making it into state or the merchant association

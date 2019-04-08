@@ -46,7 +46,8 @@
 
 .item-image {
     width: 100%;
-    height: 56%;
+    height: auto;
+    max-height: 135px;
 }
 
 .item-title {
