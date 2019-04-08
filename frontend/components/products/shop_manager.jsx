@@ -64,19 +64,30 @@ class ShopManager extends React.Component {
         if (this.props.products.length > 0) {
 
             this.products = this.filterProducts(this.props.currentUser.id);
-
             this.products = this.products.map((product, idx) => {
+
                 return (
-                    <div key={idx} className="managers-product-index-items">
-                        <ProductIndexItem
-                            product={product}
-                            key={product.id}
-                            merchant={this.props.shop_name}
-                            updateProduct={this.props.updateProduct}
-                        />
-                        <Link className="update-listing" to={`/updateListing/${product.id}`}> Update Product </Link>
-                        <button onClick={() => this.removeProduct(product.id)} className="remove-listing"> End Listing </button>
-                    </div>
+                    <li key={idx} className="manager-product-index-item">
+                        <div className="mngr-item-img-box">
+                            <img className="mngr-item-img" src={product.productPictures[0]} />
+                        </div>
+                        <div className="mngr-item-prod-details">
+                            <h4 className="mngr-item-prod-title">{product.title}</h4>
+                            <div className="mngr-item-stock-price">
+                                <span className="mngr-item-stock">stock </span>
+                                <span className="mngr-item-detail-separator"> | </span>
+                                <span className="mngr-item-price">${product.price.toFixed(2)}</span>
+                            </div>
+                        </div>
+                        <div className="manager-options">
+                            <Link className="update-listing" to={`/updateListing/${product.id}`}> 
+                                <i className="far fa-edit"/> 
+                            </Link>
+                            <button onClick={() => this.removeProduct(product.id)} className="remove-listing">
+                                <i className="far fa-trash-alt"/>
+                            </button>
+                        </div>
+                    </li>
                 )
             })
 
@@ -88,7 +99,10 @@ class ShopManager extends React.Component {
             <div className="shop-manager-box">
                 <div className="left-nav">
                     <header className="left-nav-header">
-                        <i className="fas fa-store"></i> Shop Manager
+                        <div className="mngr-icon-bg">
+                            <i className="fas fa-store"/>
+                        </div>
+                        <span> Shop Manager </span>
                     </header>
                     <div className="left-nav-listings">
                         <button className="nav-listings-button">
@@ -112,10 +126,6 @@ class ShopManager extends React.Component {
                     </header>
 
                     <div className="mngr-main-background">
-
-                        <div className="manager-actions">
-                            something
-                        </div>
 
                         <div className="manager-ul-box">
 

@@ -130,7 +130,6 @@
 .left-nav {
     width: 255px;
     height: 100%;
-    border-right: 1px solid lightgray;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -146,6 +145,25 @@
     margin-left: 25px;
     text-align: center;
     font-size: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.mngr-icon-bg {
+    width: 35px;
+    height: 35px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 5px;
+}
+
+.mngr-icon-bg > i {
+    color: white;
+    position: absolute;
+    top: 6px;
+    right: 4px;
+    font-weight: 700;
 }
 
 .left-nav-listings {
@@ -195,7 +213,7 @@
 }
 
 .listings-span {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 6px;
 }
 
@@ -262,6 +280,7 @@
     width: 100%;
     padding: 15px auto;
     border-bottom: 1px solid lightgray;
+    border-left: 1px solid lightgray;
 }
 
 .mngr-h2 {
@@ -274,6 +293,100 @@
 
 .mngr-main-background {
     background-color: #FAF9F5;
-    display: block;
+    border-left: 1px solid lightgray;
     
+}
+
+.manager-ul-box {
+    margin: 20px;
+}
+
+.manager-ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.manager-product-index-item {
+    width: 175px;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    margin: 10px;
+}
+
+.mngr-item-img-box {
+    width: 100%;
+    height: 137px;
+    overflow:hidden;
+}
+
+.mngr-item-img {
+    width: 100%;
+    height: auto;
+}
+
+.mngr-item-prod-details {
+    height: 80px;
+    width: 150px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.mngr-item-prod-title {
+    text-overflow: ellipsis;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.mngr-item-stock-price {
+    display: flex;
+    justify-content: flex-start;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    color: gray;
+}
+
+.mngr-item-stock-price span {
+    margin: 3px;
+}
+
+.manager-options {
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid lightgray;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.manager-options * {
+    margin: 5px;
+}
+
+.update-listing {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.update-listing:visited {
+    color: black;
+}
+
+.remove-listing {
+    border: 0;
+    color: black;
+    font-size: 16px;
+}
+
+.remove-listing:hover {
+    cursor: pointer;
 }
