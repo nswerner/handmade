@@ -51,8 +51,8 @@ class ShopManager extends React.Component {
 
     render() {
 
-        this.shopName = <h1 className="manager-h1">{this.props.currentUser.shop_name}</h1>
-        this.addListing = <Link to="/addListing" className="black-button add-listing"> <i className="fas fa-plus" /> Add Listing </Link>
+        this.shopName = <h1 className="manager-h2">{this.props.currentUser.shop_name}</h1>
+        this.addListing = <Link to="/addListing" className="add-listing"> <i className="fas fa-plus" /> Add Listing </Link>
         this.header = (
             <div className="manager-form">
                 {this.shopName}
@@ -86,12 +86,26 @@ class ShopManager extends React.Component {
 
         return (
             <div className="shop-manager-box">
-                <header className="shop-manager-header">
-                    {this.header}
-                </header>
-                <ul className="manager-products-ul">
-                    {this.products}
-                </ul>
+                <div className="left-nav">
+                
+                </div>
+                <div className="manager-main">
+
+                    <header className="shop-manager-header">
+                        {this.header}
+                    </header>
+                    <div className="manager-actions">
+                    
+                    </div>
+                    <div className="manager-ul-box">
+                        <ul className="manager-ul">
+
+                            {this.products}
+
+                        </ul>
+                    </div>
+
+                </div>
             </div>
         );
     }

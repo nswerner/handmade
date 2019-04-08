@@ -35,7 +35,7 @@ class CreateShop extends React.Component {
         this.form = (
             <div className="create-shop">
                 <h1 className="manager-h2">Create a Shop</h1>
-                <form className="manager-form-real" onSubmit={this.handleSubmit}>
+                <form className="create-shop-form" onSubmit={this.handleSubmit}>
                     {this.shop_name}
                     <input className="create-shop-button" type="submit" value="Create Shop"/>
                 </form>
@@ -46,13 +46,10 @@ class CreateShop extends React.Component {
     
 
         return(
-            <div className="shop-manager-box">
-                <header className="shop-manager-header">
+            <div className="create-shop-box">
+                <header className="create-shop-header">
                     {this.form}
                 </header>
-                <ul className="manager-products-ul">
-                    {this.products}
-                </ul>
             </div>
         );
     }

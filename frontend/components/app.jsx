@@ -23,10 +23,16 @@ const App = () => (
       <ProtectedRoute path="/products" exact={true} component={ProductIndex} />
       <Route exact path="/products/:id" component={ProductShow}/>
       <ProtectedRoute path="/createShop/" exact={true} component={CreateShop}/>
-      <ShopRoute path="/shopManager" exact={true} component={ShopManager}/>
       <ProtectedRoute path="/addListing" exact={true} component={AddListingForm}/>
       <ProtectedRoute path="/updateListing/:id" exact={true} component={UpdateListingForm}/>
-      <Footer/>
+    </div>
+
+    <div className="full-page-view">
+      <ShopRoute path="/shopManager" exact={true} component={ShopManager}/>
+    </div>
+    
+    <div className="top-level-container">
+        <Footer/>
     </div>
   </>
 );
