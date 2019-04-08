@@ -51,8 +51,8 @@ class ShopManager extends React.Component {
 
     render() {
 
-        this.shopName = <h1 className="manager-h2">{this.props.currentUser.shop_name}</h1>
-        this.addListing = <Link to="/addListing" className="add-listing"> <i className="fas fa-plus" /> Add Listing </Link>
+        this.shopName = <h1 className="manager-h2 mngr-h2">{this.props.currentUser.shop_name}</h1>
+        this.addListing = <Link to="/addListing" className="add-listing mngr-add-listing"> <i className="fas fa-plus" /> Add Listing </Link>
         this.header = (
             <div className="manager-form">
                 {this.shopName}
@@ -87,25 +87,49 @@ class ShopManager extends React.Component {
         return (
             <div className="shop-manager-box">
                 <div className="left-nav">
-                
+                    <header className="left-nav-header">
+                        <i className="fas fa-store"></i> Shop Manager
+                    </header>
+                    <div className="left-nav-listings">
+                        <button className="nav-listings-button">
+                            <i className="fas fa-shapes" />
+                            <span className="listings-span"> Listings </span>
+                        </button>
+                    </div>
+                    <div className="left-nav-orders">
+                        <button className="nav-orders-button">
+                            <i className="fas fa-clipboard-list"/>
+                            <span className="orders-span">  Orders and reviews </span>
+                        </button>
+                    </div>
+
                 </div>
+
                 <div className="manager-main">
 
                     <header className="shop-manager-header">
                         {this.header}
                     </header>
-                    <div className="manager-actions">
-                    
-                    </div>
-                    <div className="manager-ul-box">
-                        <ul className="manager-ul">
 
-                            {this.products}
+                    <div className="mngr-main-background">
 
-                        </ul>
+                        <div className="manager-actions">
+                            something
+                        </div>
+
+                        <div className="manager-ul-box">
+
+                            <ul className="manager-ul">
+
+                                {this.products}
+
+                            </ul>
+
+                        </div>
                     </div>
 
                 </div>
+
             </div>
         );
     }
