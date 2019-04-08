@@ -9,7 +9,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
         !loggedIn ? (
             <Component {...props} />
         ) : (
-                <Redirect to="/" />
+            <Redirect to="/" />
             )
     )} />
 );
@@ -20,14 +20,27 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
         loggedIn ? (
             <Component {...props} />
         ) : (
-                <Redirect to="/" />
+            <Redirect to="/" />
+            )
+    )} />
+);
+
+const Shop = ({ component: Component, path, loggedIn, createdShop, exact }) => (
+    <Route path={path} exact={exact} render={(props) => (
+        (loggedIn && createdShop) ? (
+            <Component {...props} />
+        ) : (
+            <Redirect to="/createShop" />
             )
     )} />
 );
 
 // access the Redux state to check if the user is logged in
 const mapStateToProps = state => {
-    return { loggedIn: Boolean(state.session.id) };
+    return ({ 
+        loggedIn: Boolean(state.session.id),
+        createdShop: Boolean((state.entities.users[state.session.id].shop_name))
+    });
 }
 
 // connect Auth to the redux state
@@ -36,3 +49,5 @@ export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 // connect Protected to the redux state
 export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
 
+
+export const ShopRoute = withRouter(connect(mapStateToProps)(Shop));

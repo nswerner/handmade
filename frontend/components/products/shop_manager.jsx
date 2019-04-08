@@ -9,7 +9,7 @@ class ShopManager extends React.Component {
         this.state = {
             shop_name: this.props.shop_name
         }
-        
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.filterProducts = this.filterProducts.bind(this);
@@ -18,7 +18,7 @@ class ShopManager extends React.Component {
 
     handleChange() {
         return (e) => {
-            this.setState({ shop_name: e.currentTarget.value} )
+            this.setState({ shop_name: e.currentTarget.value })
         }
     }
 
@@ -27,8 +27,8 @@ class ShopManager extends React.Component {
         $.ajax({
             method: "PATCH",
             url: `/api/users/${this.props.currentUser.id}`,
-            data: {user: {shop_name: `${this.state.shop_name}`}}
-        }).then( (user) => this.props.receiveCurrentUser(user));    
+            data: { user: { shop_name: `${this.state.shop_name}` } }
+        }).then((user) => this.props.receiveCurrentUser(user));
     }
 
     componentDidMount() {
@@ -37,7 +37,7 @@ class ShopManager extends React.Component {
 
     filterProducts(id) {
 
-        const filteredProducts = this.props.products.filter( product => {
+        const filteredProducts = this.props.products.filter(product => {
             return (product.merchant_id === id)
         })
 
@@ -45,7 +45,7 @@ class ShopManager extends React.Component {
     }
 
     removeProduct(id) {
-        this.props.removeProduct(id).then( () => {
+        this.props.removeProduct(id).then(() => {
             this.props.fetchUserProducts(this.props.currentUser.id);
         });
     }
@@ -59,23 +59,23 @@ class ShopManager extends React.Component {
                 <div className="manager-form">
                     {this.shopName}
                     {this.addListing}
-                </div> 
+                </div>
             )
 
-        
+
             if (this.props.products.length > 0) {
 
                 this.products = this.filterProducts(this.props.currentUser.id);
 
-                this.products = this.products.map( (product, idx)=> {
-                    return(
+                this.products = this.products.map((product, idx) => {
+                    return (
                         <div key={idx} className="managers-product-index-items">
                             <ProductIndexItem
                                 product={product}
                                 key={product.id}
                                 merchant={this.props.shop_name}
                                 updateProduct={this.props.updateProduct}
-                                />
+                            />
                             <Link className="update-listing" to={`/updateListing/${product.id}`}> Update Product </Link>
                             <button onClick={() => this.removeProduct(product.id)} className="remove-listing"> End Listing </button>
                         </div>
@@ -94,15 +94,15 @@ class ShopManager extends React.Component {
                     <h1 className="manager-h2">Create a Shop</h1>
                     <form className="manager-form-real" onSubmit={this.handleSubmit}>
                         {this.shop_name}
-                        <input className="create-shop-button" type="submit" value="Create Shop"/>
+                        <input className="create-shop-button" type="submit" value="Create Shop" />
                     </form>
                 </div>
             )
 
-          this.products = null;
+            this.products = null;
         }
 
-        return(
+        return (
             <div className="shop-manager-box">
                 <header className="shop-manager-header">
                     {this.form}
@@ -116,3 +116,4 @@ class ShopManager extends React.Component {
 }
 
 export default ShopManager;
+

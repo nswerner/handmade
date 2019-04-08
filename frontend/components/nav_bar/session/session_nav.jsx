@@ -46,10 +46,18 @@ class SessionNav extends React.Component {
                 this.dropdown = null;
             }
 
+            if (this.props.currentUser.shop_name) {
+                this.manager = <Link to="/shopManager" className="icon-button store-mngr"> <i className="fas fa-store" /> Shop Manager</Link>
+            } else {
+                this.manager = <Link to="/createShop" className="icon-button store-mngr"> <i className="fas fa-store" /> Shop Manager</Link>
+            }
+
             // CHANGE THIS PROFILE IMAGE TO RENDER THE DEFAULT OR THE USERS PICTURE IF PRESENT
+
+            // debugger
             return (
                 <div className="icon-nav">
-                    <Link to="/shopManager" className="icon-button store-mngr"> <i className="fas fa-store"/> Shop Manager</Link>
+                    {this.manager}
                     <button onClick={this.showDropdown} className="icon-button profile-button"> <img src={window.proDefSmall} alt="small default profile image" /> <span>You <i className="fas fa-caret-down"/></span> </button>
                     {this.dropdown}
                     <button className="icon-button cart-button"> <i className="fas fa-shopping-cart"/> Cart</button>

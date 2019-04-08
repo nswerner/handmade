@@ -7,7 +7,7 @@ import { openModal } from '../../../actions/modal_actions';
 const msp = state => {
 
     return({
-        currentUser: state.session.id,
+        currentUser: state.entities.users[state.session.id],
         demoUser: { email: "demo@email.com", password: "demopassword" }
     });
 };

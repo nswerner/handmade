@@ -19,7 +19,7 @@ NEEDS WORK:
 
     6) -COMPLETE- ProductShow: Can't get li opacity to stay at 1 on selected
 
-    7) -HACKY COMPLETE- Modal isn't perfectly centered, it's slightly to the right
+    7) -COMPLETE (HACKY)- Modal isn't perfectly centered, it's slightly to the right
         - I am using multiple divs, one at top: 50%, left: 50%; and the inner with an odd translation of ~(-11%, -7%);
         - .or class is translated something like %1000;
 
@@ -28,7 +28,7 @@ NEEDS WORK:
 
     9) Error handing on the session form still doesn't activate a red focus/active on the trouble element
 
-    10) -PARTIALLY COMPLETE- Coffee dictionary has a duplicate picture in the seed file
+    10) -COMPLETE- Coffee dictionary has a duplicate picture in the seed file
         - changed seed file, will need to reseed to make change
 
     12) ? DEVELOP FULLSIZE PICTURE MODAL ?
@@ -90,7 +90,11 @@ NEEDS WORK:
     30) Product Index - one tall image throws the row size for every image
         - Maybe add div around image itself, make image height auto and the surrounding div 11vw with overflow hidden
 
-    31) App looks slightly shifted to the right    
+    31) App looks slightly shifted to the right
+
+    32) Add first name/ last name to the User model and profile dropdown
+
+    33) Remove Lorem Ipsum on the Product Show Overview Page
 
     
 
