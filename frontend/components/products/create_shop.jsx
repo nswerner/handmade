@@ -47,9 +47,7 @@ class CreateShop extends React.Component {
 
         return(
             <div className="create-shop-box">
-                <header className="create-shop-header">
-                    {this.form}
-                </header>
+                {this.form}
             </div>
         );
     }

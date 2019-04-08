@@ -294,7 +294,7 @@
 .mngr-main-background {
     background-color: #FAF9F5;
     border-left: 1px solid lightgray;
-    
+    min-height: 150px;
 }
 
 .manager-ul-box {

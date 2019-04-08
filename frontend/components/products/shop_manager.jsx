@@ -92,7 +92,7 @@ class ShopManager extends React.Component {
             })
 
         } else {
-            this.products = null;
+            this.products = <span className="manager-h2"> Your Listed Products can be Managed Here </span>
         }
 
         return (
