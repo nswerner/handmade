@@ -4,6 +4,7 @@
 
 .index-item-li {
     width: 15.4%;
+    height: 240px;
     box-sizing: border-box;
     margin-bottom: 4%;
     max-height: 3%;
@@ -46,10 +47,16 @@
   width: 100%;
 }
 
+.pii-image-box {
+    height: 62.5%;
+    width: 100%;
+    overflow: hidden;
+}
+
 .item-image {
     width: 100%;
     height: auto;
-    max-height: 135px;
+    min-height: 150px;
 }
 
 .item-title {

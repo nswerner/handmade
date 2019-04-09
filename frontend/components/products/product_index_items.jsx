@@ -8,7 +8,9 @@ const ProductIndexItem = ({ product, merchant }) => {
     return (
         <li className="index-item-li">
             <Link className="item-box" to={`/products/${product.id}`}>
-                <img className="item-image" src={product.productPictures[0]} alt={product.title}/>
+                <div className="pii-image-box">
+                    <img className="item-image" src={product.productPictures[0]} alt={product.title}/>
+                </div>
                 <h2 className="item-title">{product.title}</h2>
                 <span className="item-merchant">{merchant.shop_name}</span>
                 <br/>
