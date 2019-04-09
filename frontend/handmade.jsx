@@ -39,6 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
         window.fetchProduct = ProductActions.fetchProduct;
         window.updateProduct = ProductActions.updateProduct;
         window.createProduct = ProductActions.createProduct;
+        // window.signOut = SessionActions.signOut;
+        // window.signIn = SessionActions.signIn;
+        // window.signUp = SessionActions.signUp;
 
     // testing
 

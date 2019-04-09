@@ -7,6 +7,8 @@
     box-sizing: border-box;
     margin-bottom: 4%;
     max-height: 3%;
+    min-height: 3%;
+    min-width: 15.4%;
 }
 
 .index-item-li:first-child,

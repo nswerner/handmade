@@ -43,6 +43,6 @@ class Api::UsersController < ApplicationController
     end
 
     def ensure_cart
-        @user.cart_id ||= Cart.create(@user.id)
+        @user.update( cart_id:  ( @user.cart_id || Cart.create(user_id: @user.id).id ) )
     end
 end

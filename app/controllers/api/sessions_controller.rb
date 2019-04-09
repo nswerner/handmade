@@ -27,6 +27,6 @@ class Api::SessionsController < ApplicationController
 
     private
     def ensure_cart
-        @user.cart_id ||= Cart.create(@user.id)
+        @user.cart_id ||= Cart.create(user_id: @user.id).id
     end
 end

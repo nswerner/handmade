@@ -12,4 +12,8 @@ class CartsController < ApplicationController
     end
 
 
+    def show
+        @cart = Cart.find_by(id: current_user.cart_id)
+
+
 end
