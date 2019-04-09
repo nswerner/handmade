@@ -5,3 +5,12 @@ export const createCart = (user) => {
         url: `/api/users/${user.id}/carts`
     })
 }
+
+
+export const fetchCart = (user, id) => {
+
+    return $.ajax({
+        method: "GET",
+        url: `/api/users/${user.id}/carts/${id}`
+    })
+}
