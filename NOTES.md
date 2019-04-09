@@ -102,6 +102,9 @@ NEEDS WORK:
 
     35) Anticipating Very Long Product Titles will overrun the Shop Manager List Items
 
+    36) Back end for cart is extensive, may need to refactor and will certainly need to include error handling. Since the cart show view is so extensive, I don't know that I need all the methods in the CartItemController. 
+        - WILL NEED: CREATE (adds an item to a cart), UPDATE (to change item quantity), DELETE (removes item from a cart) but unsure about show and index since an ajax request to cart will fetch all the data needed to display the cart
+
 
 
 
