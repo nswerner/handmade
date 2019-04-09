@@ -10,6 +10,7 @@ class Api::UsersController < ApplicationController
 
             if @user.save
                 login(@user)
+                ensure_cart
                 render 'api/users/show'
             else
     
@@ -39,5 +40,9 @@ class Api::UsersController < ApplicationController
     private
     def user_params
         params.require(:user).permit(:email, :password, :shop_name, :image_url, :gender, :location, :birthday, :about, :favorite_material)
+    end
+
+    def ensure_cart
+        @user.cart_id ||= Cart.create(@user.id)
     end
 end
