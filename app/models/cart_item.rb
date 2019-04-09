@@ -10,9 +10,12 @@
 #  updated_at :datetime         not null
 #
 
-class Cart_Item < ApplicationRecord
+class CartItem < ApplicationRecord
     validates :quantity, presence: true
 
     belongs_to :product
-    belongs_to :cart
+    belongs_to :cart,
+        class_name: "Cart",
+        primary_key: :id,
+        foreign_key: :cart_id
 end

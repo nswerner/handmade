@@ -13,22 +13,22 @@ ActiveRecord::Base.transaction do
 
     User.destroy_all
 
-    user1 = User.create({email: "handForged@email.com", password: "handf0rged", shop_name: "Hand Forged", gender: "male", location: "California, USA", about: "Creating things is a passion of mine. I've always had a passion for forging. One day I found a meteorite outside our family home and decided to make a ring out of it. The feedback was tremendous and now, I'm fortunate to say I'm one of the largest producers of meteorite forged goods in the United States!", favorite_material: "meteorite", birthday: Date.new(1990, 4, 30)})
-    user2 = User.create({email: "winter_is_coming@email.com" ,password: "agirlwithnoname", shop_name: "Winter is Coming"})
-    user3 = User.create({email: "favorite_waterways@email.com", password: "hudsonBay", shop_name: "Favorite Waterways"})
-    user4 = User.create({email: "fStopFitz@email.com", password: "black&white", shop_name: "Contrast Photography"})
-    user5 = User.create({email: "StyleLife@email.com", password: "100cotton", shop_name: "Soft Threads"})
+    user1 = User.create!({email: "handForged@email.com", password: "handf0rged", shop_name: "Hand Forged", gender: "male", location: "California, USA", about: "Creating things is a passion of mine. I've always had a passion for forging. One day I found a meteorite outside our family home and decided to make a ring out of it. The feedback was tremendous and now, I'm fortunate to say I'm one of the largest producers of meteorite forged goods in the United States!", favorite_material: "meteorite", birthday: Date.new(1990, 4, 30)})
+    user2 = User.create!({email: "winter_is_coming@email.com" ,password: "agirlwithnoname", shop_name: "Winter is Coming"})
+    user3 = User.create!({email: "favorite_waterways@email.com", password: "hudsonBay", shop_name: "Favorite Waterways"})
+    user4 = User.create!({email: "fStopFitz@email.com", password: "black&white", shop_name: "Contrast Photography"})
+    user5 = User.create!({email: "StyleLife@email.com", password: "100cotton", shop_name: "Soft Threads"})
 
-    user6 = User.create({email: "goldenTouch@email.com", password: "platinum", shop_name: "Silver&Gold"})
-    user7 = User.create({email: "caffeinePlease@email.com", password: "extraShot", shop_name: "Dark Roast Prints"})
-    user8 = User.create({email: "starvingArtist@email.com", password: "vanGogh", shop_name: "RGB_CMYK"})
-    user9 = User.create({email: "handtools@email.com", password: "hammer_nails", shop_name: "hammer&nails"})
+    user6 = User.create!({email: "goldenTouch@email.com", password: "platinum", shop_name: "Silver&Gold"})
+    user7 = User.create!({email: "caffeinePlease@email.com", password: "extraShot", shop_name: "Dark Roast Prints"})
+    user8 = User.create!({email: "starvingArtist@email.com", password: "vanGogh", shop_name: "RGB_CMYK"})
+    user9 = User.create!({email: "handtools@email.com", password: "hammer_nails", shop_name: "hammer&nails"})
 
-    User.create({email: "gr00t@email.com", password: "iAmGroot"})
-    User.create({email: "test", password: "password"})
-    User.create({email: "test@email.com", password: "password"})
-    User.create({email: "test@test.com", password: "password"})
-    demo_user = User.create({email: "demo@email.com", password: "demopassword", shop_name: "Demo Shop"})
+    User.create!({email: "gr00t@email.com", password: "iAmGroot"})
+    User.create!({email: "test", password: "password"})
+    User.create!({email: "test@email.com", password: "password"})
+    User.create!({email: "test@test.com", password: "password"})
+    demo_user = User.create!({email: "demo@email.com", password: "demopassword", shop_name: "Demo Shop"})
 
     ########
 
@@ -47,7 +47,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/meteorite_01.jpg')
     product.product_pictures.attach(io: file, filename: 'meteorite_ring_01.jpg')
 
-    product.save
+    product.save!
 
     ########
 
@@ -67,7 +67,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/paper_elephant_02.jpg')
     product.product_pictures.attach(io: file, filename: 'paper_elephant_02.jpg')
 
-    product.save
+    product.save!
 
     ########
 
@@ -87,7 +87,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/one_shoulder_dress_02.jpg')
     product.product_pictures.attach(io: file, filename: 'one_shoulder_dress_02.jpg')
 
-    product.save
+    product.save!
 
     ########
 
@@ -104,7 +104,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/starry_night_01.jpg')
     product.product_pictures.attach(io: file, filename: 'starry_night_01.jpg')
 
-    product.save
+    product.save!
 
 
     ########
@@ -125,7 +125,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/wire_camera_02.jpg')
     product.product_pictures.attach(io: file, filename: 'wire_camera_02.jpg')
 
-    product.save
+    product.save!
 
     ########
 
@@ -142,7 +142,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/boys_birthday_shirt_01.jpg')
     product.product_pictures.attach(io: file, filename: 'boys_birthday_shirt_01.jpg')
 
-    product.save
+    product.save!
 
     #######
 
@@ -159,7 +159,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/cat_tote_00.jpg')
     product.product_pictures.attach(io: file, filename: 'cat_tote_00.jpg')
 
-    product.save
+    product.save!
 
     #######
 
@@ -176,7 +176,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/circle_statement_earrings_01.jpg')
     product.product_pictures.attach(io: file, filename: 'circle_statement_earrings_01.jpg')
 
-    product.save
+    product.save!
 
     ########
 
@@ -196,7 +196,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/coffee_chart_02.jpg')
     product.product_pictures.attach(io: file, filename: 'coffee_chart_02.jpg')
 
-    product.save
+    product.save!
 
     ########
 
@@ -220,7 +220,7 @@ ActiveRecord::Base.transaction do
     product.product_pictures.attach(io: file, filename: 'coffee_prints_03.jpg')
 
 
-    product.save
+    product.save!
 
     ########
 
@@ -237,7 +237,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/constellation_necklace_01.jpg')
     product.product_pictures.attach(io: file, filename: 'constellation_necklace_01.jpg')
 
-    product.save
+    product.save!
 
     ########
 
@@ -254,7 +254,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/contemporary_painting_00.jpg')
     product.product_pictures.attach(io: file, filename: 'contemporary_painting_00.jpg')
 
-    product.save
+    product.save!
 
     ########
 
@@ -271,7 +271,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/geometric_mountain_01.jpg')
     product.product_pictures.attach(io: file, filename: 'geometric_mountain_01.jpg')
 
-    product.save
+    product.save!
 
     ########
 
@@ -297,7 +297,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/desert_prints_04.jpg')
     product.product_pictures.attach(io: file, filename: 'desert_prints_04.jpg')
 
-    product.save
+    product.save!
 
     ########
 
@@ -314,7 +314,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/eucalyptus_wall_art_01.jpg')
     product.product_pictures.attach(io: file, filename: 'eucalyptus_wall_art_01.jpg')
 
-    product.save
+    product.save!
 
     ########
 
@@ -331,7 +331,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/baby_bodysuit_00.jpg')
     product.product_pictures.attach(io: file, filename: 'baby_bodysuit_00.jpg')
 
-    product.save
+    product.save!
 
     ########
 
@@ -351,7 +351,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/dad_hammer_02.jpg')
     product.product_pictures.attach(io: file, filename: 'dad_hammer_02.jpg')
 
-    product.save
+    product.save!
 
     ########
 
@@ -371,7 +371,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/bay_reliefs_03.jpg')
     product.product_pictures.attach(io: file, filename: 'bay_reliefs_03.jpg')
 
-    product.save
+    product.save!
 
     ########
 
@@ -397,7 +397,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/b&w_dandys_04.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_dandys_04.jpg')
 
-    product.save
+    product.save!
 
 
     ########
@@ -422,7 +422,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/b&w_landscape_03.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_landscape_03.jpg')
 
-    product.save
+    product.save!
 
 
     ########
@@ -440,7 +440,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/black_and_white_01.jpg')
     product.product_pictures.attach(io: file, filename: 'black_and_white_01.jpg')
 
-    product.save
+    product.save!
 
     ########
 
@@ -463,7 +463,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/b&w_foothills_03.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_foothills_03.jpg')
 
-    product.save
+    product.save!
     
 
     ########
@@ -490,7 +490,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/b&w_factory_04.jpg')
     product.product_pictures.attach(io: file, filename: 'b&w_factory_04.jpg')
 
-    product.save
+    product.save!
 
     ########
 
@@ -510,7 +510,7 @@ ActiveRecord::Base.transaction do
     file = open('https://s3.amazonaws.com/handmade-seeds/black_and_white_05.jpg')
     product.product_pictures.attach(io: file, filename: 'black_and_white_05.jpg')
 
-    product.save
+    product.save!
 
     ########
 end

@@ -49,7 +49,6 @@ class ProductForm extends React.Component {
             //     const newPictureFiles = this.state.pictureFiles;
             //     newPictureFiles.push(file);
 
-            //     debugger
             //     const newPictureURLs = this.state.pictureURLs;
             //     newPictureURLs.push(fileReader.result);
             //     this.setState({ pictureFiles: newPictureFiles, pictureURLs: newPictureURLs });

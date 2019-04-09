@@ -53,8 +53,6 @@ class SessionNav extends React.Component {
             }
 
             // CHANGE THIS PROFILE IMAGE TO RENDER THE DEFAULT OR THE USERS PICTURE IF PRESENT
-
-            // debugger
             return (
                 <div className="icon-nav">
                     {this.manager}

@@ -45,7 +45,9 @@ class User < ApplicationRecord
     belongs_to :cart,
         class_name: "Cart",
         primary_key: :id,
-        foreign_key: :cart_id
+        foreign_key: :cart_id,
+        optional: true
+    
 
     def password=(password)
         @password = password

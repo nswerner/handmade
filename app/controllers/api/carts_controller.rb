@@ -1,11 +1,10 @@
-class CartsController < ApplicationController
+class Api::CartsController < ApplicationController
 
     def create
-        @cart = Cart.new(user_id: current_user.id)
+        @cart = Cart.new(user_id: params[:user_id])
         
         if @cart.save
-            # CHANGE THIS WHEN VIEWS IMPLEMENTED
-            # render 'api/carts/show'
+            render 'api/cart/show'
         else
             render json: @cart.errors.full_messages
         end
@@ -13,7 +12,14 @@ class CartsController < ApplicationController
 
 
     def show
-        @cart = Cart.find_by(id: current_user.cart_id)
+        @cart = Cart.where(id: params[:id]).includes(:cart_items, :products)
+        @cart = @cart[0]
+
+        if @cart
+            render 'api/cart/show'
+        end
+    end
+
 
 
 end

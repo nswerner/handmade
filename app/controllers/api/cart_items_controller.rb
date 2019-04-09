@@ -1,3 +1,5 @@
-class CartItemsController < ApplicationController
+class Api::CartItemsController < ApplicationController
+
+    
 
 end
