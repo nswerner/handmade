@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // testing
 
+        window.store = store;
         window.getState = store.getState;
         window.dispatch = store.dispatch;
 
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.fetchProduct = ProductActions.fetchProduct;
         window.updateProduct = ProductActions.updateProduct;
         window.createProduct = ProductActions.createProduct;
+
         // window.signOut = SessionActions.signOut;
         // window.signIn = SessionActions.signIn;
         // window.signUp = SessionActions.signUp;

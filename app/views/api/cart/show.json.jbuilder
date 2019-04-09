@@ -10,6 +10,8 @@
     end
 end
 
+@products ||= {}
+
 @cart_items = 
     json.cartItems do 
         @cart.cart_items.each do |item|
@@ -26,6 +28,8 @@ end
             end
         end
     end
+
+@cart_items ||= {}
 
 ###################################################
 
