@@ -11,6 +11,8 @@ import AddListingForm from './products/create_product_form_container';
 import UpdateListingForm from './products/update_product_form_container';
 import Splash from './splash/splash_container';
 import CreateShop from './products/create_shop_container';
+import Cart from './carts/cart_container';
+
 
 const App = () => (
   <>
@@ -25,6 +27,7 @@ const App = () => (
       <ProtectedRoute path="/createShop/" exact={true} component={CreateShop}/>
       <ProtectedRoute path="/addListing" exact={true} component={AddListingForm}/>
       <ProtectedRoute path="/updateListing/:id" exact={true} component={UpdateListingForm}/>
+      <ProtectedRoute path="/myCart" exact={true} component={Cart} />
     </div>
 
     <div className="full-page-view">

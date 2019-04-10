@@ -1,11 +1,12 @@
 import * as CartApiUtil from '../util/cart_api_util';
+import Cart from '../components/carts/cart';
 
 export const RECEIVE_CART = "RECEIVE_CART"
 
 // CHANGE THIS: PASSING UNDEFINED PRODUCTS AND CART ITEMS WHEN CART IS EMPTY - SEE HOW REDUCERS HANDLE IT
 // normal actions
 const receiveCart = (payload) => {
-    // debugger
+
     return ({
         type: RECEIVE_CART,
         cart: payload.cart,
@@ -28,3 +29,4 @@ export const fetchCart = (user, id) => dispatch => {
     return CartApiUtil.fetchCart(user, id)
         .then( (payload) => dispatch(receiveCart(payload)) )
 }
+

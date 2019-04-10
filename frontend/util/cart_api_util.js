@@ -14,3 +14,11 @@ export const fetchCart = (user, id) => {
         url: `/api/users/${user.id}/carts/${id}`
     })
 }
+
+export const fetchCurrentCartID = (user) => {
+
+    return $.ajax({
+        method: "GET",
+        url: `api/users/${user.id}`
+    })
+}

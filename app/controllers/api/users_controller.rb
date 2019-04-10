@@ -22,7 +22,9 @@ class Api::UsersController < ApplicationController
     def show
         @user = User.find_by(id: params[:id])
 
-        if @user
+        if @user == current_user
+            render :private_show
+        elsif @user
             render :show
         end
     end
