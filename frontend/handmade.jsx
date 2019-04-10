@@ -7,6 +7,8 @@ import Root from "./components/root";
 
 import * as SessionActions from './actions/session_actions';
 import * as ProductActions from './actions/product_actions';
+import * as CartActions from './actions/cart_actions';
+import * as CartItemActions from './actions/cart_item_actions';
 
 // testing imports
 
@@ -35,15 +37,20 @@ document.addEventListener("DOMContentLoaded", () => {
         window.getState = store.getState;
         window.dispatch = store.dispatch;
 
-        window.fetchProducts = ProductActions.fetchProducts;
-        window.removeProduct = ProductActions.deleteProduct;
-        window.fetchProduct = ProductActions.fetchProduct;
-        window.updateProduct = ProductActions.updateProduct;
-        window.createProduct = ProductActions.createProduct;
-
         // window.signOut = SessionActions.signOut;
         // window.signIn = SessionActions.signIn;
         // window.signUp = SessionActions.signUp;
+
+        // window.fetchProducts = ProductActions.fetchProducts;
+        // window.removeProduct = ProductActions.deleteProduct;
+        // window.fetchProduct = ProductActions.fetchProduct;
+        // window.updateProduct = ProductActions.updateProduct;
+        // window.createProduct = ProductActions.createProduct;
+
+        window.createCart = CartActions.createCart;
+        window.fetchCart = CartActions.fetchCart;
+
+        window.createCartItem = CartItemActions.createCartItem;
 
     // testing
 

@@ -32,7 +32,7 @@
     margin-right: 0px;
 }
 
-.index-item-li:hover > .item-box > .item-image {
+.index-item-li:hover > .item-box > .pii-image-box {
     transition: 0.2s;
     box-shadow: 1px 1px 7px 1px lightgray;
     /* box-shadow: none|h-offset v-offset blur spread color */
