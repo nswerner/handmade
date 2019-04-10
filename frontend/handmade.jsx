@@ -51,6 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
         window.fetchCart = CartActions.fetchCart;
 
         window.createCartItem = CartItemActions.createCartItem;
+        window.updateCartItem = CartItemActions.updateCartItem;
+        window.deleteCartItem = CartItemActions.deleteCartItem;
 
     // testing
 

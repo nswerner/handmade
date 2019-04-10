@@ -1,9 +1,6 @@
 class Api::CartItemsController < ApplicationController
 
     def create
-        debugger
-        # @cart_item = CartItem.new(cart_id: params[:cart_id], quantity: params[:cartItems][:quantity], product_id: params[:cartItems][:product_id])
-        # quantity: params[:cart_items][:quantity] 
         @cart_item = CartItem.new(cart_item_params)
         @cart_item.cart_id = params[:cart_id]
 

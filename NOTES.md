@@ -105,6 +105,12 @@ NEEDS WORK:
     36) Back end for cart is extensive, may need to refactor and will certainly need to include error handling. Since the cart show view is so extensive, I don't know that I need all the methods in the CartItemController. 
         - WILL NEED: CREATE (adds an item to a cart), UPDATE (to change item quantity), DELETE (removes item from a cart) but unsure about show and index since an ajax request to cart will fetch all the data needed to display the cart
 
+    37) Margin in the Shop Manager Index Items only affects the first line of the header text
+
+    38) Shop Manager Cards - The entire card should be a clickable link to the product show page
+
+    39) Red Asterisk to denote required fields
+
 
 
 

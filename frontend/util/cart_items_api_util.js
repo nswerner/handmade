@@ -9,12 +9,12 @@ export const createCartItem = (user, cartItems) => {
 }
 
 //cart is referenced from user so we can only update items in the users current cart
-export const updateCartItem = (user, item, cartItem) => {
+export const updateCartItem = (user, cartItems) => {
 
     return $.ajax({
         method: "PATCH",
-        url: `/api/users/${user.id}/carts/${user.cart_id}/cart_items/${item.id}`,
-        data: { cartItem }
+        url: `/api/users/${user.id}/carts/${user.cart_id}/cart_items/${cartItems.id}`,
+        data: { cartItems }
     })
 }
 
