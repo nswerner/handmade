@@ -1,5 +1,5 @@
 import { RECEIVE_CART_ITEM, REMOVE_CART_ITEM } from '../../../actions/cart_item_actions';
-import { RECEIVE_CART } from '../../../actions/cart_actions'
+import { RECEIVE_CART } from '../../../actions/cart_actions';
 import { merge } from 'lodash';
 
 
@@ -18,7 +18,7 @@ const CartItemsReducer = (oldState = {}, action) => {
             return newState;
 
         case RECEIVE_CART:
-            newState = merge(newState, action.cartItems)
+            newState = merge(newState, action.cartItems);
             return newState;
 
         default:

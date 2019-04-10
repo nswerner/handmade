@@ -18,7 +18,7 @@ const removeCartItem = (response) => {
 
     return({
         type: REMOVE_CART_ITEM,
-        cartItemId: response.cartItems.id
+        cartItemId: Object.keys(response.cartItems)
     })
 }
 
@@ -35,7 +35,6 @@ export const updateCartItem = (user, cartItem) => dispatch => {
     return CartItemsApiUtil.updateCartItem(user, cartItem)
         .then( response => dispatch(receiveCartItem(response)) );
 }
-
 
 export const deleteCartItem = (user, cartItem) => dispatch => {
     return CartItemsApiUtil.deleteCartItem(user, cartItem)

@@ -29,7 +29,7 @@ class Api::CartItemsController < ApplicationController
         render 'api/cart_items/show'
     end
 
-    def delete
+    def destroy
         @cart_item = CartItem.find_by(id: params[:id])
         
         if @cart_item
