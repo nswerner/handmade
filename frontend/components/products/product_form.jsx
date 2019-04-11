@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import CurrencyInput from 'react-currency-input';
 
 class ProductForm extends React.Component {
     constructor(props) {
@@ -16,6 +17,7 @@ class ProductForm extends React.Component {
         this.createUploadSquare = this.createUploadSquare.bind(this);
         this.createSavedSquares = this.createSavedSquares.bind(this);
         this.handleFileReader = this.handleFileReader.bind(this);
+        this.handlePriceChange = this.handlePriceChange.bind(this);
     }
 
     handleFileReader(fileReader, file) {
@@ -44,7 +46,7 @@ class ProductForm extends React.Component {
             const file = files[idx];
             const fileReader = new FileReader();
             this.handleFileReader(fileReader, file);
-            // Issue: inside the fat arrow function, 'this' was fileReader
+            // Issue?: inside the fat arrow function, 'this' was fileReader
             // fileReader.onloadend = () => {
             //     const newPictureFiles = this.state.pictureFiles;
             //     newPictureFiles.push(file);
@@ -91,10 +93,16 @@ class ProductForm extends React.Component {
 
 
     handleChange(field) {
+
         return (e) => {
             this.setState({ [field]: e.currentTarget.value });
         }
 
+    }
+
+    handlePriceChange(event, maskedvalue, floatvalue) {
+
+        this.setState({ price: parseFloat(event.target.value.slice(1)) });
     }
 
     createDefaultSquares(number) {
@@ -308,7 +316,8 @@ class ProductForm extends React.Component {
                         </div>
 
                         <div className="right-col">
-                            <input className="price-input" type="float" value={this.state.price} onChange={this.handleChange('price')} /> 
+                            <CurrencyInput className="price-input" prefix="$" value={this.state.price} onChangeEvent={() => this.handlePriceChange(event)}/>
+                            {/* <input className="price-input" type="number" value={this.state.price} onChange={this.handleChange('price')} />  */}
                         </div>
 
                     </div>

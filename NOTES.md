@@ -111,6 +111,8 @@ NEEDS WORK:
 
     39) Red Asterisk to denote required fields
 
+    40) USERS CONTROLLER - SHOW IS BREAKING PRODUCTS PAGE
+
 
 
 
