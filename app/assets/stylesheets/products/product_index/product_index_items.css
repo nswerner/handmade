@@ -10,6 +10,8 @@
     max-height: 3%;
     min-height: 3%;
     min-width: 15.4%;
+    margin-left: 5px;
+    margin-right: 12px;
 }
 
 .index-item-li:first-child,
