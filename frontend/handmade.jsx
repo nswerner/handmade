@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // testing
 
-        window.getState = store.getState;
-        window.dispatch = store.dispatch;
+        // window.getState = store.getState;
+        // window.dispatch = store.dispatch;
 
         // window.signOut = SessionActions.signOut;
         // window.signIn = SessionActions.signIn;
@@ -47,11 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // window.createProduct = ProductActions.createProduct;
 
         // window.createCart = CartActions.createCart;
-        window.fetchCart = CartActions.fetchCart;
+        // window.fetchCart = CartActions.fetchCart;
 
-        window.createCartItem = CartItemActions.createCartItem;
-        window.updateCartItem = CartItemActions.updateCartItem;
-        window.deleteCartItem = CartItemActions.deleteCartItem;
+        // window.createCartItem = CartItemActions.createCartItem;
+        // window.updateCartItem = CartItemActions.updateCartItem;
+        // window.deleteCartItem = CartItemActions.deleteCartItem;
 
     // testing
 
