@@ -18,6 +18,7 @@ class ProductForm extends React.Component {
         this.createSavedSquares = this.createSavedSquares.bind(this);
         this.handleFileReader = this.handleFileReader.bind(this);
         this.handlePriceChange = this.handlePriceChange.bind(this);
+        this.publishButton = this.publishButton.bind(this);
     }
 
     handleFileReader(fileReader, file) {
@@ -102,7 +103,7 @@ class ProductForm extends React.Component {
 
     handlePriceChange(event, maskedvalue, floatvalue) {
 
-        this.setState({ price: parseFloat(event.target.value.slice(1)) });
+        this.setState({ price: parseFloat(event.target.value.slice(2)) });
     }
 
     createDefaultSquares(number) {
@@ -207,6 +208,24 @@ class ProductForm extends React.Component {
         }
     }
 
+    publishButton() {
+        let submit;
+
+        if (
+            this.state.title === "" ||  
+            this.state.description === "" || 
+            this.state.price === "" || 
+            this.state.pictureFiles.length === 0
+        ) {
+            submit = <span className="listing-form-submit span-publish-placeholder" >Complete the form to publish</span>
+        } else {
+            submit =  <input className="listing-form-submit" type="submit" value={this.props.formType} />
+        }
+
+        return submit;
+    }
+
+
     render() {
         
         let previewSquares;
@@ -215,16 +234,19 @@ class ProductForm extends React.Component {
         } else {
             previewSquares = this.createPreviewSquares(0);
         }
+
         let previewLength = previewSquares.length;
         let defaultLength = 9 - previewLength - this.saveLength;
-
         let defaultSquares = this.createDefaultSquares(defaultLength);
+
         let uploadSquare;
         if ( (this.saveLength + previewLength + defaultSquares.length) > 9 ) {
             uploadSquare = null;
         } else {
             uploadSquare = this.createUploadSquare();
         }
+
+        this.submit = this.publishButton()
     
 
         return (
@@ -237,7 +259,7 @@ class ProductForm extends React.Component {
 
                         <div className="left-col">
                             <label className="pictures-label">
-                                <h2 className="listing-form-h2">Photos: </h2>
+                                <h2 className="listing-form-h2">Photos * </h2>
                                 <p className="about-pictures">
                                     Use up to ten photos to show your item's most important qualities.
                                     <br />
@@ -268,7 +290,7 @@ class ProductForm extends React.Component {
 
                         <div className="left-col">
                             <label className="title-label" id="title-connected">
-                                <h2 className="listing-form-h2">Title: </h2>
+                                <h2 className="listing-form-h2">Title * </h2>
                                 <p className="about-title">
                                     Include keywords that buyers would use to search for your item.
                                 </p>
@@ -286,7 +308,7 @@ class ProductForm extends React.Component {
                     
                         <div className="left-col">
                             <label className="description-label">
-                                <h2 className="listing-form-h2">Description: </h2>
+                                <h2 className="listing-form-h2">Description * </h2>
                                 <p className="about-description">
                                     Start with a brief overview that describes your item's finest features.
 
@@ -306,7 +328,7 @@ class ProductForm extends React.Component {
                     
                         <div className="left-col">
                             <label className="price-label">
-                                <h2 className="listing-form-h2">Price: </h2>
+                                <h2 className="listing-form-h2">Price * </h2>
                                 <p className="about-price">
                                     Factor in the costs of materials and labor, plus any related business expenses.
                                     Consider the total price buyers will pay too—including shipping.
@@ -316,13 +338,13 @@ class ProductForm extends React.Component {
                         </div>
 
                         <div className="right-col">
-                            <CurrencyInput className="price-input" prefix="$" value={this.state.price} onChangeEvent={() => this.handlePriceChange(event)}/>
+                            <CurrencyInput className="price-input" prefix="$ " value={this.state.price} onChangeEvent={() => this.handlePriceChange(event)}/>
                             {/* <input className="price-input" type="number" value={this.state.price} onChange={this.handleChange('price')} />  */}
                         </div>
 
                     </div>
 
-                    <input className="listing-form-submit" type="submit" value={this.props.formType} />
+                    {this.submit}
                 </form>
             </div>
         );

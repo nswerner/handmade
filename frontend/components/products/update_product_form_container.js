@@ -9,6 +9,7 @@ const msp = (state, ownProps) => {
     if (state.entities.products[productId]) {
         product = state.entities.products[productId];
         product["pictureURLs"] = [];
+        product['pictureFiles'] = [];
     } else {
         product = {
             title: "",
