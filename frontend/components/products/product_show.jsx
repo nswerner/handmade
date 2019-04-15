@@ -111,13 +111,13 @@ class ProductShow extends React.Component {
                             {/* <span className="demand"><i className="fas fa-shopping-cart"></i>Other people want this. </span> */}
                         </div>
 
-                        <div className="product-overview-box">
+                        {/* <div className="product-overview-box">
                             <h3 className="product-overview-h3">Overview</h3>
                             <p className="overview-paragraph">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut diam quam nulla porttitor. 
                                 Scelerisque varius morbi enim nunc faucibus a pellentesque sit. 
                             </p>
-                        </div>
+                        </div> */}
                         <div className="shipping-returns-box">
                             <h3 className="shipping-returns-h3">Shipping and Returns</h3>
                             <div className="shipping-paragraph-box">
