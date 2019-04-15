@@ -4,7 +4,7 @@
 Handmade is a clone of Etsy, an online merchant community that allows users to buy and sell handmade and vintage goods. In the most recent release, site visitors can register an account. Users can view items for sale from other users and list/update products for sale. In the next release, cart functionality will be added.
 
 ## Live
-[Handmade](handmade-with-love.herokuapp.com)
+[Handmade](https://handmade-with-love.herokuapp.com)
 
 ## Technology
 * Git
