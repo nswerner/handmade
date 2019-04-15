@@ -23,7 +23,6 @@ class Cart extends React.Component {
         if (prevProps.cartItems.length > 0) {
             
             for (let idx = 0; idx < this.props.cartItems.length; idx += 1) {
-                debugger
                 if (this.props.cartItems[idx].quantity !== prevProps.cartItems[idx].quantity) {
                     return this.props.fetchCart(this.props.currentUser, this.props.currentUser.cart_id);
                 }
