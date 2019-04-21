@@ -175,6 +175,10 @@
   padding-bottom: 7px;
 }
 
+.cart-link-wrapper {
+  text-decoration: none;
+}
+
 .profile-button span {
   font-size: 12px;
   font-weight: 500;

@@ -18,7 +18,7 @@ class ProductIndex extends React.Component {
             sliceStart: 0,
             sliceEnd: 12,
             totalPages: null,
-            loading: false
+            loading: true
         }
 
         this.getProducts = this.getProducts.bind(this);

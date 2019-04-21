@@ -58,7 +58,7 @@ class SessionNav extends React.Component {
                     {this.manager}
                     <button onClick={this.showDropdown} className="icon-button profile-button"> <img src={window.proDefSmall} alt="small default profile image" /> <span>You <i className="fas fa-caret-down"/></span> </button>
                     {this.dropdown}
-                    <button className="icon-button cart-button"> <i className="fas fa-shopping-cart"/> Cart</button>
+                    <Link className="cart-link-wrapper" to="/myCart"><button className="icon-button cart-button"> <i className="fas fa-shopping-cart" /> Cart</button></Link>
                 </div>
             )
         } else {

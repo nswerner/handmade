@@ -44,7 +44,7 @@ class Cart extends React.Component {
                 
                     <div className="cart-component-header">
                         <h1 className="x-items-header">{Object.values(this.props.cartItems).length} items in your cart </h1>
-                        <span className="keep-shopping-button">Keep shopping</span>
+                        <span onClick={() => this.props.ownProps.history.push('/products')} className="keep-shopping-button">Keep shopping</span>
                     </div>
 
                     <div className="full-cart">

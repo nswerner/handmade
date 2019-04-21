@@ -4,8 +4,9 @@ import { fetchCart } from '../../actions/cart_actions';
 import { fetchCurrentCartID } from '../../actions/session_actions';
 
 
-const msp = state => {
+const msp = (state, ownProps) => {
     const currentUser = state.entities.users[state.session.id];
+    
     
     let cart;
     if (Object.values(state.entities.carts).length > 0) {
@@ -32,7 +33,8 @@ const msp = state => {
         currentUser,
         cart,
         cartItems,
-        products
+        products, 
+        ownProps
     })
 }
 
