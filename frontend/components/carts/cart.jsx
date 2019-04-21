@@ -1,4 +1,5 @@
 import React from 'react';
+import  { Link } from 'react-router-dom';
 
 class Cart extends React.Component {
     constructor(props) {
@@ -32,24 +33,48 @@ class Cart extends React.Component {
 
 
     render() {
-        let component;
+        let component = null;
+        let emptyCart = null;
 
-        if (Object.values(this.props.cart).length > 0) {
+
+        if (Object.values(this.props.cartItems).length > 0) {
+            debugger
             component = (
-                <div className="cart-component">
-                    {this.props.cart.cartTotal}
+                <div className="cart-component-subwrapper">
+                
+                    <div className="cart-component-header">
+                        <h1 className="x-items-header">{Object.values(this.props.cartItems).length} items in your cart </h1>
+                        <span className="keep-shopping-button">Keep shopping</span>
+                    </div>
+
+                    <div className="full-cart">
+                        <div className="cart-items">
+                            
+                        </div>
+
+                        <div className="cart-checkout">
+                            {this.props.cart.cartTotal}
+                        
+                        </div>
+                    </div>
                 </div>
             )
         } else {
-            component = (
-                <div className="cart-component">
-                  WAITING ON CART DATA
+
+            emptyCart = (
+                <div className="empty-cart">
+                    <h2 className="empty-header">Your cart is empty</h2>
+                    <Link className="empty-link" to="products">Find something unique to fill it up</Link>
                 </div>
             )
         }
         
         return(
-           component
+            <div className="cart-component">
+                {component}
+                {emptyCart}
+           </div>
+
         )
     }
 }

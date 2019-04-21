@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute, ShopRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute, FullPageRoute } from '../util/route_util';
 import Modal from './modal/modal_container';
 import NavBar from './nav_bar/nav_bar_container';
 import Footer from "./footer/footer_container";
@@ -27,11 +27,11 @@ const App = () => (
       <ProtectedRoute path="/createShop/" exact={true} component={CreateShop}/>
       <ProtectedRoute path="/addListing" exact={true} component={AddListingForm}/>
       <ProtectedRoute path="/updateListing/:id" exact={true} component={UpdateListingForm}/>
-      <ProtectedRoute path="/myCart" exact={true} component={Cart} />
     </div>
 
     <div className="full-page-view">
-      <ShopRoute path="/shopManager" exact={true} component={ShopManager}/>
+      <FullPageRoute path="/shopManager" exact={true} component={ShopManager}/>
+      <ProtectedRoute path="/myCart" exact={true} component={Cart} />
     </div>
     
     <div className="top-level-container">
