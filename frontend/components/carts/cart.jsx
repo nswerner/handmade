@@ -35,10 +35,37 @@ class Cart extends React.Component {
     render() {
         let component = null;
         let emptyCart = null;
+        let cartItems = null;
 
+
+        // this.props.users[this.props.products[this.props.cartItems[0].product_id].merchant_id].shop_name
 
         if (Object.values(this.props.cartItems).length > 0) {
             debugger
+
+            cartItems = this.props.cartItems.map( cartItem => {
+                debugger
+                return(
+                    <div className="cart-index-item">
+
+                        <div className="cart-item-top">
+                            {/* <h5 className="cart-item-shop-header">{this.props.users[this.props.products[cartItem.product_id].merchant_id].shop_name}</h5> */}
+                            <div className="cart-item-image-box">
+                                <img src={this.props.products[cartItem.product_id].productPictures[0]} alt=""/>
+                            </div>
+                        </div>
+
+                        <div className="cart-item-bottom">
+                            remove from cart
+                        </div>
+
+                    </div>
+                )
+
+            })
+
+            debugger
+
             component = (
                 <div className="cart-component-subwrapper">
                 
@@ -49,7 +76,9 @@ class Cart extends React.Component {
 
                     <div className="full-cart">
                         <div className="cart-items cart-left">
-                            
+                            <ul>
+                                {cartItems}
+                            </ul>
                         </div>
 
                         <div className="cart-checkout cart-right">

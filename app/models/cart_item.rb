@@ -18,4 +18,8 @@ class CartItem < ApplicationRecord
         class_name: "Cart",
         primary_key: :id,
         foreign_key: :cart_id
+    
+    has_one :merchant,
+        through: :product,
+        source: :merchant
 end

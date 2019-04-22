@@ -24,16 +24,26 @@ const msp = (state, ownProps) => {
 
     let products;
     if (Object.values(state.entities.products).length > 0) {
-        products = Object.values(state.entities.products);
+        products = state.entities.products;
     } else {
-        products = [];
+        products = {};
     }
+
+    let users;
+    if (Object.values(state.entities.users).length > 0) {
+        users = state.entities.users;
+    } else {
+        users = {};
+    }
+
+
 
     return({
         currentUser,
         cart,
         cartItems,
         products, 
+        users,
         ownProps
     })
 }

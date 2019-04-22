@@ -31,7 +31,7 @@ end
 
 @cart_items ||= {}
 
-
+debugger
 
 ###################################################
 
@@ -90,4 +90,14 @@ json.products do
     end
 end
 
+
+# NEW
+json.users do
+    @cart.cart_items.each do |cartItem|
+
+        json.set! cartItem.merchant.id do
+            json.extract! cartItem.merchant, :shop_name
+        end
+    end
+end
 

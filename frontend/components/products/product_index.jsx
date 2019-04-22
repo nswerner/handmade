@@ -75,7 +75,8 @@ class ProductIndex extends React.Component {
         // CHANGE THIS IF LOAD TIMES BECOME EXCESSIVE
         if (this.state.loading) {
             return (
-                <div className="loading">Loading</div>
+                // <div className="loading">Loading</div>
+                null
             )
         }
 
