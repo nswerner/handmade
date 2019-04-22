@@ -6,7 +6,17 @@ class Cart extends React.Component {
         super(props)
 
 
+        this.selectOptions = this.selectOptions.bind(this);
+    }
 
+    selectOptions(stock) {
+        const options = [];
+
+        for (let idx = 2; idx <= stock; idx += 1) {
+            options.push(<option key={idx} value={`${idx}`}>{idx}</option>);
+        }
+
+        return options;
     }
 
     componentDidMount() {
@@ -32,6 +42,7 @@ class Cart extends React.Component {
     }
 
 
+
     render() {
         let component = null;
         let emptyCart = null;
@@ -49,14 +60,30 @@ class Cart extends React.Component {
                     <div className="cart-index-item">
 
                         <div className="cart-item-top">
-                            <h5 className="cart-item-shop-header">{this.props.users[this.props.products[cartItem.product_id].merchant_id].shop_name}</h5>
-                            <div className="cart-item-image-box">
-                                <img className="cart-item-img" src={this.props.products[cartItem.product_id].productPictures[0]} alt=""/>
+
+                            <div className="cart-item-left">
+                                <div className="cart-item-tile">
+                                    <h5 className="cart-item-shop-header">{this.props.users[this.props.products[cartItem.product_id].merchant_id].shop_name}</h5>
+                                    <div className="cart-item-image-box">
+                                        <img className="cart-item-img" src={this.props.products[cartItem.product_id].productPictures[0]} alt="" />
+                                    </div>
+                                </div>
+                                <div className='cart-item-title'>
+                                    {this.props.products[cartItem.product_id].title}
+                                </div>
                             </div>
+
+                            <div className="cart-item-right">
+                                <select className="quantity-select" type="select">
+                                    <option value="1" defaultValue="">1</option>
+                                    {this.selectOptions(20)}
+                                </select>
+                            </div>
+                         
                         </div>
 
                         <div className="cart-item-bottom">
-                            remove from cart
+                            Remove from cart
                         </div>
 
                     </div>
