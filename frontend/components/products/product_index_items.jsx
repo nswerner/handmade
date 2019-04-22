@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 const ProductIndexItem = ({ product, merchant }) => {
 
+    merchant = merchant || null;
+    debugger
 
     return (
         <li className="index-item-li">

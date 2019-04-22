@@ -73,11 +73,11 @@ class ProductIndex extends React.Component {
     render() {
 
         // CHANGE THIS IF LOAD TIMES BECOME EXCESSIVE
-        // if (this.state.loading) {
-        //     return (
-        //         <div className="loading">Loading</div>
-        //     )
-        // }
+        if (this.state.loading) {
+            return (
+                <div className="loading">Loading</div>
+            )
+        }
 
         if (this.state.page > 2) {
             this.start = <button className="start-button" onClick={this.firstPage}> Back to start </button>
