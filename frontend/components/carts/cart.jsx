@@ -58,12 +58,11 @@ class Cart extends React.Component {
                 debugger
                 return(
                     <div className="cart-index-item">
+                        <h5 className="cart-item-shop-header">{this.props.users[this.props.products[cartItem.product_id].merchant_id].shop_name}</h5>
 
                         <div className="cart-item-top">
-
                             <div className="cart-item-left">
                                 <div className="cart-item-tile">
-                                    <h5 className="cart-item-shop-header">{this.props.users[this.props.products[cartItem.product_id].merchant_id].shop_name}</h5>
                                     <div className="cart-item-image-box">
                                         <img className="cart-item-img" src={this.props.products[cartItem.product_id].productPictures[0]} alt="" />
                                     </div>
@@ -78,6 +77,11 @@ class Cart extends React.Component {
                                     <option value="1" defaultValue="">1</option>
                                     {this.selectOptions(20)}
                                 </select>
+
+                                <div className="cart-item-prices">
+                                    <span className="cart-item-total-cost">${cartItem.itemPrice}</span>
+                                    <span className="cart-item-unit-cost">(${cartItem.unitPrice} each)</span>
+                                </div>
                             </div>
                          
                         </div>
