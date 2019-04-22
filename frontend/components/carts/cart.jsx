@@ -48,12 +48,45 @@ class Cart extends React.Component {
                     </div>
 
                     <div className="full-cart">
-                        <div className="cart-items">
+                        <div className="cart-items cart-left">
                             
                         </div>
 
-                        <div className="cart-checkout">
-                            {this.props.cart.cartTotal}
+                        <div className="cart-checkout cart-right">
+                            <h4 className="pay-header">How you'll pay</h4>
+
+                            <div className="credit-card-radio-div"> 
+                                <label htmlFor="credit-card" className="credit-card-label">
+                                    <input type="radio" id="credit-card" className="payment-radio" value="credit-card" checked={true} />
+                                    <i className="fab fa-cc-visa payment-fab" />
+                                    <i className="fab fa-cc-mastercard payment-fab"/>
+                                    <i className="fab fa-cc-amex payment-fab"/>
+                                    <i className="fab fa-cc-discover payment-fab"/>
+                                </label>
+                            </div>
+
+                            <div className="paypal-radio-div">
+                                <label htmlFor="paypal" className="credit-card-label">
+                                    <input type="radio" id="paypal" className="payment-radio" value="paypal" checked={false} />
+                                    <i className="fab fa-cc-paypal payment-fab"/>
+                                </label>
+                            </div>
+
+                            <div className="checkout-total">
+
+                                <div className="total-header">
+                                    Total ({ Object.values(this.props.cartItems).length } items)
+                                </div>
+
+                                <div className="total-cost">
+                                    ${this.props.cart.cartTotal}
+                                </div>
+
+                                
+                            
+                            </div>
+
+                            <div className="checkout-button">Proceed to checkout</div>
                         
                         </div>
                     </div>
