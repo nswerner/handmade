@@ -11,7 +11,8 @@ const receiveCart = (payload) => {
         type: RECEIVE_CART,
         cart: payload.cart,
         products: payload.products,
-        cartItems: payload.cartItems
+        cartItems: payload.cartItems,
+        users: payload.users
     })
 }
 

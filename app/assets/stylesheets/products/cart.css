@@ -164,3 +164,14 @@
 }
 
 
+.cart-item-image-box {
+    width: 100%;
+    height: 137px;
+    overflow:hidden;
+}
+
+.cart-item-img {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+}

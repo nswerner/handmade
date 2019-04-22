@@ -49,9 +49,9 @@ class Cart extends React.Component {
                     <div className="cart-index-item">
 
                         <div className="cart-item-top">
-                            {/* <h5 className="cart-item-shop-header">{this.props.users[this.props.products[cartItem.product_id].merchant_id].shop_name}</h5> */}
+                            <h5 className="cart-item-shop-header">{this.props.users[this.props.products[cartItem.product_id].merchant_id].shop_name}</h5>
                             <div className="cart-item-image-box">
-                                <img src={this.props.products[cartItem.product_id].productPictures[0]} alt=""/>
+                                <img className="cart-item-img" src={this.props.products[cartItem.product_id].productPictures[0]} alt=""/>
                             </div>
                         </div>
 
