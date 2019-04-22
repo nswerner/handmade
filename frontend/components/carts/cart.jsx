@@ -41,8 +41,6 @@ class Cart extends React.Component {
         }
     }
 
-
-
     render() {
         let component = null;
         let emptyCart = null;
@@ -52,12 +50,11 @@ class Cart extends React.Component {
         // this.props.users[this.props.products[this.props.cartItems[0].product_id].merchant_id].shop_name
 
         if (Object.values(this.props.cartItems).length > 0) {
-            debugger
 
-            cartItems = this.props.cartItems.map( cartItem => {
-                debugger
+            cartItems = this.props.cartItems.map( (cartItem, idx)  => {
+
                 return(
-                    <div className="cart-index-item">
+                    <div className="cart-index-item" key={idx}>
                         <h5 className="cart-item-shop-header">{this.props.users[this.props.products[cartItem.product_id].merchant_id].shop_name}</h5>
 
                         <div className="cart-item-top">
@@ -94,8 +91,6 @@ class Cart extends React.Component {
                 )
 
             })
-
-            debugger
 
             component = (
                 <div className="cart-component-subwrapper">
