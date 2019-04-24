@@ -39,7 +39,7 @@ export const fetchCartItem = (user, cart, item) => {
 
 //cart is referenced from user so we can only delete items from the users current cart
 export const deleteCartItem = (user, item) => {
-
+    debugger
     return $.ajax({
         method: "DELETE",
         url: `/api/users/${user.id}/carts/${user.cart_id}/cart_items/${item.id}`

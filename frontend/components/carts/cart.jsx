@@ -10,6 +10,7 @@ class Cart extends React.Component {
             cartItems: this.props.cartItems
         }
 
+        debugger
         this.selectOptions = this.selectOptions.bind(this);
         this.cartItemQuantityHandler = this.cartItemQuantityHandler.bind(this);
     }
@@ -97,7 +98,7 @@ class Cart extends React.Component {
                          
                         </div>
 
-                        <div className="cart-item-bottom">
+                        <div className="cart-item-bottom" onClick={() => this.props.deleteCartItem(this.props.currentUser, cartItem)}>
                             Remove from cart
                         </div>
 

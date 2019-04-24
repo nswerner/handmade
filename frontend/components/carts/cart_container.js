@@ -55,7 +55,7 @@ const mdp = dispatch => {
     return({
         fetchCart: (user, id) => dispatch(fetchCart(user, id)),
         fetchCurrentCartID: (user) => dispatch(fetchCurrentCartID(user)),
-        deleteCartItem: (user, id) => dispatch(deleteCartItem(user, id))
+        deleteCartItem: (user, cartItem) => dispatch(deleteCartItem(user, cartItem))
     })
 }
 
