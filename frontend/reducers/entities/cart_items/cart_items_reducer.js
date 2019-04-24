@@ -14,6 +14,7 @@ const CartItemsReducer = (oldState = {}, action) => {
             return newState;
 
         case REMOVE_CART_ITEM:
+            debugger
             delete newState[action.cartItemId];
             return newState;
 

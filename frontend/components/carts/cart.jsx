@@ -29,7 +29,8 @@ class Cart extends React.Component {
     cartItemQuantityHandler(event, cartItem) {
         const value = event.target.value;
         const oldState = this.state.cartItems;
-        let newCartItem = cartItem;
+
+        let newCartItem = merge({}, cartItem);
         newCartItem.quantity = parseInt(value);
         newCartItem.itemPrice = newCartItem.quantity * parseFloat(newCartItem.unitPrice);
         newCartItem.itemPrice = newCartItem.itemPrice.toFixed(2).toString();
@@ -39,14 +40,7 @@ class Cart extends React.Component {
         this.setState({ cartItems: newState });
         this.props.updateCartItem(this.props.currentUser, newCartItem)
             .then( this.props.fetchCart(this.props.currentUser, this.props.currentUser.cart_id));
-        
-
-        ////
-
-
-        // const oldCart = this.props.cart;
-        // let newCart = merge({}, oldCart);
-        // newCart.cartTotal = 
+    
     }
 
     componentDidMount() {
@@ -110,6 +104,7 @@ class Cart extends React.Component {
                          
                         </div>
 
+                            {/* .then(this.props.fetchCart(this.props.currentUser, this.props.currentUser.cart_id))}> */}
                         <div className="cart-item-bottom" onClick={() => this.props.deleteCartItem(this.props.currentUser, cartItem)}>
                             Remove from cart
                         </div>
