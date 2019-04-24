@@ -1,22 +1,41 @@
 import React from 'react';
 import  { Link } from 'react-router-dom';
+import { merge } from 'lodash';
 
 class Cart extends React.Component {
     constructor(props) {
         super(props)
 
-
-        this.selectOptions = this.selectOptions.bind(this);
-    }
-
-    selectOptions(stock) {
-        const options = [];
-
-        for (let idx = 2; idx <= stock; idx += 1) {
-            options.push(<option key={idx} value={`${idx}`}>{idx}</option>);
+        this.state = {
+            cartItems: this.props.cartItems
         }
 
+        debugger
+
+        this.selectOptions = this.selectOptions.bind(this);
+        this.cartItemQuantityHandler = this.cartItemQuantityHandler.bind(this);
+    }
+
+    selectOptions(max) {
+        const options = [];
+
+        for (let idx = 1; idx <= max; idx += 1) {
+            options.push(<option key={idx} value={idx}>{idx}</option>);
+        }
+        
         return options;
+    }
+
+    cartItemQuantityHandler(event, cartItem) {
+        const value = event.target.value;
+        const oldState = this.state.cartItems;
+        let newCartItem = cartItem;
+        newCartItem.quantity = parseInt(value);
+        newCartItem.itemPrice = newCartItem.quantity * parseFloat(newCartItem.unitPrice);
+
+        const newState = merge([], oldState, newCartItem);
+
+        this.setState({ cartItems: newState });
     }
 
     componentDidMount() {
@@ -46,9 +65,6 @@ class Cart extends React.Component {
         let emptyCart = null;
         let cartItems = null;
 
-
-        // this.props.users[this.props.products[this.props.cartItems[0].product_id].merchant_id].shop_name
-
         if (Object.values(this.props.cartItems).length > 0) {
 
             cartItems = this.props.cartItems.map( (cartItem, idx)  => {
@@ -70,8 +86,7 @@ class Cart extends React.Component {
                             </div>
 
                             <div className="cart-item-right">
-                                <select className="quantity-select" type="select">
-                                    <option value="1" defaultValue="">1</option>
+                                <select className="quantity-select" type="select" defaultValue={cartItem.quantity} onChange={() => this.cartItemQuantityHandler(event, cartItem)}>
                                     {this.selectOptions(20)}
                                 </select>
 
