@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Cart from './cart';
 import { fetchCart } from '../../actions/cart_actions';
-import { deleteCartItem } from '../../actions/cart_item_actions';
+import { deleteCartItem, updateCartItem } from '../../actions/cart_item_actions';
 import { fetchCurrentCartID } from '../../actions/session_actions';
 
 
@@ -55,7 +55,8 @@ const mdp = dispatch => {
     return({
         fetchCart: (user, id) => dispatch(fetchCart(user, id)),
         fetchCurrentCartID: (user) => dispatch(fetchCurrentCartID(user)),
-        deleteCartItem: (user, cartItem) => dispatch(deleteCartItem(user, cartItem))
+        deleteCartItem: (user, cartItem) => dispatch(deleteCartItem(user, cartItem)),
+        updateCartItem: (user, cartItem) => dispatch(updateCartItem(user, cartItem))
     })
 }
 

@@ -7,10 +7,11 @@ class Cart extends React.Component {
         super(props)
 
         this.state = {
-            cartItems: this.props.cartItems
+            cartItems: this.props.cartItems,
+            cart: this.props.cart
         }
 
-        debugger
+
         this.selectOptions = this.selectOptions.bind(this);
         this.cartItemQuantityHandler = this.cartItemQuantityHandler.bind(this);
     }
@@ -31,11 +32,21 @@ class Cart extends React.Component {
         let newCartItem = cartItem;
         newCartItem.quantity = parseInt(value);
         newCartItem.itemPrice = newCartItem.quantity * parseFloat(newCartItem.unitPrice);
-        newCartItem.itemPrice = newCartItem.itemPrice.toFixed(2);
+        newCartItem.itemPrice = newCartItem.itemPrice.toFixed(2).toString();
 
         const newState = merge([], oldState, newCartItem);
 
         this.setState({ cartItems: newState });
+        this.props.updateCartItem(this.props.currentUser, newCartItem)
+            .then( this.props.fetchCart(this.props.currentUser, this.props.currentUser.cart_id));
+        
+
+        ////
+
+
+        // const oldCart = this.props.cart;
+        // let newCart = merge({}, oldCart);
+        // newCart.cartTotal = 
     }
 
     componentDidMount() {
@@ -46,6 +57,7 @@ class Cart extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
+        // if an item has been removed length will change, refetch
         if (this.props.cartItems.length !== prevProps.cartItems.length) {
             return this.props.fetchCart(this.props.currentUser, this.props.currentUser.cart_id);
         }

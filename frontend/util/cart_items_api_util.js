@@ -9,6 +9,7 @@ export const createCartItem = (user, cartItems) => {
 }
 
 //cart is referenced from user so we can only update items in the users current cart
+// *cartItems* as opposed to cartItem because thats what controller params are requiring
 export const updateCartItem = (user, cartItems) => {
 
     return $.ajax({
@@ -39,7 +40,6 @@ export const fetchCartItem = (user, cart, item) => {
 
 //cart is referenced from user so we can only delete items from the users current cart
 export const deleteCartItem = (user, item) => {
-    debugger
     return $.ajax({
         method: "DELETE",
         url: `/api/users/${user.id}/carts/${user.cart_id}/cart_items/${item.id}`
