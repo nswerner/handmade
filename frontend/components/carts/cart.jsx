@@ -10,8 +10,6 @@ class Cart extends React.Component {
             cartItems: this.props.cartItems
         }
 
-        debugger
-
         this.selectOptions = this.selectOptions.bind(this);
         this.cartItemQuantityHandler = this.cartItemQuantityHandler.bind(this);
     }
@@ -32,6 +30,7 @@ class Cart extends React.Component {
         let newCartItem = cartItem;
         newCartItem.quantity = parseInt(value);
         newCartItem.itemPrice = newCartItem.quantity * parseFloat(newCartItem.unitPrice);
+        newCartItem.itemPrice = newCartItem.itemPrice.toFixed(2);
 
         const newState = merge([], oldState, newCartItem);
 
