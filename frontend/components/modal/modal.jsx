@@ -22,7 +22,7 @@ class Modal extends React.Component {
         <input className="form-demo" type="submit" value="Demo" onClick={this.handleDemo} />
 
         <p className="session-lorem">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          By signing in or registering, you agree to Handmade's Terms of Use and Privacy Policy. Handmade may send you communications; you may change your preferences in your account settings. 
         </p>
       </div>
 

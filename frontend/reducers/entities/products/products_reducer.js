@@ -1,4 +1,5 @@
 import { RECEIVE_ALL_PRODUCTS, RECEIVE_PRODUCT, REMOVE_PRODUCT } from '../../../actions/product_actions';
+import { RECEIVE_CART } from '../../../actions/cart_actions';
 import { merge } from 'lodash';
 
 
@@ -18,6 +19,10 @@ const ProductsReducer = (oldState = {}, action) => {
 
         case REMOVE_PRODUCT:
             delete newState[action.id];
+            return newState;
+
+        case RECEIVE_CART:
+            newState = merge(newState, action.products)
             return newState;
 
         default: 

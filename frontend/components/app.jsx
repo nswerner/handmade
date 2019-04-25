@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute, ShopRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute, FullPageRoute } from '../util/route_util';
 import Modal from './modal/modal_container';
 import NavBar from './nav_bar/nav_bar_container';
 import Footer from "./footer/footer_container";
@@ -11,6 +11,8 @@ import AddListingForm from './products/create_product_form_container';
 import UpdateListingForm from './products/update_product_form_container';
 import Splash from './splash/splash_container';
 import CreateShop from './products/create_shop_container';
+import Cart from './carts/cart_container';
+
 
 const App = () => (
   <>
@@ -28,7 +30,8 @@ const App = () => (
     </div>
 
     <div className="full-page-view">
-      <ShopRoute path="/shopManager" exact={true} component={ShopManager}/>
+      <FullPageRoute path="/shopManager" exact={true} component={ShopManager}/>
+      <ProtectedRoute path="/myCart" exact={true} component={Cart} />
     </div>
     
     <div className="top-level-container">

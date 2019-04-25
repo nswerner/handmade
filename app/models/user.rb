@@ -22,18 +22,32 @@ class User < ApplicationRecord
 
     attr_reader :password
 
-    validates :session_token, :cart_id, presence: true, uniqueness: true
+    validates :session_token, presence: true, uniqueness: true
     validates :password_digest, presence: true
+    validates :cart_id, uniqueness: true, allow_nil: true
     validates :shop_name, uniqueness: true, allow_nil: true
     validates :password, length: {minimum: 6, allow_nil: true}
 
-    after_initialize :ensure_session_token, :ensure_cart
+    after_initialize :ensure_session_token
 
     has_one_attached :photo
+
     has_many :listed_products,
         class_name: "Product",
         primary_key: :id,
         foreign_key: :merchant_id
+
+    has_many :previous_carts,
+        class_name: "Cart",
+        primary_key: :id,
+        foreign_key: :user_id
+
+    belongs_to :cart,
+        class_name: "Cart",
+        primary_key: :id,
+        foreign_key: :cart_id,
+        optional: true
+    
 
     def password=(password)
         @password = password
@@ -77,11 +91,6 @@ class User < ApplicationRecord
         token
     end
 
-    def ensure_cart
-        # CHANGE THIS WHEN CART CLASS IS CREATED
-        # self.cart_id ||= Cart.create.id
-        self.cart_id ||= rand(1..10000)
-    end
 end
 
 

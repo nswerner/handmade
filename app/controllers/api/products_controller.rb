@@ -1,5 +1,4 @@
 class Api::ProductsController < ApplicationController
-
     # This is where we can incorporate search - Product.where(url_query)
     def index
         if params[:user_id]

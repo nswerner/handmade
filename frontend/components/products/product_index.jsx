@@ -18,7 +18,7 @@ class ProductIndex extends React.Component {
             sliceStart: 0,
             sliceEnd: 12,
             totalPages: null,
-            loading: false
+            loading: true
         }
 
         this.getProducts = this.getProducts.bind(this);
@@ -73,11 +73,12 @@ class ProductIndex extends React.Component {
     render() {
 
         // CHANGE THIS IF LOAD TIMES BECOME EXCESSIVE
-        // if (this.state.loading) {
-        //     return (
-        //         <div className="loading">Loading</div>
-        //     )
-        // }
+        if (this.state.loading) {
+            return (
+                // <div className="loading">Loading</div>
+                null
+            )
+        }
 
         if (this.state.page > 2) {
             this.start = <button className="start-button" onClick={this.firstPage}> Back to start </button>

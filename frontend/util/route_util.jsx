@@ -59,4 +59,4 @@ export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
 
 
-export const ShopRoute = withRouter(connect(mapStateToProps)(Shop));
+export const FullPageRoute = withRouter(connect(mapStateToProps)(Shop));

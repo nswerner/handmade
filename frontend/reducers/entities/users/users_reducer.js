@@ -1,5 +1,6 @@
 import { RECEIVE_CURRENT_USER } from '../../../actions/session_actions';
 import { RECEIVE_ALL_PRODUCTS, RECEIVE_PRODUCT } from '../../../actions/product_actions';
+import { RECEIVE_CART } from '../../../actions/cart_actions';
 import { merge } from 'lodash';
 
 const UsersReducer = (oldState = {}, action) => {
@@ -17,7 +18,11 @@ const UsersReducer = (oldState = {}, action) => {
       return newState;
 
     case RECEIVE_PRODUCT: 
-      newState = merge(newState, action.merchant )
+      newState = merge(newState, action.merchant );
+      return newState;
+
+    case RECEIVE_CART:
+      newState = merge(newState, action.users);
       return newState;
     
     default:

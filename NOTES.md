@@ -102,6 +102,20 @@ NEEDS WORK:
 
     35) Anticipating Very Long Product Titles will overrun the Shop Manager List Items
 
+    36) Back end for cart is extensive, may need to refactor and will certainly need to include error handling. Since the cart show view is so extensive, I don't know that I need all the methods in the CartItemController. 
+        - WILL NEED: CREATE (adds an item to a cart), UPDATE (to change item quantity), DELETE (removes item from a cart) but unsure about show and index since an ajax request to cart will fetch all the data needed to display the cart
+
+    37) Margin in the Shop Manager Index Items only affects the first line of the header text
+
+    38) Shop Manager Cards - The entire card should be a clickable link to the product show page
+
+    39) Red Asterisk to denote required fields
+
+    40) -COMPLETE- USERS CONTROLLER - SHOW IS BREAKING PRODUCTS PAGE
+        -SOLN- ADD LOADING TO STATE THAT RENDERS/ACCESSES NOTHING UNTIL DATA IS PRESENT
+
+    41) Product ID and Cart Item ID indexed so add item twice kicks errors right now, need to UPDATE instead of POST
+
 
 
 

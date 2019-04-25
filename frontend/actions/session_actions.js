@@ -1,4 +1,5 @@
 import * as SessionApiUtil from '../util/session_api_util';
+import * as CartApiUtil from '../util/cart_api_util';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
@@ -45,4 +46,10 @@ export const signOut = () => (dispatch) => {
         errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
+export const fetchCurrentCartID = (user) => dispatch => {
+    return CartApiUtil.fetchCurrentCartID(user)
+        .then( user => {
+            return dispatch(receiveCurrentUser(user))
+        })
+}
 

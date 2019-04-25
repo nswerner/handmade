@@ -4,9 +4,14 @@
 
 .index-item-li {
     width: 15.4%;
+    height: 240px;
     box-sizing: border-box;
-    margin-bottom: 4%;
+    margin-bottom: 2.5%;
     max-height: 3%;
+    min-height: 3%;
+    min-width: 15.4%;
+    margin-left: 5px;
+    margin-right: 12px;
 }
 
 .index-item-li:first-child,
@@ -29,7 +34,7 @@
     margin-right: 0px;
 }
 
-.index-item-li:hover > .item-box > .item-image {
+.index-item-li:hover > .item-box > .pii-image-box {
     transition: 0.2s;
     box-shadow: 1px 1px 7px 1px lightgray;
     /* box-shadow: none|h-offset v-offset blur spread color */
@@ -44,10 +49,17 @@
   width: 100%;
 }
 
+.pii-image-box {
+    height: 165px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
 .item-image {
     width: 100%;
     height: auto;
-    max-height: 135px;
+    min-height: 165px;
 }
 
 .item-title {
