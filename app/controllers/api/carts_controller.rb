@@ -20,9 +20,11 @@ class Api::CartsController < ApplicationController
     def show
         @cart = Cart.where(id: params[:id]).includes(:cart_items, :products)
         @cart = @cart[0]
-
+        
         if @cart
             render 'api/cart/show'
+        else
+            render json: {errors: "No cart was found"}, status: 404
         end
     end
 
