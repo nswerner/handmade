@@ -11,7 +11,7 @@ const CartItemsReducer = (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_CART_ITEM:
-            newState = merge(newState, action.cartItem);
+            newState = merge(newState, action.cartItems.cartItems);
             return newState;
 
         case REMOVE_CART_ITEM:

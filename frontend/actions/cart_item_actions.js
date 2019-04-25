@@ -7,7 +7,7 @@ export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
 // normal action creators
 
 const receiveCartItem = (response) => {
-
+    debugger
     return({
         type: RECEIVE_CART_ITEM,
         cartItem: response.cartItems
