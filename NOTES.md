@@ -114,7 +114,7 @@ NEEDS WORK:
     40) -COMPLETE- USERS CONTROLLER - SHOW IS BREAKING PRODUCTS PAGE
         -SOLN- ADD LOADING TO STATE THAT RENDERS/ACCESSES NOTHING UNTIL DATA IS PRESENT
 
-    41) 
+    41) Product ID and Cart Item ID indexed so add item twice kicks errors right now, need to UPDATE instead of POST
 
 
 

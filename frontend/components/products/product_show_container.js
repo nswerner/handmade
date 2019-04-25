@@ -20,7 +20,8 @@ const msp = (state, ownProps) => {
         productId: productId,
         product: state.entities.products[productId],
         products: state.entities.products,
-        merchant: merchant
+        merchant: merchant,
+        ownProps
     });
 };
 

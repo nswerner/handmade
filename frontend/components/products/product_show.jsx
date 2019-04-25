@@ -54,7 +54,8 @@ class ProductShow extends React.Component {
 
     addToCart() {
         let cartItem = {product_id: this.props.productId, quantity: this.state.selectedQuantity};
-        this.props.createCartItem(this.props.currentUser, cartItem);
+        this.props.createCartItem(this.props.currentUser, cartItem)
+            .then(() => this.props.ownProps.history.push('/myCart'));
     }
 
     render() {
