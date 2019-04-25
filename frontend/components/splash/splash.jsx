@@ -8,12 +8,13 @@ class Splash extends React.Component {
 
 
     render() {
+
         return(
             <div className="splash-box">
-                <img className="handmade-splash" src="https://s3.amazonaws.com/handmade-seeds/handmade_splash.jpg" alt=""/>
+                <img onClick={() => this.props.openModal('signin')} className="handmade-splash" src="https://s3.amazonaws.com/handmade-seeds/handmade_splash.jpg" alt=""/>
                 <br/>
                 <br/>
-                <img className="handmade-subsplash" src="https://s3.amazonaws.com/handmade-seeds/handmade_subsplash.jpg" alt=""/>
+                <img onClick={() => this.props.openModal('signin')} className="handmade-subsplash" src="https://s3.amazonaws.com/handmade-seeds/handmade_subsplash.jpg" alt=""/>
             </div>
         )
     }
