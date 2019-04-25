@@ -7,10 +7,9 @@ export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
 // normal action creators
 
 const receiveCartItem = (response) => {
-    debugger
     return({
         type: RECEIVE_CART_ITEM,
-        cartItem: response.cartItems
+        cartItem: response.cartItems.cartItems
     })
 }
 
@@ -28,7 +27,9 @@ const removeCartItem = (response) => {
 
 export const createCartItem = (user, cartItem) => dispatch => {
     return CartItemsApiUtil.createCartItem(user, cartItem)
-        .then( response => dispatch(receiveCartItem(response)) );
+        .then( response => {
+            dispatch(receiveCartItem(response));
+        } ) 
 }
 
 export const updateCartItem = (user, cartItem) => dispatch => {
