@@ -9,7 +9,8 @@ class Cart extends React.Component {
         this.state = {
             cartItems: this.props.cartItems,
             cart: this.props.cart,
-            loading: true
+            loading: true,
+            payment: "credit"
         }
 
         this.selectOptions = this.selectOptions.bind(this);
@@ -25,6 +26,10 @@ class Cart extends React.Component {
         
         return options;
     }
+
+    // paymentHandler(event) {
+    //     this.setState({payment: })
+    // }
 
     cartItemQuantityHandler(event, cartItem) {
         const value = event.target.value;
@@ -137,7 +142,7 @@ class Cart extends React.Component {
 
                             <div className="credit-card-radio-div"> 
                                 <label htmlFor="credit-card" className="credit-card-label">
-                                    <input type="radio" id="credit-card" className="payment-radio" value="credit-card" checked={true} />
+                                    <input type="radio" id="credit-card" name="payment-radio" className="payment-radio" value="credit-card" defaultChecked={true}/>
                                     <i className="fab fa-cc-visa payment-fab" />
                                     <i className="fab fa-cc-mastercard payment-fab"/>
                                     <i className="fab fa-cc-amex payment-fab"/>
@@ -147,7 +152,7 @@ class Cart extends React.Component {
 
                             <div className="paypal-radio-div">
                                 <label htmlFor="paypal" className="credit-card-label">
-                                    <input type="radio" id="paypal" className="payment-radio" value="paypal" checked={false} />
+                                    <input type="radio" id="paypal" name="payment-radio" className="payment-radio" value="paypal"  />
                                     <i className="fab fa-cc-paypal payment-fab"/>
                                 </label>
                             </div>
