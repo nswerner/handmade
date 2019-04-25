@@ -8,9 +8,9 @@ class Cart extends React.Component {
 
         this.state = {
             cartItems: this.props.cartItems,
-            cart: this.props.cart
+            cart: this.props.cart,
+            loading: true
         }
-
 
         this.selectOptions = this.selectOptions.bind(this);
         this.cartItemQuantityHandler = this.cartItemQuantityHandler.bind(this);
@@ -45,7 +45,7 @@ class Cart extends React.Component {
 
     componentDidMount() {
         this.props.fetchCurrentCartID(this.props.currentUser).then( () => {
-            this.props.fetchCart(this.props.currentUser, this.props.currentUser.cart_id)
+            this.props.fetchCart(this.props.currentUser, this.props.currentUser.cart_id).then(this.setState({loading: false}))
         });
 
     }
@@ -71,10 +71,13 @@ class Cart extends React.Component {
         let emptyCart = null;
         let cartItems = null;
 
+        if (this.state.loading === true) {
+            return null;
+        }
+
         if (Object.values(this.props.cartItems).length > 0) {
 
             cartItems = this.props.cartItems.map( (cartItem, idx)  => {
-
                 return(
                     <div className="cart-index-item" key={idx}>
                         <h5 className="cart-item-shop-header">{this.props.users[this.props.products[cartItem.product_id].merchant_id].shop_name}</h5>

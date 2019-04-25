@@ -5,12 +5,15 @@ class ProductShow extends React.Component {
         super(props);
 
         this.state = {
-            selectedPicture: 0
+            selectedPicture: 0,
+            selectedQuantity: 1
         }
 
         this.product = null;
         this.selectOptions = this.selectOptions.bind(this);
         this.picturesArray = this.picturesArray.bind(this);
+        this.handleQuantitySelect = this.handleQuantitySelect.bind(this);
+        this.addToCart = this.addToCart.bind(this);
     }
 
     componentDidMount() {
@@ -27,11 +30,15 @@ class ProductShow extends React.Component {
     selectOptions(stock) {
         const options = [];
 
-        for (let idx = 2; idx <= stock; idx += 1) {
-            options.push(<option key={idx} value={`${idx}`}>{idx}</option>);
+        for (let idx = 1; idx <= stock; idx += 1) {
+            options.push(<option key={idx} value={idx}>{idx}</option>);
         }
 
         return options;
+    }
+
+    handleQuantitySelect(event) {
+        this.setState({selectedQuantity: parseInt(event.target.value)});
     }
 
     picturesArray() {
@@ -43,6 +50,11 @@ class ProductShow extends React.Component {
         }
     
         return pictures;
+    }
+
+    addToCart() {
+        let cartItem = {product_id: this.props.productId, quantity: this.state.selectedQuantity};
+        this.props.createCartItem(this.props.currentUser, cartItem);
     }
 
     render() {
@@ -98,14 +110,13 @@ class ProductShow extends React.Component {
                                 <label className="quantity-label">Quantity:</label>
                         
                                 {/* CHANGE THIS TO ACCOUNT FOR ACTUAL PRODUCT STOCK */}
-                                <select className="quantity-select" type="select">
-                                    <option value="1" defaultValue="">1</option>
+                                <select className="quantity-select" type="select" defaultValue={1} onChange={() => this.handleQuantitySelect(event)}>
                                     {this.selectOptions(20)}
                                 </select>
 
                             </div>
                             <button className="buy-now">Buy it now</button>
-                            <button className="black-button cart-add">Add to Cart</button>
+                            <button className="black-button cart-add" onClick={this.addToCart}>Add to Cart</button>
 
                             {/* CHANGE THIS WHEN SHOPPING CART ITEMS IS POPULATED */}
                             {/* <span className="demand"><i className="fas fa-shopping-cart"></i>Other people want this. </span> */}

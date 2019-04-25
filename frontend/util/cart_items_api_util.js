@@ -1,6 +1,5 @@
 //cart is referenced from user so we can only add items to the users current cart
 export const createCartItem = (user, cartItems) => {
-
     return $.ajax({
         method: "POST",
         url: `/api/users/${user.id}/carts/${user.cart_id}/cart_items`,

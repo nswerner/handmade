@@ -1,6 +1,7 @@
 import { RECEIVE_CART_ITEM, REMOVE_CART_ITEM } from '../../../actions/cart_item_actions';
 import { RECEIVE_CART } from '../../../actions/cart_actions';
 import { merge } from 'lodash';
+import { LOGOUT_CURRENT_USER } from '../../../actions/session_actions';
 
 
 const CartItemsReducer = (oldState = {}, action) => {
@@ -14,13 +15,15 @@ const CartItemsReducer = (oldState = {}, action) => {
             return newState;
 
         case REMOVE_CART_ITEM:
-            debugger
             delete newState[action.cartItemId];
             return newState;
 
         case RECEIVE_CART:
             newState = merge(newState, action.cartItems);
             return newState;
+
+        case LOGOUT_CURRENT_USER:
+            return {};
 
         default:
             return oldState;
