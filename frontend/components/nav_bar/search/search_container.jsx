@@ -2,9 +2,11 @@ import { connect } from "react-redux";
 import Search from './search';
 
 const msp = (state) => {
-    
-    return({
+    const allProducts = state.entities.products;
 
+
+    return({
+        allProducts
     });
 };
 
