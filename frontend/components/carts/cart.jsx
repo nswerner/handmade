@@ -144,13 +144,8 @@ class Cart extends React.Component {
                             </div>
 
                             <div className="credit-card-radio-div"> 
-<<<<<<< HEAD
-                                <label htmlFor="credit-card" className="credit-card-label">
-                                    <input type="radio" id="credit-card" name="payment-radio" className="payment-radio" value="credit-card" defaultChecked={true}/>
-=======
                                 <label htmlFor="credit-card"  className="credit-card-label">
                                     <input type="radio" id="credit-card" name="payment-radio" className="payment-radio" value="credit-card" defaultChecked={true} />
->>>>>>> cart
                                     <i className="fab fa-cc-visa payment-fab" />
                                     <i className="fab fa-cc-mastercard payment-fab"/>
                                     <i className="fab fa-cc-amex payment-fab"/>
@@ -160,11 +155,7 @@ class Cart extends React.Component {
 
                             <div className="paypal-radio-div">
                                 <label htmlFor="paypal" className="credit-card-label">
-<<<<<<< HEAD
-                                    <input type="radio" id="paypal" name="payment-radio" className="payment-radio" value="paypal"  />
-=======
                                     <input type="radio" id="paypal" name="payment-radio" className="payment-radio" value="paypal" />
->>>>>>> cart
                                     <i className="fab fa-cc-paypal payment-fab"/>
                                 </label>
                             </div>
