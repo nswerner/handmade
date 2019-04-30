@@ -25,7 +25,7 @@ class Api::CartItemsController < ApplicationController
     end
 
     def index
-        @cart_items = CartItems.where(cart_id: params[:cart_id])
+        @cart_items = CartItem.where(cart_id: params[:cart_id])
         render 'api/cart_items/index'
     end
 
