@@ -3,18 +3,29 @@ import Search from './search';
 import { filterProducts } from '../../../actions/product_actions';
 
 const msp = (state) => {
-    const allProducts = state.entities.products;
+    const storeProducts = state.entities.products;
+    let allProducts;
 
+    debugger
+    
+    if (Object.keys(state.entities.products).length >= 23) {
+        allProducts = state.entities.products;
 
-    return({
-        allProducts
-    });
+        return ({
+            storeProducts,
+            allProducts
+        })
+
+    }  else 
+        return({
+            storeProducts,
+        });
 };
 
 const mdp = (dispatch) => {
     
     return({
-        filterProducts: (currentlyDisplayed) => dispatch(filterProducts(currentlyDisplayed))
+        filterProducts: (currentlyDisplayed) => dispatch(filterProducts(currentlyDisplayed)),
     });
 };
 
