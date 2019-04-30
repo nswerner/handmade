@@ -14,7 +14,6 @@ const receiveCartItem = (response) => {
 }
 
 const removeCartItem = (response) => {
-
     return({
         type: REMOVE_CART_ITEM,
         cartItemId: Object.keys(response.cartItems)

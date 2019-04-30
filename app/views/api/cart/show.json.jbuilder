@@ -34,7 +34,6 @@ end
 ###################################################
 
 
-
 json.cart do
 
     cart_item_ids = @cart.cart_items.map { |item| item.id }

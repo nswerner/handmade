@@ -14,7 +14,7 @@ ActiveRecord::Base.transaction do
     User.destroy_all
 
     user1 = User.create!({email: "handForged@email.com", password: "handf0rged", shop_name: "Hand Forged", gender: "male", location: "California, USA", about: "Creating things is a passion of mine. I've always had a passion for forging. One day I found a meteorite outside our family home and decided to make a ring out of it. The feedback was tremendous and now, I'm fortunate to say I'm one of the largest producers of meteorite forged goods in the United States!", favorite_material: "meteorite", birthday: Date.new(1990, 4, 30)})
-    user2 = User.create!({email: "winter_is_coming@email.com" ,password: "agirlwithnoname", shop_name: "Winter is Coming"})
+    user2 = User.create!({email: "winter_is_coming@email.com", password: "agirlwithnoname", shop_name: "Winter is Coming"})
     user3 = User.create!({email: "favorite_waterways@email.com", password: "hudsonBay", shop_name: "Favorite Waterways"})
     user4 = User.create!({email: "fStopFitz@email.com", password: "black&white", shop_name: "Contrast Photography"})
     user5 = User.create!({email: "StyleLife@email.com", password: "100cotton", shop_name: "Soft Threads"})
@@ -28,7 +28,11 @@ ActiveRecord::Base.transaction do
     User.create!({email: "test", password: "password"})
     User.create!({email: "test@email.com", password: "password"})
     User.create!({email: "test@test.com", password: "password"})
+
     demo_user = User.create!({email: "demo@email.com", password: "demopassword", shop_name: "Demo Shop"})
+    demo_cart = Cart.create!({user_id: demo_user.id})
+    demo_user.cart_id = demo_cart.id
+    demo_user.save!
 
     ########
 
@@ -37,7 +41,7 @@ ActiveRecord::Base.transaction do
     product = Product.new({
         title: "Meteorite Ring", 
         description: "All of our rings are made from scientifically verified meteorites. Show your special someone just how special they are to you with a one of a kind meteorite ring!", 
-        price: 4699.97,
+        price: 1699.97,
         merchant_id: user1.id
     })
 
