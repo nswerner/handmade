@@ -50,7 +50,7 @@
 }
 
 .pii-image-box {
-    height: 195px;
+    height: 190px;
     width: 100%;
     overflow: hidden;
     margin-bottom: 5px;
@@ -59,7 +59,7 @@
 .item-image {
     width: 100%;
     height: auto;
-    min-height: 195px;
+    min-height: 190px;
 }
 
 .item-title {

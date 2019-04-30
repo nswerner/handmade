@@ -39,7 +39,7 @@ class Cart extends React.Component {
 
         this.setState({ cartItems: newState });
         this.props.updateCartItem(this.props.currentUser, newCartItem)
-            .then( this.props.fetchCart(this.props.currentUser, this.props.currentUser.cart_id));
+            .then(this.props.fetchCart(this.props.currentUser, this.props.currentUser.cart_id));
     
     }
 

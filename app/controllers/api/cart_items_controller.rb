@@ -8,6 +8,8 @@ class Api::CartItemsController < ApplicationController
             @cart_item
             @product = Product.find_by(id: @cart_item.product_id)
             render 'api/cart_items/show'
+        else 
+            render json: {"errors": [@cart_item.errors.full_messages]}
         end
     end
 
