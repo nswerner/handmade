@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
         unless @user.is_a?(Array)
             login(@user)
             ensure_cart
-            render 'api/users/show'
+            render 'api/users/private_show'
         else
             render json: @user, status: 401
         end

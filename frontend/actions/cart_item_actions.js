@@ -7,7 +7,6 @@ export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
 // normal action creators
 
 const receiveCartItem = (response) => {
-
     return({
         type: RECEIVE_CART_ITEM,
         cartItem: response.cartItems
@@ -15,7 +14,6 @@ const receiveCartItem = (response) => {
 }
 
 const removeCartItem = (response) => {
-
     return({
         type: REMOVE_CART_ITEM,
         cartItemId: Object.keys(response.cartItems)

@@ -5,6 +5,8 @@ class Api::CartItemsController < ApplicationController
         @cart_item.cart_id = params[:cart_id]
 
         if @cart_item.save
+            @cart_item
+            @product = Product.find_by(id: @cart_item.product_id)
             render 'api/cart_items/show'
         end
     end
@@ -14,6 +16,7 @@ class Api::CartItemsController < ApplicationController
 
         if @cart_item
             if @cart_item.update(cart_item_params)
+                @product = Product.find_by(id: @cart_item.product_id)
                 render 'api/cart_items/show'
             end
         end
@@ -26,6 +29,7 @@ class Api::CartItemsController < ApplicationController
 
     def show
         @cart_item = CartItem.find_by(id: params[:id])
+        @product = Product.find_by(id: @cart_item.product_id)
         render 'api/cart_items/show'
     end
 
@@ -34,6 +38,7 @@ class Api::CartItemsController < ApplicationController
         
         if @cart_item
             @cart_item.destroy
+            @product = Product.find_by(id: @cart_item.product_id)
             render 'api/cart_items/show'
         end
     end
