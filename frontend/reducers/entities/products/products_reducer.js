@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_PRODUCTS, RECEIVE_PRODUCT, REMOVE_PRODUCT } from '../../../actions/product_actions';
+import { RECEIVE_ALL_PRODUCTS, RECEIVE_PRODUCT, REMOVE_PRODUCT, FILTER_PRODUCTS } from '../../../actions/product_actions';
 import { RECEIVE_CART } from '../../../actions/cart_actions';
 import { merge } from 'lodash';
 
@@ -24,6 +24,9 @@ const ProductsReducer = (oldState = {}, action) => {
         case RECEIVE_CART:
             newState = merge(newState, action.products)
             return newState;
+
+        case FILTER_PRODUCTS:
+            return action.products;
 
         default: 
             return oldState;

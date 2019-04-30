@@ -4,6 +4,7 @@ export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT";
 export const RECEIVE_ALL_PRODUCTS = "RECEIVE_ALL_PRODUCTS";
 export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
 export const RECEIVE_PRODUCT_ERRORS = "RECEIVE_PRODUCT_ERRORS";
+export const FILTER_PRODUCTS = "FILTER_PRODUCTS";
 
 // normal action creators
 
@@ -33,6 +34,11 @@ const removeProduct = (response) => {
 const receiveErrors = (errors) => ({
     type: RECEIVE_PRODUCT_ERRORS,
     errors
+})
+
+const filterProductsAction = (currentlyDisplayed) => ({
+    type: FILTER_PRODUCTS,
+    products: currentlyDisplayed
 })
 
 
@@ -76,4 +82,8 @@ export const deleteProduct = (id) => (dispatch) => {
             return dispatch(removeProduct(response)),
         error => dispatch(receiveErrors(error.responseJSON))
         });
+}
+
+export const filterProducts = (currentlyDisplayed) => (dispatch) => {
+    return dispatch(filterProductsAction(currentlyDisplayed)), error => dispatch(receiveErrors(error.responseJSON))
 }

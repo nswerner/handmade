@@ -13,16 +13,20 @@ class Search extends React.Component {
         this.handleInput = this.handleInput.bind(this);
     }
 
-
-    handleInput(event) {
-        debugger
-        let filteredProducts = _.filter(this.props.allProducts, product => product.title.includes(event.target.value) || product.description.includes(event.target.value) )
-        this.setState({searchTerm: event.target.value, currentlyDisplayed: filteredProducts})
-    }
     
 
+
+    handleInput(event) {
+        let filteredProducts = _.filter(this.props.allProducts, product => product.title.toLowerCase().includes(event.target.value.toLowerCase()));
+        this.setState({searchTerm: event.target.value, currentlyDisplayed: filteredProducts});
+        this.props.filterProducts(filteredProducts);
+    }
+    
+    componentDidUpdate(prevProps, prevState) {
+        
+    }
+
     render() {
-        debugger
         return(
             <div className="search-bar-and-button">
                 <input onChange={this.handleInput} value={this.state.searchTerm} className="search-bar" type="search"/>
