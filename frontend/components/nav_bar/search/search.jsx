@@ -14,10 +14,14 @@ class Search extends React.Component {
 
 
     handleInput(event) {
-        debugger
         let filteredProducts = _.filter(this.allProducts, product => product.title.toLowerCase().includes(event.target.value.toLowerCase()));
-        this.setState({searchTerm: event.target.value, currentlyDisplayed: filteredProducts});
-        this.props.filterProducts(filteredProducts);
+        let filteredProductObject = {};
+        for (let idx = 0; idx < filteredProducts.length; idx += 1) {
+            filteredProductObject[filteredProducts[idx].id] = filteredProducts[idx];
+        }
+        
+        this.setState({searchTerm: event.target.value, currentlyDisplayed: filteredProductObject});
+        this.props.filterProducts(filteredProductObject);
     }
     
     componentDidUpdate(prevProps, prevState) {
@@ -27,7 +31,6 @@ class Search extends React.Component {
     }
 
     render() {
-        debugger
         return(
             <div className="search-bar-and-button">
                 <input onChange={this.handleInput} value={this.state.searchTerm} className="search-bar" type="search"/>

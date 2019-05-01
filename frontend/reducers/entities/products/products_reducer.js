@@ -26,7 +26,7 @@ const ProductsReducer = (oldState = {}, action) => {
             return newState;
 
         case FILTER_PRODUCTS:
-            return action.products;
+            return merge({}, action.products);
 
         default: 
             return oldState;
