@@ -9,10 +9,10 @@ const msp = (state) => {
     let allProducts;
     let searchTerm;
 
-    if (state.ui.search) {
-        searchTerm = state.ui.search;
-    } else {
+    if (state.ui.search === null) {
         searchTerm = "";
+    } else {
+        searchTerm = state.ui.search;
     }
 
     if (Object.keys(state.entities.products).length >= 23) {
@@ -21,13 +21,13 @@ const msp = (state) => {
         return ({
             storeProducts,
             allProducts,
-            searchTerm: state.ui.search
+            searchTerm: searchTerm
         })
 
     }  else { 
         return({
             storeProducts,
-            searchTerm: state.ui.search
+            searchTerm: searchTerm
         });
     }
 };

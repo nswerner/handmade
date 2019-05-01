@@ -87,7 +87,7 @@ class Search extends React.Component {
     render() {
         return(
             <div className="search-bar-and-button">
-                <input onKeyPress={this.handleKeyPress} onChange={this.handleInput} value={this.state.searchTerm} className="search-bar" type="search"/>
+                <input onKeyPress={this.handleKeyPress} onChange={this.handleInput} value={this.props.searchTerm} className="search-bar" type="search"/>
                 <button  onClick={this.handleClick} className="search-button">Search</button>
             </div>
         )

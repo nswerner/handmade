@@ -1,7 +1,6 @@
 import React from "react";
 import ProductIndexItem from "./product_index_items";
 
-
 // SOME NOTES - 
     // NEED TO ADD LOGIC FOR FIRST AND LAST PAGE STOPS
     // NEED TO STOP THE GETPRODUCTS CALL WHEN STATE IS FULLY LOADED
@@ -86,7 +85,15 @@ class ProductIndex extends React.Component {
             this.start = null;
         } 
 
-        this.productArray = Object.values(this.props.products);
+
+        let filteredProducts = _.filter(this.props.products, product => product.title.toLowerCase().includes(this.props.searchTerm));
+        let filteredProductObject = {};
+        for (let idx = 0; idx < filteredProducts.length; idx += 1) {
+            filteredProductObject[filteredProducts[idx].id] = filteredProducts[idx];
+        }
+
+
+        this.productArray = Object.values(filteredProductObject);
         this.productsSlice = this.productArray.slice(this.state.sliceStart, this.state.sliceEnd);
 
         this.products = this.productsSlice.map( product => {
