@@ -12,7 +12,6 @@ class Search extends React.Component {
         this.handleInput = this.handleInput.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
-        // this.nav = this.nav.bind(this);
     }
 
     handleClick(event) {
@@ -39,11 +38,6 @@ class Search extends React.Component {
             this.props.history.push('/products');
             this.props.filterProducts(filteredProductObject);
             document.querySelector('.search-button').click();
-            // async nav() {
-            //     this.props.history.push("/products")
-            // }
-
-            // nav().then(this.props.filterProducts(filteredProductObject));
         }
     }
 
@@ -64,24 +58,11 @@ class Search extends React.Component {
             this.props.filterProducts(filteredProductObject);
         }
     }
-
-    // componentDidMount(prevProps, prevState) {
-    //     this.handleNavigation(prevProps);
-    // }
     
     componentDidUpdate(prevProps, prevState) {
         if (this.props.allProducts && Object.keys(this.props.allProducts).length >= 23) {
             this.allProducts = this.props.allProducts;
         }
-
-        // if (this.props.location.pathname === "/products") {
-        //     let filteredProducts = _.filter(this.allProducts, product => product.title.toLowerCase().includes(event.target.value.toLowerCase()));
-        //     let filteredProductObject = {};
-        //     for (let idx = 0; idx < filteredProducts.length; idx += 1) {
-        //         filteredProductObject[filteredProducts[idx].id] = filteredProducts[idx];
-        //     }
-        //     this.props.filterProducts(filteredProductObject);
-        // }
     }
 
     render() {
