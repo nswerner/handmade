@@ -1,13 +1,7 @@
 import React from "react";
 import ProductIndexItem from "./product_index_items";
 
-// SOME NOTES - 
-    // NEED TO ADD LOGIC FOR FIRST AND LAST PAGE STOPS
-    // NEED TO STOP THE GETPRODUCTS CALL WHEN STATE IS FULLY LOADED
-
-    // REFACTOR PAGES USING CONTROLLER KAMINARI BUILT IN METHODS AND PASS AS PROPS
  
-
 class ProductIndex extends React.Component {
     constructor(props) {
         super(props);
@@ -71,10 +65,8 @@ class ProductIndex extends React.Component {
 
     render() {
 
-        // CHANGE THIS IF LOAD TIMES BECOME EXCESSIVE
         if (this.state.loading) {
             return (
-                // <div className="loading">Loading</div>
                 null
             )
         }

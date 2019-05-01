@@ -11,7 +11,6 @@ class SessionNav extends React.Component {
             showDropdown: false
         };
 
-        // this.handleDD = this.handleDD.bind(this);
         this.sessionNav = this.sessionNav.bind(this);
         this.showDropdown = this.showDropdown.bind(this);
         this.closeDropdown = this.closeDropdown.bind(this);
@@ -33,10 +32,6 @@ class SessionNav extends React.Component {
     }
 
 
-    // handleDD() {
-    //     this.state.showDropdown ? this.setState({ showDropdown: false }) : this.setState({ showDropdown: true });
-    // }
-
     sessionNav() {
         if (this.props.currentUser) {
             
@@ -52,7 +47,6 @@ class SessionNav extends React.Component {
                 this.manager = <Link to="/createShop" className="icon-button store-mngr"> <i className="fas fa-store" /> Shop Manager</Link>
             }
 
-            // CHANGE THIS PROFILE IMAGE TO RENDER THE DEFAULT OR THE USERS PICTURE IF PRESENT
             return (
                 <div className="icon-nav">
                     {this.manager}

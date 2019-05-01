@@ -13,7 +13,6 @@ class SessionForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.handleDemo = this.handleDemo.bind(this);
     }
 
     handleChange(field) {
@@ -30,19 +29,6 @@ class SessionForm extends React.Component {
             return this.props.closeModal();
         });
     }
-
-    // handleDemo(e) {
-    //     if (this.props.formType === "Sign Up") {
-    //         e.stopPropagation();
-    //         e.preventDefault();
-    //     }
-
-    //     const demoUser = this.props.demoUser;
-    //     this.setState({ email: demoUser.email, password: demoUser.password });
-    //     this.props.demoLogin(demoUser).then( () => {
-    //         return this.props.closeModal();
-    //     });
-    // }
 
 
     componentDidUpdate() {
@@ -111,9 +97,6 @@ class SessionForm extends React.Component {
 
                     <br/>
 
-                    {/* <span className="light-gray-horizontal-border">
-                        <label className="or"> OR </label>
-                    </span> */}
                     
                 </form>
             </>

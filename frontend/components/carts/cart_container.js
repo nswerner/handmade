@@ -39,8 +39,6 @@ const msp = (state, ownProps) => {
         users = {};
     }
 
-
-
     return({
         currentUser,
         cart,

@@ -27,16 +27,12 @@ class ProductForm extends React.Component {
             this.setState(prevState => ({
                 pictureFiles: [...prevState.pictureFiles, file ]
             }))
-            // const newPictureFiles = this.state.pictureFiles;
-            // newPictureFiles.push(file);
+
     
             this.setState(prevState => ({
                 pictureURLs: [...prevState.pictureURLs, fileReader.result]
             }))
 
-            // const newPictureURLs = this.state.pictureURLs;
-            // newPictureURLs.push(fileReader.result);
-            // this.setState({ pictureFiles: newPictureFiles, pictureURLs: newPictureURLs });
         }
     }
 
@@ -47,15 +43,6 @@ class ProductForm extends React.Component {
             const file = files[idx];
             const fileReader = new FileReader();
             this.handleFileReader(fileReader, file);
-            // Issue?: inside the fat arrow function, 'this' was fileReader
-            // fileReader.onloadend = () => {
-            //     const newPictureFiles = this.state.pictureFiles;
-            //     newPictureFiles.push(file);
-
-            //     const newPictureURLs = this.state.pictureURLs;
-            //     newPictureURLs.push(fileReader.result);
-            //     this.setState({ pictureFiles: newPictureFiles, pictureURLs: newPictureURLs });
-            // }
             
             fileReader.readAsDataURL(file);
         }
@@ -339,7 +326,6 @@ class ProductForm extends React.Component {
 
                         <div className="right-col">
                             <CurrencyInput className="price-input" prefix="$ " value={this.state.price} onChangeEvent={() => this.handlePriceChange(event)}/>
-                            {/* <input className="price-input" type="number" value={this.state.price} onChange={this.handleChange('price')} />  */}
                         </div>
 
                     </div>

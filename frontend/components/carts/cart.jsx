@@ -39,7 +39,6 @@ class Cart extends React.Component {
 
         this.setState({ cartItems: newState });
         this.props.updateCartItem(this.props.currentUser, newCartItem)
-            // .then(this.props.fetchCart(this.props.currentUser, this.props.currentUser.cart_id));
     
     }
 
@@ -112,7 +111,6 @@ class Cart extends React.Component {
                          
                         </div>
 
-                            {/* .then(this.props.fetchCart(this.props.currentUser, this.props.currentUser.cart_id))}> */}
                         <div className="cart-item-bottom" onClick={() => this.props.deleteCartItem(this.props.currentUser, cartItem)}>
                             Remove from cart
                         </div>

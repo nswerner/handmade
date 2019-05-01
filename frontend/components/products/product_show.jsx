@@ -86,18 +86,9 @@ class ProductShow extends React.Component {
                             {this.pictures}
                         </ul>
 
-                        {/* CHANGE THIS MAYBE A BOX POINTING TO THE USERS PROFILE INSTEAD OF ASKING A ? */}
-
                         <section className="product-description-box">
                             <h3 className="description-header">Description</h3>
-                            {/* <div className="outer-description">
-                                <input type="checkbox" id="readmore-label" />
-                                <div className="inner-description">
-                                    { this.product.description }
-                                </div>
-                                <br/>
-                                <label htmlFor="readmore-label" className="readmore-label">  </label>
-                            </div> */}
+
                             <p className="product-description">{this.product.description}</p>
                         </section>
 
@@ -111,7 +102,6 @@ class ProductShow extends React.Component {
                             <div className="buy-quantity">
                                 <label className="quantity-label">Quantity:</label>
                         
-                                {/* CHANGE THIS TO ACCOUNT FOR ACTUAL PRODUCT STOCK */}
                                 <select className="quantity-select" type="select" defaultValue={1} onChange={() => this.handleQuantitySelect(event)}>
                                     {this.selectOptions(20)}
                                 </select>
@@ -120,17 +110,8 @@ class ProductShow extends React.Component {
                             <button className="buy-now">Buy it now</button>
                             <button className="black-button cart-add" onClick={this.addToCart}>Add to Cart</button>
 
-                            {/* CHANGE THIS WHEN SHOPPING CART ITEMS IS POPULATED */}
-                            {/* <span className="demand"><i className="fas fa-shopping-cart"></i>Other people want this. </span> */}
                         </div>
 
-                        {/* <div className="product-overview-box">
-                            <h3 className="product-overview-h3">Overview</h3>
-                            <p className="overview-paragraph">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut diam quam nulla porttitor. 
-                                Scelerisque varius morbi enim nunc faucibus a pellentesque sit. 
-                            </p>
-                        </div> */}
                         <div className="shipping-returns-box">
                             <h3 className="shipping-returns-h3">Shipping and Returns</h3>
                             <div className="shipping-paragraph-box">

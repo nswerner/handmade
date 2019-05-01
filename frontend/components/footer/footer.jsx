@@ -9,9 +9,7 @@ class Footer extends React.Component {
 
     }
 
-    /* <Link className="footer-personal" to="wwww.hand-made.app">Nicholas Werner</Link> */ 
     render () {
-        // CHANGE THIS PERSONAL LINK TO LOAD PERSONAL SITE
         return (
             <footer className="footer-box">
                 <div className="footer-box-flex-left">
