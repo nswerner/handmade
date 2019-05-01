@@ -44,6 +44,8 @@ class Cart extends React.Component {
     }
 
     componentDidMount() {
+        this.props.clearSearch();
+
         this.props.fetchCurrentCartID(this.props.currentUser).then( () => {
             this.props.fetchCart(this.props.currentUser, this.props.currentUser.cart_id)
             .then(this.props.fetchProducts())

@@ -32,6 +32,7 @@ class ShopManager extends React.Component {
     }
 
     componentDidMount() {
+        this.props.clearSearch();
         this.props.fetchUserProducts(this.props.currentUser.id);
     }
 

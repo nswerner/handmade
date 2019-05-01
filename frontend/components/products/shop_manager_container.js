@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import ShopManager from './shop_manager';
 import { receiveCurrentUser } from '../../actions/session_actions';
 import { fetchUserProducts, updateProduct, deleteProduct } from '../../actions/product_actions';
+import { clearSearch } from '../../actions/search_actions';
  
 const msp = state => {
     const currentUser = state.entities.users[state.session.id]
@@ -26,7 +27,8 @@ const mdp = (dispatch) => {
         receiveCurrentUser: (user) => dispatch(receiveCurrentUser(user)),
         fetchUserProducts: (userId) => dispatch(fetchUserProducts(userId)),
         updateProduct: (product) => dispatch(updateProduct(product)),
-        removeProduct: (id) => dispatch(deleteProduct(id))
+        removeProduct: (id) => dispatch(deleteProduct(id)),
+        clearSearch: () => dispatch(clearSearch())
     });
 };
 

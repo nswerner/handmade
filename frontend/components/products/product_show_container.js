@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import ProductShow from './product_show';
 import { fetchProduct } from '../../actions/product_actions';
 import { createCartItem } from '../../actions/cart_item_actions';
+import { clearSearch } from '../../actions/search_actions';
 
 
 const msp = (state, ownProps) => {
@@ -29,7 +30,8 @@ const mdp = (dispatch) => {
 
     return({
         fetchProduct: (id) => dispatch(fetchProduct(id)),
-        createCartItem: (user, cartItem) => dispatch(createCartItem(user, cartItem))
+        createCartItem: (user, cartItem) => dispatch(createCartItem(user, cartItem)),
+        clearSearch: () => dispatch(clearSearch())
     });
 };
 

@@ -4,6 +4,7 @@ import { fetchCart } from '../../actions/cart_actions';
 import { deleteCartItem, updateCartItem } from '../../actions/cart_item_actions';
 import { fetchCurrentCartID } from '../../actions/session_actions';
 import { fetchProducts } from '../../actions/product_actions';
+import { clearSearch } from '../../actions/search_actions';
 
 
 const msp = (state, ownProps) => {
@@ -58,7 +59,8 @@ const mdp = dispatch => {
         fetchCurrentCartID: (user) => dispatch(fetchCurrentCartID(user)),
         deleteCartItem: (user, cartItem) => dispatch(deleteCartItem(user, cartItem)),
         updateCartItem: (user, cartItem) => dispatch(updateCartItem(user, cartItem)),
-        fetchProducts: () => dispatch(fetchProducts())
+        fetchProducts: () => dispatch(fetchProducts()),
+        clearSearch: () => dispatch(clearSearch())
     })
 }
 

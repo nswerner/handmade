@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import CreateShop from './create_shop';
 import { withRouter } from 'react-router-dom';
 import { receiveCurrentUser } from '../../actions/session_actions';
-
+import { clearSearch } from '../../actions/search_actions';
 
 const msp = state => {
     const currentUser = state.entities.users[state.session.id]
@@ -23,7 +23,8 @@ const msp = state => {
 const mdp = (dispatch) => {
 
     return ({
-        receiveCurrentUser: (user) => dispatch(receiveCurrentUser(user))
+        receiveCurrentUser: (user) => dispatch(receiveCurrentUser(user)),
+        clearSearch: () => dispatch(clearSearch())
     });
 };
 
