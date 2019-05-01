@@ -45,7 +45,9 @@ class Cart extends React.Component {
 
     componentDidMount() {
         this.props.fetchCurrentCartID(this.props.currentUser).then( () => {
-            this.props.fetchCart(this.props.currentUser, this.props.currentUser.cart_id).then(this.setState({loading: false}))
+            this.props.fetchCart(this.props.currentUser, this.props.currentUser.cart_id)
+            .then(this.props.fetchProducts())
+            .then(this.setState({loading: false}))
         });
 
     }
@@ -76,7 +78,7 @@ class Cart extends React.Component {
             return null;
         }
 
-        if (Object.values(this.props.cartItems).length > 0) {
+        if (Object.values(this.props.cartItems).length > 0 && Object.values(this.props.products).length >= Object.values(this.props.cartItems).length) {
 
             cartItems = this.props.cartItems.map( (cartItem, idx)  => {
                 return(
