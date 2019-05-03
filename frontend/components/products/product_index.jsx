@@ -78,7 +78,7 @@ class ProductIndex extends React.Component {
         } 
 
 
-        let filteredProducts = _.filter(this.props.products, product => product.title.toLowerCase().includes(this.props.searchTerm));
+        let filteredProducts = _.filter(this.props.products, product => product.title.toLowerCase().includes(this.props.searchTerm.toLowerCase()));
         let filteredProductObject = {};
         for (let idx = 0; idx < filteredProducts.length; idx += 1) {
             filteredProductObject[filteredProducts[idx].id] = filteredProducts[idx];
