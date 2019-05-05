@@ -6,7 +6,7 @@ class Search extends React.Component {
 
         this.state = {
             currentlyDisplayed: this.props.storeProducts,
-            searchTerm: this.props.searchTerm
+            searchTerm: this.props.searchTerm,
         }
 
         this.handleInput = this.handleInput.bind(this);
@@ -15,6 +15,13 @@ class Search extends React.Component {
     }
 
     handleClick(event) {
+
+        if (this.props.loggedIn === false) {
+            this.props.openModal();
+            return;
+        }
+
+
         let filteredProducts = _.filter(this.allProducts, product => product.title.toLowerCase().includes(event.target.value.toLowerCase()));
         let filteredProductObject = {};
         for (let idx = 0; idx < filteredProducts.length; idx += 1) {
@@ -26,7 +33,15 @@ class Search extends React.Component {
     }
 
     handleKeyPress(event) {
+
+
         if (event.key === "Enter") {
+
+            if (this.props.loggedIn === false) {
+                this.props.openModal();
+                return;
+            }
+
             let filteredProducts = _.filter(this.allProducts, product => product.title.toLowerCase().includes(event.target.value.toLowerCase()));
             let filteredProductObject = {};
 
@@ -37,7 +52,6 @@ class Search extends React.Component {
 
             this.props.history.push('/products');
             this.props.filterProducts(filteredProductObject);
-            document.querySelector('.search-button').click();
         }
     }
 
