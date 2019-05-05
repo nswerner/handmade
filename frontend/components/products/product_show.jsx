@@ -107,7 +107,7 @@ class ProductShow extends React.Component {
                                 </select>
 
                             </div>
-                            <button className="buy-now">Buy it now</button>
+                            {/* <button className="buy-now">Buy it now</button> */}
                             <button className="black-button cart-add" onClick={this.addToCart}>Add to Cart</button>
 
                         </div>

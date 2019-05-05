@@ -69,9 +69,11 @@ class ShopManager extends React.Component {
 
                 return (
                     <li key={idx} className="manager-product-index-item">
-                        <div className="mngr-item-img-box">
-                            <img className="mngr-item-img" src={product.productPictures[0]} />
-                        </div>
+                        <Link to={`/products/${product.id}`}>
+                            <div className="mngr-item-img-box">
+                                <img className="mngr-item-img" src={product.productPictures[0]} />
+                            </div>
+                        </Link>
                         <div className="mngr-item-prod-details">
                             <div className="mngr-item-prod-tite">
                                 <span className="mngr-item-prod-h4">{product.title}</span>

@@ -327,6 +327,10 @@
     overflow:hidden;
 }
 
+.mngr-item-img-box:hover {
+    cursor: pointer;
+}
+
 .mngr-item-img {
     width: 100%;
     height: auto;
@@ -351,6 +355,7 @@
     margin: 5px;
     height: 40px;
     width: 95%;
+    margin-left: 0px;
 }
 
 .mngr-item-prod-h4 {
@@ -360,6 +365,7 @@
     margin-bottom: 10px;
     margin: 5px;
     width: 95%;
+    margin-left: 0px;
 }
 
 
@@ -410,4 +416,12 @@
 
 .remove-listing:focus {
     outline: none;
+}
+
+.link-to-product{
+    z-index: 2;
+}
+
+.link-to-product:hover{
+    cursor: pointer;
 }
