@@ -54,7 +54,7 @@
 .dd-name {
     position: absolute;
     left: 85px;
-    top: 24px;
+    top: 35px;
     text-overflow: ellipsis;
     max-width: 225px;
 }
@@ -76,7 +76,7 @@
 
 .name-link:hover {
     text-decoration-color: black;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .view-profile {
