@@ -23,12 +23,12 @@ class ProfileDropdown extends React.Component {
                         <Link className="view-pro-link" to={`/users/${this.props.currentUser.id}`}>View profile <i className="fa fa-angle-right" aria-hidden="true"></i></Link>
                     </div>
                 </div>
-                <div className="dropdown-list-box">
+                {/* <div className="dropdown-list-box">
                     <ul className="dropdown-list-ul">
                         <li className="purchases-reviews">Purchases and reviews</li>
                         <li className="account-settings">Account settings</li>
                     </ul>
-                </div>
+                </div> */}
                 <div className="sign-out-box">
                     <Link to={'/'} className="pro-dd-signout-button" onClick={this.props.signOut}>Sign Out</Link>
                 </div>

@@ -19,10 +19,9 @@
 
 .profile-dropdown {
     background-color: white;
-    height: 250px;
     width: 250px;
     position: absolute;
-    top: 84px;
+    top: 80px;
     border: 1px solid lightgray;
     z-index: 3;
 }
