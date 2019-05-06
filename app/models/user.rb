@@ -6,7 +6,6 @@
 #  email             :string           not null
 #  password_digest   :string           not null
 #  session_token     :string           not null
-#  cart_id           :integer          not null
 #  shop_name         :string
 #  image_url         :text
 #  gender            :string
@@ -16,6 +15,7 @@
 #  favorite_material :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  cart_id           :integer
 #
 
 class User < ApplicationRecord
@@ -39,6 +39,11 @@ class User < ApplicationRecord
 
     has_many :previous_carts,
         class_name: "Cart",
+        primary_key: :id,
+        foreign_key: :user_id
+
+    has_many :reviews,
+        class_name: "Review",
         primary_key: :id,
         foreign_key: :user_id
 

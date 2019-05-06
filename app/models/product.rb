@@ -19,6 +19,7 @@ class Product < ApplicationRecord
 
 
     has_many_attached :product_pictures
+    has_many :reviews
     belongs_to :merchant,
         class_name: "User",
         primary_key: :id,
