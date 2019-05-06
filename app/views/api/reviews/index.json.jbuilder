@@ -7,7 +7,7 @@ json.reviews do
 end
 
 json.users do
-    @review.each do |review|
+    @reviews.each do |review|
         json.set! review.user_id do
             json.extract! review.user, :id, :email
         end
