@@ -264,7 +264,7 @@ ActiveRecord::Base.transaction do
 
     product = Product.new({
         title: "Metal Wall Art - Geometric Mountain ", 
-        description: "Handshaped metal wall art is sure to bring a contemporary and industrial feel to any space. We a", 
+        description: "Handshaped metal wall art is sure to bring a contemporary and industrial feel to any space.", 
         price: 18.99,
         merchant_id: user2.id
     })

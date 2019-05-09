@@ -14,6 +14,7 @@ class ProductShow extends React.Component {
         this.picturesArray = this.picturesArray.bind(this);
         this.handleQuantitySelect = this.handleQuantitySelect.bind(this);
         this.addToCart = this.addToCart.bind(this);
+        this.filterReviews = this.filterReviews.bind(this);
     }
 
     componentDidMount() {
@@ -60,12 +61,20 @@ class ProductShow extends React.Component {
         this.props.ownProps.history.push('/myCart');
     }
 
+    filterReviews(prodID) {
+        this.reviews = this.props.reviews.filter( review => {
+            debugger
+            review.product_id === prodID
+        })
+    }
+
     render() {
 
         if (!this.props.reviews) {
             this.reviews = null;
         } else {
-            this.reviews = this.props.reviews.map( (review, idx) => {
+            this.filterReviews(this.props.productId);
+            this.reviews = this.reviews.map( (review, idx) => {
                 return(
                     <li className="review-li" key={`review${idx}`}>
                         <div className="review-box">
