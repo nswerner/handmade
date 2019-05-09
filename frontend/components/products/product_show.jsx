@@ -19,6 +19,7 @@ class ProductShow extends React.Component {
     componentDidMount() {
         this.props.clearSearch();
         this.props.fetchProduct(this.props.productId);
+        this.props.fetchReviews(this.props.productId);
     }
 
 
@@ -61,6 +62,33 @@ class ProductShow extends React.Component {
 
     render() {
 
+        if (!this.props.reviews) {
+            debugger
+            this.reviews = null;
+        } else {
+            debugger
+            this.reviews = this.props.reviews.map( (review, idx) => {
+                return(
+                    <li className="review-li" key={`review${idx}`}>
+                        <div className="review-box">
+                            <header className="review-header">
+                                <h3 className="review-email">{this.props.users[review.user_id].email}</h3>
+                                {/* <h4 className="review-date">{review.dateCreated}</h4> */}
+                            </header>
+                            <div className="review-rating">
+                                {review.rating}
+                            </div>
+                            <div className="review-description">
+                                {review.body}
+                            </div>
+                        </div>
+                    </li>
+                )
+            })
+        }
+
+
+
         let content;
 
         if (!(this.props.products[this.props.productId])) {
@@ -90,6 +118,16 @@ class ProductShow extends React.Component {
                             <h3 className="description-header">Description</h3>
 
                             <p className="product-description">{this.product.description}</p>
+                        </section>
+
+                        <section className="product-reviews-box">
+                            <h3 className="reviews-header">Reviews</h3>
+                        
+        
+
+                            <ul className="reviews-ul">
+                                {this.reviews}
+                            </ul>
                         </section>
 
                     </div>
