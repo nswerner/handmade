@@ -63,17 +63,19 @@ class ProductShow extends React.Component {
 
     filterReviews(prodID) {
         this.reviews = this.props.reviews.filter( review => {
-            debugger
-            review.product_id === prodID
+            return review.product_id === parseInt(prodID);
         })
+        debugger
+        return this.reviews;
     }
 
     render() {
 
-        if (!this.props.reviews) {
+        if (this.props.reviews.length === 0) {
             this.reviews = null;
         } else {
-            this.filterReviews(this.props.productId);
+            debugger
+            this.reviews = this.filterReviews(this.props.productId);
             this.reviews = this.reviews.map( (review, idx) => {
                 return(
                     <li className="review-li" key={`review${idx}`}>
