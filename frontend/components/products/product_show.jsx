@@ -63,10 +63,8 @@ class ProductShow extends React.Component {
     render() {
 
         if (!this.props.reviews) {
-            debugger
             this.reviews = null;
         } else {
-            debugger
             this.reviews = this.props.reviews.map( (review, idx) => {
                 return(
                     <li className="review-li" key={`review${idx}`}>
@@ -78,7 +76,7 @@ class ProductShow extends React.Component {
                             <div className="review-rating">
                                 {review.rating}
                             </div>
-                            <div className="review-description">
+                            <div className="review-body">
                                 {review.body}
                             </div>
                         </div>
@@ -122,9 +120,6 @@ class ProductShow extends React.Component {
 
                         <section className="product-reviews-box">
                             <h3 className="reviews-header">Reviews</h3>
-                        
-        
-
                             <ul className="reviews-ul">
                                 {this.reviews}
                             </ul>

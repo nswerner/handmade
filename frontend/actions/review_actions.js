@@ -49,8 +49,8 @@ export const fetchReview = (reviews) => dispatch => {
         .then(response => dispatch(receiveReview(response)));
 }
 
-export const updateProductReview = (reviews) => dispatch => {
-    return ReviewsApiUtil.updateProductReview(reviews)
+export const updateReview = (reviews) => dispatch => {
+    return ReviewsApiUtil.updateReview(reviews)
         .then(response => dispatch(receiveReview(response)));
 }
 
