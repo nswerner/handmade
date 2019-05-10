@@ -68,14 +68,13 @@ class ProductShow extends React.Component {
         return this.reviews;
     }
 
-    render() {
-
+    createReviewLIs() {
         if (this.props.reviews.length === 0) {
             this.reviews = null;
         } else {
             this.reviews = this.filterReviews(this.props.productId);
-            this.reviews = this.reviews.map( (review, idx) => {
-                return(
+            this.reviews = this.reviews.map((review, idx) => {
+                return (
                     <li className="review-li" key={`review${idx}`}>
                         <div className="review-box">
                             <header className="review-header">
@@ -93,9 +92,26 @@ class ProductShow extends React.Component {
                 )
             })
         }
+    }
+
+    createMyReview() {
+
+        for (let idx = 0; idx < this.props.reviews.length; idx += 1) {
+            if (this.props.currentUser.id === this.props.reviews[idx].user_id) {
+               this.myReview = this.reviews[idx];
+               this.reviews.splice(idx, 1);
+               return;
+            }
+        }
+
+        this.myReview = <textarea name="" id="" cols="30" rows="10"></textarea>
+    }
+
+    render() {
 
 
-
+        this.createReviewLIs();
+        this.createMyReview();
         let content;
 
         if (!(this.props.products[this.props.productId])) {
@@ -129,6 +145,10 @@ class ProductShow extends React.Component {
 
                         <section className="product-reviews-box">
                             <h3 className="reviews-header">Reviews</h3>
+                            <div className="review-form">
+                                <h4 className="review-form-header"> My Review </h4>
+                                {this.myReview}
+                            </div>
                             <ul className="reviews-ul">
                                 {this.reviews}
                             </ul>
