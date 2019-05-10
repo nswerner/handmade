@@ -65,7 +65,6 @@ class ProductShow extends React.Component {
         this.reviews = this.props.reviews.filter( review => {
             return review.product_id === parseInt(prodID);
         })
-        debugger
         return this.reviews;
     }
 
@@ -74,7 +73,6 @@ class ProductShow extends React.Component {
         if (this.props.reviews.length === 0) {
             this.reviews = null;
         } else {
-            debugger
             this.reviews = this.filterReviews(this.props.productId);
             this.reviews = this.reviews.map( (review, idx) => {
                 return(

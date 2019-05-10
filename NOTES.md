@@ -26,19 +26,19 @@ NEEDS WORK:
     8) -COMPLETE- Need to properly create horizontal lines that span 100vw
         - IDEA: create thin block element + border that has an id selector and goes 100%vw
 
-    9) Error handing on the session form still doesn't activate a red focus/active on the trouble element
+    9) Error handing on the session form doesn't activate a red focus/active on the trouble element
 
     10) -COMPLETE- Coffee dictionary has a duplicate picture in the seed file
         - changed seed file, will need to reseed to make change
 
     12) ? DEVELOP FULLSIZE PICTURE MODAL ?
 
-    13) SPEND MORE TIME IN SEED DATA 
+    13) -90% COMPLETE (COULD USE BETTER DESCRIPTIONS) SPEND MORE TIME IN SEED DATA 
         - REMOVE UNPROFESSIONAL/BAD PICTURES (or at least make them the second picture)
         - ADD MORE PICTURES
         - CHANGE DADS HAMMER, FAVORITE WATERWAYS DEFAULT
 
-    14) PUT APP ON CUSTOM DOMAIN
+    14) -COMPLETE- PUT APP ON CUSTOM DOMAIN
 
     15) ProductShow component will need revisiting after Review/Shopping Cart components are created
         - Add quantity to Products via migration
@@ -47,10 +47,11 @@ NEEDS WORK:
 
     16) Vertical Overflow of Description
 
-    17) ProductShow CompDidUpdate throws an error when trying to setState of SelectedPicture to 0, even on a promise of the new data coming back
+    17) -COMPLETE- ProductShow CompDidUpdate throws an error when trying to setState of SelectedPicture to 0, even on a promise of the new data coming back
         - error claims to try render an object
     
-    18) User photos
+    18) -COMPLETE- User photos
+        -pass on this for now, come back to it as a bonus feature
 
     19) -COMPLETE- !important - rendering preview of multiple files
         - suspect I'm having an issue in my container but I'm not sure how to pass that information forward.
@@ -75,9 +76,9 @@ NEEDS WORK:
             - PATCH: used to add any photos
             - PUT: used to set exactly how we want (i.e. exclude the deleted product picture)
 
-    24) Need to validate the presence of atleast one picture and render errors
+    24) Need to validate the presence of atleast one picture and render errors in Product Form
 
-    25) Add lorem ipsum or even better, static information, to product show page
+    25) -COMPLETE- Add lorem ipsum or even better, static information, to product show page
 
     26) Need to handle AJAX request error in form in the event that theres no photo
 
@@ -85,38 +86,36 @@ NEEDS WORK:
 
     28) Add a Are you sure? (this action is final) prompt to end listings
 
-    29) subSplash image has Etsy in it still
+    29) -COMPLETE- subSplash image has Etsy in it still
 
-    30) Product Index - one tall image throws the row size for every image
+    30) -COMPLETE- Product Index - one tall image throws the row size for every image
         - Maybe add div around image itself, make image height auto and the surrounding div 11vw with overflow hidden
         - Not sure that works well because it makes the wider images go out of the picture
         - May need logic to decide if image is tall or wide or let users set thumbnail images on listing
 
-    31) App looks slightly shifted to the right
+    31) -COMPLETE- App looks slightly shifted to the right
 
     32) Add first name/ last name to the User model and profile dropdown
 
-    33) Remove Lorem Ipsum on the Product Show Overview Page
+    33) -COMPLETE- Remove Lorem Ipsum on the Product Show Overview Page
 
     34) Will need to Refactor the Shop Manager Header to render based on the selection in the left nav;
 
     35) Anticipating Very Long Product Titles will overrun the Shop Manager List Items
 
-    36) Back end for cart is extensive, may need to refactor and will certainly need to include error handling. Since the cart show view is so extensive, I don't know that I need all the methods in the CartItemController. 
+    36) -COMPLETE- Back end for cart is extensive, may need to refactor and will certainly need to include error handling. Since the cart show view is so extensive, I don't know that I need all the methods in the CartItemController. 
         - WILL NEED: CREATE (adds an item to a cart), UPDATE (to change item quantity), DELETE (removes item from a cart) but unsure about show and index since an ajax request to cart will fetch all the data needed to display the cart
 
-    37) Margin in the Shop Manager Index Items only affects the first line of the header text
+    37) -COMPLETE- Margin in the Shop Manager Index Items only affects the first line of the header text
 
-    38) Shop Manager Cards - The entire card should be a clickable link to the product show page
+    38) -COMPLETE- Shop Manager Cards - The entire card should be a clickable link to the product show page
 
-    39) Red Asterisk to denote required fields
+    39) -COMPLETE- Red Asterisk to denote required fields
 
     40) -COMPLETE- USERS CONTROLLER - SHOW IS BREAKING PRODUCTS PAGE
         -SOLN- ADD LOADING TO STATE THAT RENDERS/ACCESSES NOTHING UNTIL DATA IS PRESENT
 
-    41) Product ID and Cart Item ID indexed so add item twice kicks errors right now, need to UPDATE instead of POST
-
-
+    41) -COMPLETE- Product ID and Cart Item ID indexed so add item twice kicks errors right now, need to UPDATE instead of POST
 
 
  
