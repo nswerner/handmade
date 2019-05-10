@@ -104,7 +104,7 @@ class ProductShow extends React.Component {
             }
         }
 
-        this.myReview = <textarea name="" id="" cols="30" rows="10"></textarea>
+       return this.myReview = <textarea className="review-textarea" id="" cols="30" rows="10"></textarea>
     }
 
     render() {
@@ -140,7 +140,8 @@ class ProductShow extends React.Component {
                         <section className="product-description-box">
                             <h3 className="description-header">Description</h3>
 
-                            <p className="product-description">{this.product.description}</p>
+                            <p className="product-description">{this.product.description} Every product on Handmade is made by real people just like you. 
+                            </p>
                         </section>
 
                         <section className="product-reviews-box">
