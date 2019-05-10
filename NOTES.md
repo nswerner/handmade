@@ -17,20 +17,13 @@ NEEDS WORK:
     - .or class is translated something like %1000;
 -COMPLETE- Need to properly create horizontal lines that span 100vw
     - IDEA: create thin block element + border that has an id selector and goes 100%vw
--OPEN- Error handing on the session form doesn't activate a red focus/active on the trouble element
 -COMPLETE- Coffee dictionary has a duplicate picture in the seed file
     - changed seed file, will need to reseed to make change
--OPEN- ? DEVELOP FULLSIZE PICTURE MODAL ?
 -COMPLETE(90%)- (COULD USE BETTER DESCRIPTIONS) SPEND MORE TIME IN SEED DATA 
     - REMOVE UNPROFESSIONAL/BAD PICTURES (or at least make them the second picture)
     - ADD MORE PICTURES
     - CHANGE DADS HAMMER, FAVORITE WATERWAYS DEFAULT
 -COMPLETE- PUT APP ON CUSTOM DOMAIN
--OPEN- ProductShow component will need revisiting after Review/Shopping Cart components are created
-    - Add quantity to Products via migration
-    - Add quantity to Docs
-    - All of ProductShow could use some refactoring into smaller components, its starting to get unwieldly.
--OPEN- Vertical Overflow of Description
 -COMPLETE- ProductShow CompDidUpdate throws an error when trying to setState of SelectedPicture to 0, even on a promise of the new data coming back
     - error claims to try render an object
 -COMPLETE- User photos
@@ -48,26 +41,16 @@ NEEDS WORK:
     - after I filtered, I did not refactor later code to use the filtered version
 -COMPLETE- Force price have 2 decimal places
     -USED .toFixed(2); right in the display component
--OPEN- Need to implement the ability to remove a picture attachment from product in my update form
-    - idea: boolean in state that defaults false, and returns true if a photo has been deleted
-    - some logic to send two HTML requests in the event that a photo has been deleted
-        - PATCH: used to add any photos
-        - PUT: used to set exactly how we want (i.e. exclude the deleted product picture)
--OPEN- Need to validate the presence of atleast one picture and render errors in Product Form
 -COMPLETE- Add lorem ipsum or even better, static information, to product show page
 -COMPLETE- Need to handle AJAX request error in form in the event that theres no photo
 -COMPLETE- PRODUCTSHOW picture ul is off kilter to the right after heroku push
--OPEN- Add a Are you sure? (this action is final) prompt to end listings
 -COMPLETE- subSplash image has Etsy in it still
 -COMPLETE- Product Index - one tall image throws the row size for every image
     - Maybe add div around image itself, make image height auto and the surrounding div 11vw with overflow hidden
     - Not sure that works well because it makes the wider images go out of the picture
     - May need logic to decide if image is tall or wide or let users set thumbnail images on listing
 -COMPLETE- App looks slightly shifted to the right
--OPEN- Add first name/ last name to the User model and profile dropdown
 -COMPLETE- Remove Lorem Ipsum on the Product Show Overview Page
--OPEN- Will need to Refactor the Shop Manager Header to render based on the selection in the left nav;
--OPEN- Anticipating Very Long Product Titles will overrun the Shop Manager List Items
 -COMPLETE- Back end for cart is extensive, may need to refactor and will certainly need to include error handling. Since the cart show view is so extensive, I don't know that I need all the methods in the CartItemController. 
     - WILL NEED: CREATE (adds an item to a cart), UPDATE (to change item quantity), DELETE (removes item from a cart) but unsure about show and index since an ajax request to cart will fetch all the data needed to display the cart
 -COMPLETE- Margin in the Shop Manager Index Items only affects the first line of the header text
@@ -76,6 +59,23 @@ NEEDS WORK:
 -COMPLETE- USERS CONTROLLER - SHOW IS BREAKING PRODUCTS PAGE
     -SOLN- ADD LOADING TO STATE THAT RENDERS/ACCESSES NOTHING UNTIL DATA IS PRESENT
 -COMPLETE- Product ID and Cart Item ID indexed so add item twice kicks errors right now, need to UPDATE instead of POST
+-OPEN- Error handing on the session form doesn't activate a red focus/active on the trouble element
+-OPEN- ? DEVELOP FULLSIZE PICTURE MODAL ?
+-OPEN- ProductShow component will need revisiting after Review/Shopping Cart components are created
+    - Add quantity to Products via migration
+    - Add quantity to Docs
+    - All of ProductShow could use some refactoring into smaller components, its starting to get unwieldly.
+-OPEN- Vertical Overflow of Description
+-OPEN- Need to implement the ability to remove a picture attachment from product in my update form
+    - idea: boolean in state that defaults false, and returns true if a photo has been deleted
+    - some logic to send two HTML requests in the event that a photo has been deleted
+        - PATCH: used to add any photos
+        - PUT: used to set exactly how we want (i.e. exclude the deleted product picture)
+-OPEN- Need to validate the presence of atleast one picture and render errors in Product Form
+-OPEN- Add a Are you sure? (this action is final) prompt to end listings
+-OPEN- Add first name/ last name to the User model and profile dropdown
+-OPEN- Will need to Refactor the Shop Manager Header to render based on the selection in the left nav;
+-OPEN- Anticipating Very Long Product Titles will overrun the Shop Manager List Items
 
 
  
