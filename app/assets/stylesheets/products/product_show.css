@@ -405,7 +405,6 @@
 
 .review-form {
     list-style:none;
-    border: 1px solid lightgray;
     margin-left: 0px;
     padding-left: 10px;
 }
@@ -425,4 +424,11 @@
     min-height: 50px;
     height: 50px;
     margin: 5px 0;
+}
+
+.my-review {
+    background-color: #FAF9F5;
+    border-radius: 3px;
+    padding: 3px;
+    padding-left: 10px;
 }
