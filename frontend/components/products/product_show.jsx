@@ -112,7 +112,6 @@ class ProductShow extends React.Component {
 
     render() {
 
-
         this.createReviewLIs();
         this.createMyReview();
         let content;
