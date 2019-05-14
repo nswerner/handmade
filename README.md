@@ -5,6 +5,7 @@ Handmade is a clone of Etsy, an online merchant community that allows users to b
 
 Product Index ![ProductIndex](https://github.com/r0ckf0rd/handmade/blob/reviews/app/assets/images/ProductIndex.png)(#) <br/><br/>
 
+<img src="https://github.com/r0ckf0rd/handmade/blob/reviews/app/assets/images/ProductIndex.png" />
 
 
 ## Live
