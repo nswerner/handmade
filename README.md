@@ -5,8 +5,7 @@ Handmade is a clone of Etsy, an online merchant community that allows users to b
 
 Product Index
 <a href="#"><img src="https://github.com/r0ckf0rd/handmade/blob/reviews/app/assets/images/ProductIndex.png" /></a>
-<br />
-<br />
+<br /> <br />
 
 
 ## Live
@@ -116,6 +115,7 @@ createDefaultSquares(number) {
 ```
 
    
-Previously Saved Photos ![PreviouslySavedPhoto](https://github.com/r0ckf0rd/handmade/blob/reviews/app/assets/images/PhotoUploadForm.png) <br/><br/>
+Previously Saved Photos [![PreviouslySavedPhoto](https://github.com/r0ckf0rd/handmade/blob/reviews/app/assets/images/PhotoUploadForm.png)](#) <br/><br/>
 
-Newly Saved Photos ![NewlySavedPhoto](https://github.com/r0ckf0rd/handmade/blob/reviews/app/assets/images/UploadedPhoto.png) <br/><br/>
+Newly Saved Photos [![NewlySavedPhoto](https://github.com/r0ckf0rd/handmade/blob/reviews/app/assets/images/UploadedPhoto.png)](#) <br/><br/>
+
