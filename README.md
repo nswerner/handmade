@@ -3,6 +3,9 @@
 ## About Handmade
 Handmade is a clone of Etsy, an online merchant community that allows users to buy and sell handmade and vintage goods. In the most recent release, site visitors can register an account. Users can view items for sale from other users and list/update products for sale. In the next release, cart functionality will be added.
 
+Product Index ![ProductIndex](https://github.com/r0ckf0rd/handmade/blob/reviews/app/assets/images/ProductIndex.png) <br/><br/>
+
+
 ## Live
 [Handmade](handmade-with-love.herokuapp.com)
 
@@ -110,6 +113,6 @@ createDefaultSquares(number) {
 ```
 
    
-Previously Saved Photos ![PhotoUploadForm](https://github.com/r0ckf0rd/handmade/blob/reviews/app/assets/images/PhotoUploadForm.png) <br/><br/>
+Previously Saved Photos ![PreviouslySavedPhoto](https://github.com/r0ckf0rd/handmade/blob/reviews/app/assets/images/PhotoUploadForm.png) <br/><br/>
 
-Newly Saved Photos ![PhotoUploadForm](https://github.com/r0ckf0rd/handmade/blob/reviews/app/assets/images/UploadedPhoto.png) <br/><br/>
+Newly Saved Photos ![NewlySavedPhoto](https://github.com/r0ckf0rd/handmade/blob/reviews/app/assets/images/UploadedPhoto.png) <br/><br/>
