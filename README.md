@@ -110,4 +110,6 @@ createDefaultSquares(number) {
 ```
 
    
-Photo Upload Form ![PhotoUploadForm](https://github.com/r0ckf0rd/handmade/blob/reviews/app/assets/images/PhotoUploadForm.png) <br/><br/>
+Previously Saved Photos ![PhotoUploadForm](https://github.com/r0ckf0rd/handmade/blob/reviews/app/assets/images/PhotoUploadForm.png) <br/><br/>
+
+Newly Saved Photos ![PhotoUploadForm](https://github.com/r0ckf0rd/handmade/blob/reviews/app/assets/images/UploadedPhoto.png) <br/><br/>
