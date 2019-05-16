@@ -18,12 +18,18 @@ class ProductShow extends React.Component {
         this.filterReviews = this.filterReviews.bind(this);
         this.handeTextArea = this.handleTextArea.bind(this);
         this.postReview = this.postReview.bind(this);
+
+        this.filterReviews();
     }
 
     componentDidMount() {
         this.props.clearSearch();
         this.props.fetchProduct(this.props.productId);
         this.props.fetchReviews(this.props.productId);
+    }
+
+    componentWillUnmount() {
+        this.props.clearReviews();
     }
 
 

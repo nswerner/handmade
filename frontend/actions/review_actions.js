@@ -3,7 +3,7 @@ import * as ReviewsApiUtil from '../util/reviews_api_util';
 export const RECEIVE_REVIEWS = "RECEIVE_CART_ITEM";
 export const REMOVE_REVIEW = "REMOVE_CART_ITEM";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
-
+export const CLEAR_REVIEWS = "CLEAR_REVIEWS";
 
 // normal action creators
 
@@ -27,6 +27,12 @@ const removeReview = (response) => {
     return ({
         type: REMOVE_REVIEW,
         reviewID: Object.keys(response.reviews)
+    })
+}
+
+const clearAllReviews = () => {
+    return ({
+        type: CLEAR_REVIEWS
     })
 }
 
@@ -57,4 +63,8 @@ export const updateReview = (reviews) => dispatch => {
 export const deleteReview = (reviews) => dispatch => {
     return ReviewsApiUtil.deleteReview(reviews)
         .then(response => dispatch(removeReview(response)));
+}
+
+export const clearReviews = () => dispatch => {
+    return dispatch(clearAllReviews());
 }

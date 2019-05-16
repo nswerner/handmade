@@ -3,7 +3,7 @@ import ProductShow from './product_show';
 import { fetchProduct } from '../../actions/product_actions';
 import { createCartItem } from '../../actions/cart_item_actions';
 import { clearSearch } from '../../actions/search_actions';
-import { fetchReviews, fetchReview, createReview, updateReview, deleteReview } from '../../actions/review_actions';
+import { fetchReviews, createReview, updateReview, deleteReview, clearReviews } from '../../actions/review_actions';
 
 
 const msp = (state, ownProps) => {
@@ -38,7 +38,8 @@ const mdp = (dispatch) => {
         fetchReviews: (product_id) => dispatch(fetchReviews(product_id)),
         createReview: (reviews) => dispatch(createReview(reviews)),
         updateReview: (reviews) => dispatch(updateReview(reviews)),
-        deleteReview: (reviews) => dispatch(deleteReview(reviews))
+        deleteReview: (reviews) => dispatch(deleteReview(reviews)),
+        clearReviews: () => dispatch(clearReviews())
     });
 };
 
