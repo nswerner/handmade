@@ -13,8 +13,8 @@ class Api::ReviewsController < ApplicationController
     end
 
     def update
-        @review = Review.find_by(id: params[:id])
-
+        @review = Review.where(user_id: params[:reviews][:user_id]).where(product_id: params[:reviews][:product_id])
+        @review = @review[0]
         if @review
             if @review.update(review_params)
                 @user = User.find_by(id: @review.user_id)

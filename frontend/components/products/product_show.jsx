@@ -7,7 +7,8 @@ class ProductShow extends React.Component {
         this.state = {
             selectedPicture: 0,
             selectedQuantity: 1,
-            reviewBody: ""
+            reviewBody: "",
+            editing: false
         }
 
         this.product = null;
@@ -18,8 +19,9 @@ class ProductShow extends React.Component {
         this.filterReviews = this.filterReviews.bind(this);
         this.handeTextArea = this.handleTextArea.bind(this);
         this.postReview = this.postReview.bind(this);
+        this.toggleEditReview = this.toggleEditReview.bind(this);
 
-        this.filterReviews();
+        this.filterReviews(this.props.productId);
     }
 
     componentDidMount() {
@@ -28,15 +30,14 @@ class ProductShow extends React.Component {
         this.props.fetchReviews(this.props.productId);
     }
 
-    componentWillUnmount() {
-        this.props.clearReviews();
-    }
-
-
     componentDidUpdate(oldProps) {
         if (this.props.match.params.id !== oldProps.match.params.id) {
             this.props.fetchProduct(this.props.match.params.id);
         }
+    }
+
+    componentWillUnmount() {
+        this.props.clearReviews();
     }
 
     selectOptions(stock) {
@@ -55,7 +56,6 @@ class ProductShow extends React.Component {
 
     picturesArray() {
         const pictures = [];
-
         for (let idx = 0; idx < this.product.productPictures.length; idx += 1) {
             const klass = (idx === this.state.selectedPicture) ? "thumbnail-li thumb-selected" : "thumbnail-li"
             pictures.push(<li key={idx} className={klass} onClick={() => this.setState({selectedPicture: idx})}><img className="thumbnail" src={this.product.productPictures[`${idx}`]} alt={`${this.product.title} thumbnail`} /></li>);
@@ -103,24 +103,44 @@ class ProductShow extends React.Component {
         }
     }
 
-    createMyReview() {
+    toggleEditReview() {
+        this.setState({editing: true})
+    }
 
+    modifyReview(event) {
+        this.setState({reviewBody: event.target.value});
+        let review = {};
+        review['id'] = 
+        review['body'] = this.state.reviewBody;
+        review['rating'] = 5;
+        review['product_id'] = parseInt(this.props.productId);
+        review['user_id'] = this.props.currentUser.id;
+        this.props.updateReview(review).then( () => this.setState({editing: false}) )
+    }
+
+    createMyReview() {
         for (let idx = 0; idx < this.props.reviews.length; idx += 1) {
             if (this.props.currentUser.id === this.props.reviews[idx].user_id) {
-               this.myReview = <div className="my-review">
+               this.myReview = 
+                <div className="my-review">
                     <h4 className="review-form-header"> My Review </h4>
                     {this.reviews[idx]}
+                   <button className="edit-review-button" onClick={this.toggleEditReview}><i className="far fa-edit"/></button>
                 </div> 
                this.reviews.splice(idx, 1);
-               return;
             }
         }
 
-       return this.myReview = 
-            <div className="post-review">
-                <textarea className="review-textarea" placeholder="Write your review here" value={this.state.reviewBody} onChange={() => this.handleTextArea(event)} id="" cols="30" rows="10"></textarea>
-                <button className="post-review-button" onClick={this.postReview}>Post Review</button>
-            </div>
+
+        if (this.state.editing === true) {
+            return this.myReview =
+                <div className="post-review">
+                    <textarea className="review-textarea" placeholder={this.state.reviewBody} value={this.state.reviewBody} onChange={() => this.handleTextArea(event)} id="" cols="30" rows="10"></textarea>
+                    <button className="post-review-button" onClick={() => this.modifyReview(event)}>Modify Review</button>
+                </div>
+        } else {
+            return this.myReview;
+        }
     }
 
     handleTextArea(e) {
@@ -131,12 +151,11 @@ class ProductShow extends React.Component {
         let review = {};
         review['body'] = this.state.reviewBody;
         review['rating'] = 5;
-        review['product_id'] = this.props.productId;
+        review['product_id'] = parseInt(this.props.productId);
         review['user_id'] = this.props.currentUser.id;
         this.props.createReview(review);
     }
     
-
     render() {
 
         this.createReviewLIs();
