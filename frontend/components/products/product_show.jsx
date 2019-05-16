@@ -119,7 +119,7 @@ class ProductShow extends React.Component {
        return this.myReview = 
             <div className="post-review">
                 <textarea className="review-textarea" placeholder="Write your review here" value={this.state.reviewBody} onChange={() => this.handleTextArea(event)} id="" cols="30" rows="10"></textarea>
-                <button onClick={this.postReview}>Post Review</button>
+                <button className="post-review-button" onClick={this.postReview}>Post Review</button>
             </div>
     }
 

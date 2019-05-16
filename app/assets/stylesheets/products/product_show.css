@@ -377,7 +377,7 @@
 }
 
 .review-li {
-
+    border-top: 1px solid lightgray;
 }
 
 .review-box {
@@ -386,7 +386,7 @@
 }
 
 .review-header {
-
+    padding-top: 5px;
 }
 
 .review-email {
@@ -396,11 +396,11 @@
 }
 
 .review-rating {
-
+    padding-top: 5px;
 }
 
 .review-body {
-
+    padding-top: 5px;
 }
 
 .review-form {
@@ -431,4 +431,8 @@
     border-radius: 3px;
     padding: 3px;
     padding-left: 10px;
+}
+
+.post-review-button{
+    margin: 8px 0;
 }
