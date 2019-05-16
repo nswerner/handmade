@@ -6,7 +6,8 @@ class ProductShow extends React.Component {
 
         this.state = {
             selectedPicture: 0,
-            selectedQuantity: 1
+            selectedQuantity: 1,
+            reviewBody: ""
         }
 
         this.product = null;
@@ -15,6 +16,8 @@ class ProductShow extends React.Component {
         this.handleQuantitySelect = this.handleQuantitySelect.bind(this);
         this.addToCart = this.addToCart.bind(this);
         this.filterReviews = this.filterReviews.bind(this);
+        this.handeTextArea = this.handleTextArea.bind(this);
+        this.postReview = this.postReview.bind(this);
     }
 
     componentDidMount() {
@@ -107,8 +110,26 @@ class ProductShow extends React.Component {
             }
         }
 
-       return this.myReview = <textarea className="review-textarea" id="" cols="30" rows="10"></textarea>
+       return this.myReview = 
+            <div className="post-review">
+                <textarea className="review-textarea" placeholder="Write your review here" value={this.state.reviewBody} onChange={() => this.handleTextArea(event)} id="" cols="30" rows="10"></textarea>
+                <button onClick={this.postReview}>Post Review</button>
+            </div>
     }
+
+    handleTextArea(e) {
+        this.setState({reviewBody: e.target.value});
+    }
+
+    postReview() {
+        let review = {};
+        review['body'] = this.state.reviewBody;
+        review['rating'] = 5;
+        review['product_id'] = this.props.productId;
+        review['user_id'] = this.props.currentUser.id;
+        this.props.createReview(review);
+    }
+    
 
     render() {
 
@@ -149,7 +170,6 @@ class ProductShow extends React.Component {
                         <section className="product-reviews-box">
                             <h3 className="reviews-header">Reviews</h3>
                             <div className="review-form">
-                                
                                 {this.myReview}
                             </div>
                             <ul className="reviews-ul">
