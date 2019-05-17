@@ -441,3 +441,11 @@
 .post-review-button{
     margin: 8px 0;
 }
+
+.post-review {
+    margin: 5px;
+}
+
+.edit-review-button {
+    margin-bottom: 5px;
+}

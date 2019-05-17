@@ -103,29 +103,15 @@ class ProductShow extends React.Component {
         }
     }
 
-    toggleEditReview() {
-        this.setState({editing: true})
-    }
-
-    modifyReview(event) {
-        this.setState({reviewBody: event.target.value});
-        let review = {};
-        review['id'] = 
-        review['body'] = this.state.reviewBody;
-        review['rating'] = 5;
-        review['product_id'] = parseInt(this.props.productId);
-        review['user_id'] = this.props.currentUser.id;
-        this.props.updateReview(review).then( () => this.setState({editing: false}) )
-    }
-
     createMyReview() {
         for (let idx = 0; idx < this.props.reviews.length; idx += 1) {
             if (this.props.currentUser.id === this.props.reviews[idx].user_id) {
                this.myReview = 
-                <div className="my-review">
+                   <div key={this.props.reviews[idx].id} className="my-review">
                     <h4 className="review-form-header"> My Review </h4>
                     {this.reviews[idx]}
                    <button className="edit-review-button" onClick={this.toggleEditReview}><i className="far fa-edit"/></button>
+                   <button className="delete-review-button" onClick={() => this.deleteReview(parseInt(this.myReview.key))}><i className="far fa-trash-alt" /> </button> 
                 </div> 
                this.reviews.splice(idx, 1);
             }
@@ -137,6 +123,7 @@ class ProductShow extends React.Component {
                 <div className="post-review">
                     <textarea className="review-textarea" placeholder={this.state.reviewBody} value={this.state.reviewBody} onChange={() => this.handleTextArea(event)} id="" cols="30" rows="10"></textarea>
                     <button className="post-review-button" onClick={() => this.modifyReview(event)}>Modify Review</button>
+                   
                 </div>
         } else {
             return this.myReview;
@@ -155,7 +142,30 @@ class ProductShow extends React.Component {
         review['user_id'] = this.props.currentUser.id;
         this.props.createReview(review);
     }
-    
+
+    toggleEditReview() {
+        this.setState({ editing: true })
+    }
+
+    modifyReview(event) {
+        this.setState({ reviewBody: event.target.value });
+        let review = {};
+        review['body'] = this.state.reviewBody;
+        review['rating'] = 5;
+        review['product_id'] = parseInt(this.props.productId);
+        review['user_id'] = this.props.currentUser.id;
+        this.props.updateReview(review).then(() => this.setState({ editing: false }))
+    }
+
+    deleteReview() {
+        let review = {};
+        review['body'] = this.state.reviewBody;
+        review['rating'] = 5;
+        review['product_id'] = parseInt(this.props.productId);
+        review['user_id'] = this.props.currentUser.id;
+        this.props.deleteReview(review).then(() => this.setState({ editing: false }))
+    }
+
     render() {
 
         this.createReviewLIs();

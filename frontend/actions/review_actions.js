@@ -63,8 +63,10 @@ export const updateReview = (reviews) => dispatch => {
 
 export const deleteReview = (reviews) => dispatch => {
     return ReviewsApiUtil.deleteReview(reviews)
-        .then(response => dispatch(removeReview(response)));
-}
+        .then(response => {
+            dispatch(removeReview(response))
+        })
+};
 
 export const clearReviews = () => dispatch => {
     return dispatch(clearAllReviews());

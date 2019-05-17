@@ -44,7 +44,8 @@ class Api::ReviewsController < ApplicationController
     end
 
     def destroy
-        @review = Review.find_by(id: params[:id])
+        @review = Review.where(user_id: params[:reviews][:user_id]).where(product_id: params[:reviews][:product_id])
+        @review = @review[0]
         
         if @review
             @review.destroy
