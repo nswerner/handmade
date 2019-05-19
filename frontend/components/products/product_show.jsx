@@ -121,7 +121,6 @@ class ProductShow extends React.Component {
                         rating={this.state.rating}
                         starRatedColor="black"
                         changeRating={this.changeRating}
-                        numberOfStars={5}
                         name='rating'
                         starDimension="20px"
                         starHoverColor="gold"
@@ -136,10 +135,12 @@ class ProductShow extends React.Component {
                         <div key={this.props.reviews[idx].id} className="my-review">
                             <h4 className="review-form-header"> My Review </h4>
                             {this.reviews[idx]}
-                            <button className="edit-review-button" onClick={() => this.toggleEditReview()}><i className="far fa-edit" /></button>
-                            <button className="delete-review-button" onClick={() => this.deleteReview(parseInt(this.myReview.key))}><i className="far fa-trash-alt" /> </button>
+                            <div className="review-buttons">
+                                <button className="edit-review-button" onClick={() => this.toggleEditReview()}><i className="far fa-edit" /></button>
+                                <button className="delete-review-button" onClick={() => this.deleteReview(parseInt(this.myReview.key))}><i className="far fa-trash-alt" /> </button>
+                            </div>
                         </div>
-                    this.reviews.splice(idx, 1);;
+                    this.reviews.splice(idx, 1);
 
                     return this.myReview
                 }

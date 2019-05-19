@@ -76,6 +76,8 @@ NEEDS WORK:
 -OPEN- Add first name/ last name to the User model and profile dropdown
 -OPEN- Will need to Refactor the Shop Manager Header to render based on the selection in the left nav;
 -OPEN- Anticipating Very Long Product Titles will overrun the Shop Manager List Items
+-OPEN- Editing a Review does not remove the review from this.reviews, and thus renders underneath the form
+-OPEN- Quantity bug in cart
 
 
  
