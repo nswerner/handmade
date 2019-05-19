@@ -101,7 +101,7 @@ class Cart extends React.Component {
                             </div>
 
                             <div className="cart-item-right">
-                                <select className="quantity-select" type="select" defaultValue={cartItem.quantity} onChange={() => this.cartItemQuantityHandler(event, cartItem)}>
+                                <select className="quantity-select" type="select" value={cartItem.quantity} defaultValue={cartItem.quantity} onChange={() => this.cartItemQuantityHandler(event, cartItem)}>
                                     {this.selectOptions(20)}
                                 </select>
 
