@@ -34,7 +34,7 @@ bundle.js.map
 bundle.js*
 .DS_Store
 npm-debug.log
-NOTES.md
+./NOTES.md
 
 
 

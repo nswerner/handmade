@@ -59,6 +59,7 @@ NEEDS WORK:
 -COMPLETE- USERS CONTROLLER - SHOW IS BREAKING PRODUCTS PAGE
     -SOLN- ADD LOADING TO STATE THAT RENDERS/ACCESSES NOTHING UNTIL DATA IS PRESENT
 -COMPLETE- Product ID and Cart Item ID indexed so add item twice kicks errors right now, need to UPDATE instead of POST
+-COMPLETE- Editing a Review does not remove the review from this.reviews, and thus renders underneath the form
 -OPEN- Error handing on the session form doesn't activate a red focus/active on the trouble element
 -OPEN- ? DEVELOP FULLSIZE PICTURE MODAL ?
 -OPEN- ProductShow component will need revisiting after Review/Shopping Cart components are created
@@ -76,7 +77,6 @@ NEEDS WORK:
 -OPEN- Add first name/ last name to the User model and profile dropdown
 -OPEN- Will need to Refactor the Shop Manager Header to render based on the selection in the left nav;
 -OPEN- Anticipating Very Long Product Titles will overrun the Shop Manager List Items
--OPEN- Editing a Review does not remove the review from this.reviews, and thus renders underneath the form
 -OPEN- Quantity bug in cart
 
 
