@@ -1,65 +1,67 @@
 NEEDS WORK:
 
--COMPLETE- Product Index CSS: Hovering over a parent li gives the child image a drop shadow
--COMPLETE- Long email addresses push up against DD border
--COMPLETE- Product Index Divs (.item-box) need to actually link to product show page
--COMPLETE- Navigating to ProductShow component from my ProductIndex breaks
--COMPLETE- After changing the shape of my state, from time to time, navigating to the / will throw errors
+-CLOSED- Product Index CSS: Hovering over a parent li gives the child image a drop shadow
+-CLOSED- Long email addresses push up against DD border
+-CLOSED- Product Index Divs (.item-box) need to actually link to product show page
+-CLOSED- Navigating to ProductShow component from my ProductIndex breaks
+-CLOSED- After changing the shape of my state, from time to time, navigating to the / will throw errors
     - when at a product show page and navigating back to root
     - may have fixed it with a Protected Route
     - seems okay but needs more testing
     - errors are back after working on the product show page
 -ANSWER- What I declared the key in jbuilder was different among index and show
--COMPLETE- ProductShow: next and previous buttons over image in certain conditions
--COMPLETE- ProductShow: Can't get li opacity to stay at 1 on selected
--COMPLETE (HACKY)- Modal isn't perfectly centered, it's slightly to the right
+-CLOSED- ProductShow: next and previous buttons over image in certain conditions
+-CLOSED- ProductShow: Can't get li opacity to stay at 1 on selected
+-CLOSED (HACKY)- Modal isn't perfectly centered, it's slightly to the right
     - I am using multiple divs, one at top: 50%, left: 50%; and the inner with an odd translation of ~(-11%, -7%);
     - .or class is translated something like %1000;
--COMPLETE- Need to properly create horizontal lines that span 100vw
+-CLOSED- Need to properly create horizontal lines that span 100vw
     - IDEA: create thin block element + border that has an id selector and goes 100%vw
--COMPLETE- Coffee dictionary has a duplicate picture in the seed file
+-CLOSED- Coffee dictionary has a duplicate picture in the seed file
     - changed seed file, will need to reseed to make change
--COMPLETE(90%)- (COULD USE BETTER DESCRIPTIONS) SPEND MORE TIME IN SEED DATA 
+-CLOSED(90%)- (COULD USE BETTER DESCRIPTIONS) SPEND MORE TIME IN SEED DATA 
     - REMOVE UNPROFESSIONAL/BAD PICTURES (or at least make them the second picture)
     - ADD MORE PICTURES
     - CHANGE DADS HAMMER, FAVORITE WATERWAYS DEFAULT
--COMPLETE- PUT APP ON CUSTOM DOMAIN
--COMPLETE- ProductShow CompDidUpdate throws an error when trying to setState of SelectedPicture to 0, even on a promise of the new data coming back
+-CLOSED- PUT APP ON CUSTOM DOMAIN
+-CLOSED- ProductShow CompDidUpdate throws an error when trying to setState of SelectedPicture to 0, even on a promise of the new data coming back
     - error claims to try render an object
--COMPLETE- User photos
+-CLOSED- User photos
     -pass on this for now, come back to it as a bonus feature
--COMPLETE- !important - rendering preview of multiple files
+-CLOSED- !important - rendering preview of multiple files
     - suspect I'm having an issue in my container but I'm not sure how to pass that information forward.
     -ANSWER- javascript.push returns the length of the array. Memoize the result and setState to the result.
--HACKY COMPLETE- Updating Product Listings throws a 500 server error
+-HACKY CLOSED- Updating Product Listings throws a 500 server error
     - The problem came from data type issues:
         - On #create, the files appended to the form were file datatypes
         - On #update, the fetchProduct request returned stringified urls which were throwing errors.
     - ANSWER - Duplicate product params and filter out the strings from product_pictures 
--COMPLETE- Managers Products is not properly filtering for merchant id === current user id
+-CLOSED- Managers Products is not properly filtering for merchant id === current user id
     - did not have access to this.props.currentUser.id inside my function? 
     - after I filtered, I did not refactor later code to use the filtered version
--COMPLETE- Force price have 2 decimal places
+-CLOSED- Force price have 2 decimal places
     -USED .toFixed(2); right in the display component
--COMPLETE- Add lorem ipsum or even better, static information, to product show page
--COMPLETE- Need to handle AJAX request error in form in the event that theres no photo
--COMPLETE- PRODUCTSHOW picture ul is off kilter to the right after heroku push
--COMPLETE- subSplash image has Etsy in it still
--COMPLETE- Product Index - one tall image throws the row size for every image
+-CLOSED- Add lorem ipsum or even better, static information, to product show page
+-CLOSED- Need to handle AJAX request error in form in the event that theres no photo
+-CLOSED- PRODUCTSHOW picture ul is off kilter to the right after heroku push
+-CLOSED- subSplash image has Etsy in it still
+-CLOSED- Product Index - one tall image throws the row size for every image
     - Maybe add div around image itself, make image height auto and the surrounding div 11vw with overflow hidden
     - Not sure that works well because it makes the wider images go out of the picture
     - May need logic to decide if image is tall or wide or let users set thumbnail images on listing
--COMPLETE- App looks slightly shifted to the right
--COMPLETE- Remove Lorem Ipsum on the Product Show Overview Page
--COMPLETE- Back end for cart is extensive, may need to refactor and will certainly need to include error handling. Since the cart show view is so extensive, I don't know that I need all the methods in the CartItemController. 
+-CLOSED- App looks slightly shifted to the right
+-CLOSED- Remove Lorem Ipsum on the Product Show Overview Page
+-CLOSED- Back end for cart is extensive, may need to refactor and will certainly need to include error handling. Since the cart show view is so extensive, I don't know that I need all the methods in the CartItemController. 
     - WILL NEED: CREATE (adds an item to a cart), UPDATE (to change item quantity), DELETE (removes item from a cart) but unsure about show and index since an ajax request to cart will fetch all the data needed to display the cart
--COMPLETE- Margin in the Shop Manager Index Items only affects the first line of the header text
--COMPLETE- Shop Manager Cards - The entire card should be a clickable link to the product show page
--COMPLETE- Red Asterisk to denote required fields
--COMPLETE- USERS CONTROLLER - SHOW IS BREAKING PRODUCTS PAGE
+-CLOSED- Margin in the Shop Manager Index Items only affects the first line of the header text
+-CLOSED- Shop Manager Cards - The entire card should be a clickable link to the product show page
+-CLOSED- Red Asterisk to denote required fields
+-CLOSED- USERS CONTROLLER - SHOW IS BREAKING PRODUCTS PAGE
     -SOLN- ADD LOADING TO STATE THAT RENDERS/ACCESSES NOTHING UNTIL DATA IS PRESENT
--COMPLETE- Product ID and Cart Item ID indexed so add item twice kicks errors right now, need to UPDATE instead of POST
--COMPLETE- Editing a Review does not remove the review from this.reviews, and thus renders underneath the form
+-CLOSED- Product ID and Cart Item ID indexed so add item twice kicks errors right now, need to UPDATE instead of POST
+-CLOSED- Editing a Review does not remove the review from this.reviews, and thus renders underneath the form
+-CLOSED- Quantity bug in cart
+-CLOSED- Add first name/ last name to the User model and profile dropdown
 -OPEN- Error handing on the session form doesn't activate a red focus/active on the trouble element
 -OPEN- ? DEVELOP FULLSIZE PICTURE MODAL ?
 -OPEN- ProductShow component will need revisiting after Review/Shopping Cart components are created
@@ -74,10 +76,8 @@ NEEDS WORK:
         - PUT: used to set exactly how we want (i.e. exclude the deleted product picture)
 -OPEN- Need to validate the presence of atleast one picture and render errors in Product Form
 -OPEN- Add a Are you sure? (this action is final) prompt to end listings
--OPEN- Add first name/ last name to the User model and profile dropdown
 -OPEN- Will need to Refactor the Shop Manager Header to render based on the selection in the left nav;
 -OPEN- Anticipating Very Long Product Titles will overrun the Shop Manager List Items
--OPEN- Quantity bug in cart
 
 
  
