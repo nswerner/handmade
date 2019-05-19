@@ -447,5 +447,11 @@
 }
 
 .edit-review-button {
-    margin-bottom: 5px;
+    margin: 5px;
+    margin-top: 0px;
+}
+
+.delete-review-button {
+    margin: 5px;
+    margin-top: 0px;
 }
