@@ -115,19 +115,24 @@ class ProductShow extends React.Component {
     createMyReview() {
 
         if (this.state.editing === true) {
-            return this.myReview =
-                <div className="post-review">
-                    <StarRatings
-                        rating={this.state.rating}
-                        starRatedColor="black"
-                        changeRating={this.changeRating}
-                        name='rating'
-                        starDimension="20px"
-                        starHoverColor="gold"
-                    />
-                    <textarea className="review-textarea" placeholder={this.state.reviewBody} value={this.state.reviewBody} onChange={() => this.handleTextArea(event)} id="" cols="30" rows="10"></textarea>
-                    <button className="post-review-button" onClick={() => this.modifyReview(event)}>Modify Review</button>
-                </div>
+            for (let idx = 0; idx < this.props.reviews.length; idx += 1) {
+                if (this.props.currentUser.id === this.props.reviews[idx].user_id) {
+                    this.reviews.splice(idx, 1);
+                    return this.myReview =
+                        <div className="post-review">
+                            <StarRatings
+                                rating={this.state.rating}
+                                starRatedColor="black"
+                                changeRating={this.changeRating}
+                                name='rating'
+                                starDimension="20px"
+                                starHoverColor="gold"
+                            />
+                            <textarea className="review-textarea" placeholder={this.state.reviewBody} value={this.state.reviewBody} onChange={() => this.handleTextArea(event)} id="" cols="30" rows="10"></textarea>
+                            <button className="post-review-button" onClick={() => this.modifyReview(event)}>Modify Review</button>
+                        </div>
+                }
+            }
         } else {
             for (let idx = 0; idx < this.props.reviews.length; idx += 1) {
                 if (this.props.currentUser.id === this.props.reviews[idx].user_id) {
