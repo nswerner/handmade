@@ -13,7 +13,7 @@ Shopping Cart
 
 
 ## Live
-[Handmade](handmade-with-love.herokuapp.com)
+[Handmade](https://www.hand-made.app)
 
 ## Technology
 * Git
