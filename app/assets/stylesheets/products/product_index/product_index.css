@@ -134,3 +134,12 @@
     height: 68%;
     min-width: 1150px;
 }
+
+.bad-search {
+    height: 250px;
+    display:flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

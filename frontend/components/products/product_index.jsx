@@ -18,6 +18,7 @@ class ProductIndex extends React.Component {
         this.nextPage = this.nextPage.bind(this);
         this.previousPage = this.previousPage.bind(this);
         this.firstPage = this.firstPage.bind(this);
+        this.filterProducts = this.filterProducts.bind(this);
     }
     
     /////////
@@ -39,7 +40,7 @@ class ProductIndex extends React.Component {
     }
 
     nextPage() {
-        if (this.state.page === this.state.totalPages + 1) {
+        if (this.state.page === this.totalPages + 1) {
             return null;
         }
 
@@ -60,10 +61,19 @@ class ProductIndex extends React.Component {
 
     componentDidMount() {
         this.getProducts();
-    }  
-
+    }
+    
+    filterProducts() {
+        this.filteredProducts = _.filter(this.props.products, product => product.title.toLowerCase().includes(this.props.searchTerm.toLowerCase()));
+        this.filteredProductObject = {};
+        for (let idx = 0; idx < this.filteredProducts.length; idx += 1) {
+            this.filteredProductObject[this.filteredProducts[idx].id] = this.filteredProducts[idx];
+        }
+    }
 
     render() {
+
+        this.filterProducts()
 
         if (this.state.loading) {
             return (
@@ -77,15 +87,17 @@ class ProductIndex extends React.Component {
             this.start = null;
         } 
 
-
-        let filteredProducts = _.filter(this.props.products, product => product.title.toLowerCase().includes(this.props.searchTerm.toLowerCase()));
-        let filteredProductObject = {};
-        for (let idx = 0; idx < filteredProducts.length; idx += 1) {
-            filteredProductObject[filteredProducts[idx].id] = filteredProducts[idx];
+        if (Object.keys(this.filteredProductObject).length === 0) {
+            return (
+                <div className="bad-search">
+                    <h4>
+                        Sorry, no products could be found with that title. Check your spelling or try searching for another product!
+                    </h4>
+                </div>
+            )
         }
 
-
-        this.productArray = Object.values(filteredProductObject);
+        this.productArray = Object.values(this.filteredProductObject);
         this.productsSlice = this.productArray.slice(this.state.sliceStart, this.state.sliceEnd);
 
         this.products = this.productsSlice.map( product => {
@@ -99,7 +111,7 @@ class ProductIndex extends React.Component {
         });
         
 
-
+        this.totalPages = Math.ceil(Object.keys(this.filteredProductObject).length / 12);
 
 
         return (
@@ -113,7 +125,8 @@ class ProductIndex extends React.Component {
                     </header>
                     <nav className="index-page-nav">
                         {this.start}
-                        <span className="page-x-of-y">Page {this.state.page - 1} of {this.state.totalPages} </span>
+                        {/* <span className="page-x-of-y">Page {this.state.page - 1} of {this.state.totalPages} </span> */}
+                        <span className="page-x-of-y">Page {this.state.page - 1} of {this.totalPages} </span>
                         <button className="previous-page-button" onClick={this.previousPage}><i className="fas fa-angle-left"></i></button>
                         <button className="next-page-button" onClick={this.nextPage}><i className="fas fa-angle-right"></i></button>
                     </nav>
