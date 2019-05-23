@@ -115,12 +115,12 @@ class ShopManager extends React.Component {
                             <span className="listings-span"> Listings </span>
                         </button>
                     </div>
-                    <div className="left-nav-orders">
+                    {/* <div className="left-nav-orders">
                         <button className="nav-orders-button">
                             <i className="fas fa-clipboard-list"/>
                             <span className="orders-span">  Orders and reviews </span>
                         </button>
-                    </div>
+                    </div> */}
 
                 </div>
 
