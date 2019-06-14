@@ -78,6 +78,7 @@ NEEDS WORK:
 -OPEN- Add a Are you sure? (this action is final) prompt to end listings
 -OPEN- Will need to Refactor the Shop Manager Header to render based on the selection in the left nav;
 -OPEN- Anticipating Very Long Product Titles will overrun the Shop Manager List Items
+-OPEN- When on any product page X besides 1, typing into search returns page X of Y
 
 
  
