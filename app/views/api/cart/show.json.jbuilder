@@ -15,7 +15,7 @@ end
 @cart_items = 
     json.cartItems do 
         @cart.cart_items.each do |item|
-            if (@products["#{item.id}"])
+            if (@products["#{item.product_id}"])
                 json.set! item.id do
                     json.extract! item, :id, :quantity, :cart_id, :product_id
 
@@ -46,7 +46,7 @@ json.cart do
 
         cartTotal = 0
         @cart_items.each do |id, cartItem|
-            if (@products["#{item.id}"])
+            if (@products["#{cartItem['product_id']}"])
                 cartTotal += (cartItem['quantity'] * @products[cartItem['product_id'].to_s]['price'])
             end
         end
@@ -61,7 +61,7 @@ end
 
 json.cartItems do 
     @cart.cart_items.each do |item|
-        if (@products["#{item.id}"])
+        if (@products["#{item.product_id}"])
             json.set! item.id do
                 json.extract! item, :id, :quantity, :cart_id, :product_id
 
@@ -97,9 +97,10 @@ end
 # NEW
 json.users do
     @cart.cart_items.each do |cartItem|
-
-        json.set! cartItem.merchant.id do
-            json.extract! cartItem.merchant, :shop_name
+        if (@products["#{cartItem.product_id}"])
+            json.set! cartItem.merchant.id do
+                json.extract! cartItem.merchant, :shop_name
+            end
         end
     end
 end
