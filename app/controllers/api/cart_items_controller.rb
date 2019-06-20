@@ -4,12 +4,12 @@ class Api::CartItemsController < ApplicationController
         @cart_item = CartItem.new(cart_item_params)
         @cart_item.cart_id = params[:cart_id]
 
-        if @cart_item.save
-            @cart_item
+        if @cart_item.id
+            @cart_item.save
             @product = Product.find_by(id: @cart_item.product_id)
             render 'api/cart_items/show'
         else 
-            render json: {"errors": [@cart_item.errors.full_messages]}
+            render json: {"errors": [@cart_item.errors.full_messages]}, status: 200
         end
     end
 
