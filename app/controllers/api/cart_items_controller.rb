@@ -4,7 +4,7 @@ class Api::CartItemsController < ApplicationController
         @cart_item = CartItem.new(cart_item_params)
         @cart_item.cart_id = params[:cart_id]
 
-        if @cart_item.id
+        if !@cart_item.id
             @cart_item.save
             @product = Product.find_by(id: @cart_item.product_id)
             render 'api/cart_items/show'
