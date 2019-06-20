@@ -15,16 +15,18 @@ end
 @cart_items = 
     json.cartItems do 
         @cart.cart_items.each do |item|
-            json.set! item.id do
-                json.extract! item, :id, :quantity, :cart_id, :product_id
+            if (@products["#{item.id}"])
+                json.set! item.id do
+                    json.extract! item, :id, :quantity, :cart_id, :product_id
 
-                unitPrice = @products["#{item.product_id}"]['price']
-                itemPrice = (unitPrice * item.quantity)
-                itemPrice = sprintf('%.2f', itemPrice)
-                unitPrice = sprintf('%.2f', unitPrice)
+                    unitPrice = @products["#{item.product_id}"]['price']
+                    itemPrice = (unitPrice * item.quantity)
+                    itemPrice = sprintf('%.2f', itemPrice)
+                    unitPrice = sprintf('%.2f', unitPrice)
 
-                json.itemPrice itemPrice
-                json.unitPrice unitPrice
+                    json.itemPrice itemPrice
+                    json.unitPrice unitPrice
+                end
             end
         end
     end
@@ -44,7 +46,9 @@ json.cart do
 
         cartTotal = 0
         @cart_items.each do |id, cartItem|
-            cartTotal += (cartItem['quantity'] * @products[cartItem['product_id'].to_s]['price'])
+            if (@products["#{item.id}"])
+                cartTotal += (cartItem['quantity'] * @products[cartItem['product_id'].to_s]['price'])
+            end
         end
         cartTotal = sprintf('%.2f', cartTotal)
        json.cartTotal cartTotal
@@ -57,16 +61,18 @@ end
 
 json.cartItems do 
     @cart.cart_items.each do |item|
-        json.set! item.id do
-            json.extract! item, :id, :quantity, :cart_id, :product_id
+        if (@products["#{item.id}"])
+            json.set! item.id do
+                json.extract! item, :id, :quantity, :cart_id, :product_id
 
-            unitPrice = @products["#{item.product_id}"]['price']
-            itemPrice = (unitPrice * item.quantity)
-            itemPrice = sprintf('%.2f', itemPrice)
-            unitPrice = sprintf('%.2f', unitPrice)
+                unitPrice = @products["#{item.product_id}"]['price']
+                itemPrice = (unitPrice * item.quantity)
+                itemPrice = sprintf('%.2f', itemPrice)
+                unitPrice = sprintf('%.2f', unitPrice)
 
-            json.itemPrice itemPrice
-            json.unitPrice unitPrice
+                json.itemPrice itemPrice
+                json.unitPrice unitPrice
+            end
         end
     end
 end

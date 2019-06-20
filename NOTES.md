@@ -79,6 +79,8 @@ NEEDS WORK:
 -OPEN- Will need to Refactor the Shop Manager Header to render based on the selection in the left nav;
 -OPEN- Anticipating Very Long Product Titles will overrun the Shop Manager List Items
 -OPEN- When on any product page X besides 1, typing into search returns page X of Y
+-OPEN- If an item is in a cart and then the item is deleted from the shop manager, the cart api is non responsive and the cart is broken
+-OPEN- CART API SHOULD BE PRIVATE 
 
 
  
