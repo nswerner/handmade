@@ -38,7 +38,13 @@ end
 
 json.cart do
 
-    cart_item_ids = @cart.cart_items.map { |item| item.id }
+    cart_item_ids = @cart.cart_items.map { |item| 
+        if (@products["#{item.product_id}"]) 
+            item.id
+        end
+    }
+
+    cart_item_ids.select! { |id| !id.nil? }
 
     json.set! @cart.id do
         json.extract! @cart, :user_id
