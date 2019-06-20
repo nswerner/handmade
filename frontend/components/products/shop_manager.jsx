@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import ProductIndexItem from './product_index_items';
 
 class ShopManager extends React.Component {
     constructor(props) {

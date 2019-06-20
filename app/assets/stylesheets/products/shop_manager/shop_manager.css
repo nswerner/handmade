@@ -170,6 +170,7 @@
     height: 40px;
     display: flex;
     align-items: center;
+    background-color: lightgray;
 }
 
 .left-nav-listings *:hover {
@@ -198,6 +199,7 @@
     align-items: center;
     padding-top: 9px;
     margin-top: 2px;
+    background-color: lightgray;
 
 }
 
