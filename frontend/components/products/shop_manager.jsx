@@ -46,6 +46,8 @@ class ShopManager extends React.Component {
     removeProduct(id) {
         this.props.removeProduct(id).then(() => {
             this.props.fetchUserProducts(this.props.currentUser.id);
+            this.props.fetchCurrentCartID(this.props.currentUser);
+            this.props.fetchCart(this.props.currentUser, this.props.currentUser.cart_id);
         });
     }
 

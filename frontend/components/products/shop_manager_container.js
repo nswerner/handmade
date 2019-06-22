@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import ShopManager from './shop_manager';
-import { receiveCurrentUser } from '../../actions/session_actions';
-import { fetchUserProducts, updateProduct, deleteProduct } from '../../actions/product_actions';
+import { receiveCurrentUser, fetchCurrentCartID } from '../../actions/session_actions';
+import { fetchUserProducts, updateProduct, deleteProduct, fetchProducts } from '../../actions/product_actions';
 import { clearSearch } from '../../actions/search_actions';
+import { fetchCart  } from '../../actions/cart_actions';
  
 const msp = state => {
     const currentUser = state.entities.users[state.session.id]
@@ -28,7 +29,10 @@ const mdp = (dispatch) => {
         fetchUserProducts: (userId) => dispatch(fetchUserProducts(userId)),
         updateProduct: (product) => dispatch(updateProduct(product)),
         removeProduct: (id) => dispatch(deleteProduct(id)),
-        clearSearch: () => dispatch(clearSearch())
+        clearSearch: () => dispatch(clearSearch()),
+        fetchCurrentCartID: (user) => dispatch(fetchCurrentCartID(user)),
+        fetchCart: (user, id) => dispatch(fetchCart(user, id)),
+        fetchProducts: () => dispatch(fetchProducts())
     });
 };
 

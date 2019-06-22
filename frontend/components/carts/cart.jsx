@@ -6,6 +6,7 @@ class Cart extends React.Component {
     constructor(props) {
         super(props)
 
+
         this.state = {
             cartItems: this.props.cartItems,
             cart: this.props.cart,
@@ -69,7 +70,6 @@ class Cart extends React.Component {
         }
     }
 
-
     render() {
         let component = null;
         let emptyCart = null;
@@ -101,7 +101,7 @@ class Cart extends React.Component {
                             </div>
 
                             <div className="cart-item-right">
-                                <select className="quantity-select" type="select" value={cartItem.quantity} defaultValue={cartItem.quantity} onChange={() => this.cartItemQuantityHandler(event, cartItem)}>
+                                <select className="quantity-select" type="select" value={cartItem.quantity} onChange={() => this.cartItemQuantityHandler(event, cartItem)}>
                                     {this.selectOptions(20)}
                                 </select>
 

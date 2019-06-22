@@ -20,7 +20,7 @@ const CartItemsReducer = (oldState = {}, action) => {
 
         case RECEIVE_CART:
             newState = merge(newState, action.cartItems);
-            return newState;
+            return action.cartItems;
 
         case LOGOUT_CURRENT_USER:
             return {};

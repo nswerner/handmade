@@ -6,12 +6,12 @@ import { merge } from 'lodash';
 const CartsReducer = (oldState = {}, action) => {
 
     Object.freeze(oldState);
-    let newState = merge({}, oldState);
+    // let newState = merge({}, oldState);
 
     switch (action.type) {
         case RECEIVE_CART:
-            newState = merge(newState, action.cart);
-            return newState;
+            // newState = merge(newState, action.cart);
+            return action.cart;
 
         case LOGOUT_CURRENT_USER:
             return {};
