@@ -89,8 +89,14 @@ class ProductForm extends React.Component {
     }
 
     handlePriceChange(event, maskedvalue, floatvalue) {
+        let price = "";
+        for (let idx = 2; idx < event.target.value.length; idx ++) {
+            if (event.target.value[idx] !== ",") {
+                price += event.target.value[idx];
+            }
+        }
 
-        this.setState({ price: parseFloat(event.target.value.slice(2)) });
+        this.setState({ price: parseFloat(price) });
     }
 
     createDefaultSquares(number) {
