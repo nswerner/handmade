@@ -62,6 +62,10 @@ NEEDS WORK:
 -CLOSED- Editing a Review does not remove the review from this.reviews, and thus renders underneath the form
 -CLOSED- Quantity bug in cart
 -CLOSED- Add first name/ last name to the User model and profile dropdown
+-CLOSED- Need to validate the presence of atleast one picture and render errors in Product Form
+-CLOSED- Will need to Refactor the Shop Manager Header to render based on the selection in the left nav;
+-CLOSED- When on any product page X besides 1, typing into search returns page X of Y
+-CLOSED- If an item is in a cart and then the item is deleted from the shop manager, the cart api is non responsive and the cart is broken
 -OPEN- Error handing on the session form doesn't activate a red focus/active on the trouble element
 -OPEN- ? DEVELOP FULLSIZE PICTURE MODAL ?
 -OPEN- ProductShow component will need revisiting after Review/Shopping Cart components are created
@@ -74,12 +78,8 @@ NEEDS WORK:
     - some logic to send two HTML requests in the event that a photo has been deleted
         - PATCH: used to add any photos
         - PUT: used to set exactly how we want (i.e. exclude the deleted product picture)
--OPEN- Need to validate the presence of atleast one picture and render errors in Product Form
 -OPEN- Add a Are you sure? (this action is final) prompt to end listings
--OPEN- Will need to Refactor the Shop Manager Header to render based on the selection in the left nav;
 -OPEN- Anticipating Very Long Product Titles will overrun the Shop Manager List Items
--OPEN- When on any product page X besides 1, typing into search returns page X of Y
--OPEN- If an item is in a cart and then the item is deleted from the shop manager, the cart api is non responsive and the cart is broken
 -OPEN- CART API SHOULD BE PRIVATE 
 
 
