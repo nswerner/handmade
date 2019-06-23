@@ -16,11 +16,13 @@ class Api::CartsController < ApplicationController
 
     
     def show
-        @cart = Cart.where(id: params[:id]).includes(:cart_items, :products)
+        @cart = Cart.where(id: params[:id]).where(user_id: params[:user_id]).includes(:cart_items, :products)
         @cart = @cart[0]
 
         if @cart
             render 'api/cart/show'
+        else 
+            render json: {errors: "That information is private"}, status: 400
         end
     end
 
