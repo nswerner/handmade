@@ -66,6 +66,7 @@ NEEDS WORK:
 -CLOSED- Will need to Refactor the Shop Manager Header to render based on the selection in the left nav;
 -CLOSED- When on any product page X besides 1, typing into search returns page X of Y
 -CLOSED- If an item is in a cart and then the item is deleted from the shop manager, the cart api is non responsive and the cart is broken
+-CLOSED- CART API SHOULD BE PRIVATE 
 -OPEN- Error handing on the session form doesn't activate a red focus/active on the trouble element
 -OPEN- ? DEVELOP FULLSIZE PICTURE MODAL ?
 -OPEN- ProductShow component will need revisiting after Review/Shopping Cart components are created
@@ -80,7 +81,6 @@ NEEDS WORK:
         - PUT: used to set exactly how we want (i.e. exclude the deleted product picture)
 -OPEN- Add a Are you sure? (this action is final) prompt to end listings
 -OPEN- Anticipating Very Long Product Titles will overrun the Shop Manager List Items
--OPEN- CART API SHOULD BE PRIVATE 
 
 
  
@@ -88,10 +88,11 @@ NEEDS WORK:
 NOTES: 
 
     1) I seem to hit a hiccup everytime I extract new information out of the backend. A helpful hint to myself:
-        - It all goes back to the Model; Models have associations you can use to help extract extraneous data.
-        - Data is fetched from the database in the controller and passed to a backend view, an api route that uses json.jbuilder
+        - It all goes back to the Model; Models have associations you can use to help extract extraneous data 
+            (to reduce server load be sure to lazy-load information with an includes)
+        - Data is fetched from the database in the controller (active record) and passed to a backend view, an api route that uses json.jbuilder
         - The api view needs to extract only the data we need from the full object (Protect your private data!)
-        - Normal actions must be modified if we'll be receiving pieces of state that live in utilize different reducers
+        - Normal actions must be modified if we'll be receiving pieces of state that utilize different reducers
         - The reducers must be modified to listen (case statements) and extract data from that action
         - Verify state looks like you expect it too on several actions, if not every action related to those reducers
 
