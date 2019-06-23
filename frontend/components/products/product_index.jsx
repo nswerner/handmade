@@ -62,6 +62,16 @@ class ProductIndex extends React.Component {
     componentDidMount() {
         this.getProducts();
     }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props.searchTerm !== prevProps.searchTerm) {
+            this.setState({
+                page: 2,
+                sliceStart: 0,
+                sliceEnd: 12
+            });
+        }
+    }
     
     filterProducts() {
         this.filteredProducts = _.filter(this.props.products, product => product.title.toLowerCase().includes(this.props.searchTerm.toLowerCase()));
@@ -73,7 +83,7 @@ class ProductIndex extends React.Component {
 
     render() {
 
-        this.filterProducts()
+        this.filterProducts();
 
         if (this.state.loading) {
             return (

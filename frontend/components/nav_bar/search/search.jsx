@@ -15,7 +15,6 @@ class Search extends React.Component {
     }
 
     handleClick(event) {
-
         if (this.props.loggedIn === false) {
             this.props.openModal();
             return;
@@ -54,9 +53,6 @@ class Search extends React.Component {
             this.props.filterProducts(filteredProductObject);
         }
     }
-
-
-
 
     handleInput(event) {
         let filteredProducts = _.filter(this.allProducts, product => product.title.toLowerCase().includes(event.target.value.toLowerCase()));
