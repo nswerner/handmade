@@ -16,11 +16,7 @@
     "webpack": "webpack --watch --mode=development",
     "postinstall": "webpack",
     "start:webpack": "webpack --watch --mode=development",
-    "start:server": "bundle exec rails server",
-    "tab:start:webpack": "ttab npm run start:webpack",
-    "tab:start:server": "ttab npm run start:server",
-    "localhost": "sleep 5 && open http://localhost:3000",
-    "dev": "run-s tab:start:webpack tab:start:server localhost"
+    "start:server": "bundle exec rails server"
   },
   "repository": {
     "type": "git",
@@ -54,7 +50,6 @@
   },
   "devDependencies": {
     "eslint": "^5.16.0",
-    "eslint-plugin-react": "^7.12.4",
-    "ttab": "^0.6.1"
+    "eslint-plugin-react": "^7.12.4"
   }
 }
