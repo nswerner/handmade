@@ -20,7 +20,7 @@ class Footer extends React.Component {
                     <div className="footer-copyright">&copy; 2019 Handmade, Inc.</div>
                     <a className="footer-git" href="http://www.github.com/r0ckf0rd/handmade"><i className="fab fa-github"/>Github</a>
                     <a className="footer-linkedin" href="http://www.linkedin.com/in/nicholas-werner-7971606b/"><i className="fab fa-linkedin"/>LinkedIn</a>
-                    <a className="footer-personal" href="https://nicholas-werner.com"><i className="fas fa-user-astronaut"/>Personal</a>
+                    <a className="footer-personal" href="https://www.nicholas-werner.com"><i className="fas fa-user-astronaut"/>Personal</a>
                 </div>
             </footer>
         )
