@@ -20,7 +20,7 @@
     "tab:start:webpack": "ttab npm run start:webpack",
     "tab:start:server": "ttab npm run start:server",
     "localhost": "sleep 5 && open http://localhost:3000",
-    "dev": "run-s tab:start:webpack tab:start:server localhost"
+    "setup": "run-s tab:start:webpack tab:start:server localhost"
   },
   "repository": {
     "type": "git",
