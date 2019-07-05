@@ -15,6 +15,10 @@ Shopping Cart
 ## Live
 [Handmade](https://www.hand-made.app)
 
+## Web Archive Reference
+This version of Handmade was styled to match Etsy.com on March 20th, 2019.
+[March 20th, 2019](http://web.archive.org/web/20190320192053/https://www.etsy.com/)
+
 ## Technology
 * Git
 * Postgresql
